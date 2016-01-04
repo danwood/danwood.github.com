@@ -1,0 +1,35 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>The Story of a crash</title>
+</head>
+<body>
+<h1>The Story of a crash</h1>
+
+
+<p>
+Sandvox's beta program is going well ... we've expanded our list of testers by a big chunk (though there are many more people that want to be testers, but we just don't have the bandwidth to handle that many).  On our latest release last week, we started getting crash reports.  A lot of crash reports.  And they all had pretty much the same backtrace.  The topmost line in the backtrace was always:
+</p>
+<p><tt>
+-[WebHTMLView(WebPrivate) _recursiveDisplayRectIfNeededIgnoringOpacity: isVisibleRect: rectIsVisibleRectForView: topView:] + 68
+</tt>
+</p>
+<p>
+Nothing is more annoying in debugging than a bug you can't reproduce.  So we had to figure out a way to track this puppy down by remote control, analyzing the crash reports, asking friends who got the crasher to try out experiments, and so forth.
+</p>
+<p>
+Fortunately, we have the source to WebKit &mdash; in fact, we are bundling a recent build of WebKit with the application &mdash; which is where the crash occured.  But was the WebKit really to blame, or our source code?  In any case, we <a href="http://bugzilla.opendarwin.org/show_bug.cgi?id=5885">reported it</a> to Bugzilla.  The crashes seemed to come when somebody clicked on a popup menu in the toolbar.  We were using a custom object for an iconic popup button, so maybe that was to blame.
+</p>
+<p>
+After more investigation, and more crash reports coming in, we found a few other ways that the crash occured.  What was common about the crashes was the point of the crash, and that further back, the method <tt>-[NSMenu 
+_popUpContextMenu:withEvent:forView:withFont:]</tt> was getting called.  (Our popup menu was invoking this to bring up its menu, even though it wasn't strictly a contextual menu.)
+</p>
+<p>
+The analysis of the source code made it seem like a WebView was getting deallocated.  But extensive checking revealed this not to be the case.  We were dereferencing a null pointer, a pointer that should not have been null.
+</p>
+<p>
+As it happens, one of our beta testers who was getting the crash happens to be an extremely talented developer/debugger/hacker.   After hours of tracing, <a href="http://rentzsch.com/">he</a> discovered what was happening.  Some users have third-party contextual menu plugins installed that link to WebKit.  (The most popular of these seems to be the one that comes bundled with <a href="http://www.lemkesoft.com/en/graphcon.htm">Graphic Converter</a>.)  So what was happening was that when somebody brought up a contextual menu, the plugins were loaded; one that <i>linked to WebKit</i> brought in the system's version of Webkit, clobbering our bundled WebKit.  And boom, the crash.
+</p>
+<p>
+The next step is how to deal with this. For now, we are scanning the contextual menu plugins ourselves to find those that link to WebKit, and warn our beta-tester of the incompatibility.  But what we are really hoping for is a way to prevent these bundles from loading, and/or prevent them from loading in the system's WebKit that would link to our own.  We have a technical support incident pending with Apple....
+<p>

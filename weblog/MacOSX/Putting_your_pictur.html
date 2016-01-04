@@ -1,0 +1,21 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>Putting your picture into your mail messages</title>
+</head>
+<body>
+<h1>Putting your picture into your mail messages</h1>
+
+
+Users of Apple's Mail program are used to seeing pictures attached to people's email messages, but only if they are .mac users.
+<p />
+I noticed a <a href="http://www.macosxhints.com/article.php?story=20020904062730654">tip</a> on Mac OS X Hints that led me down a path towards installing my picture on my outgoing mail messages, even though I <strong>don't</strong> use a mac.com account.
+<p />
+<img style="padding:0 0 10px 10px;" align="right" src="http://www.karelia.com/dan_watson.jpg" height="64" width="64" hspace="10" vspace="10" border="0" />
+The trick:  use the terminal to specify a custom header to be attached to your outgoing mail messages.  Here is mine, what I had typed into the terminal to add the preference to Mail (while it's not running):
+<blockquote style="text-indent:-1em;">
+<tt>
+defaults write com.apple.mail UserHeaders '{"X-Image-Url" = "http://www.karelia.com/dan_watson.jpg"; }' 
+</tt>
+</blockquote>
+If you have a web site where you can put your own 64x64 image, you can make your image available to other Mac users as well!

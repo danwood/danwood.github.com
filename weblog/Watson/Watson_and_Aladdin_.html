@@ -1,0 +1,16 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>Watson and Aladdin's "Internet Cleanup" are incompatible</title>
+</head>
+<body>
+<h1>Watson and Aladdin's "Internet Cleanup" are incompatible</h1>
+
+
+Watson users should be aware that some incompatibilities between Watson and Aladdin System's <a href="http://www.aladdinsys.com/internetcleanup/mac/index.html">Internet Cleanup</a> (specifically, the NetBlockade feature) are incompatible.
+<p />
+If you are using Watson, you need to disable the NetBlockade feature of Internet Cleanup.  (There may be a way of keeping NetBlockade active while allowing Watson to function without it, but I haven't had a chance to investigate this.)
+<p />
+<small>
+Technical explanation (optional): NetBlockade inserts itself into your system so that any web page is passed through their filters to remove popup windows and banner ads from your web browsers.  The trouble is that in many cases, Watson relies on Web pages being formatted a particular way, and the changes to the pages that NetBlockade makes can be a bit too drastic for Watson to handle.
+</small>

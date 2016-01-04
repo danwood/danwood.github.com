@@ -1,0 +1,3 @@
+Redirect permanent abcd.html http://gigliwood.com/abcd/
+Redirect permanent abcd.htm http://gigliwood.com/abcd/
+

@@ -1,0 +1,35 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>Clarification on Information Sent to Karelia</title>
+</head>
+<body>
+<h1>Clarification on Information Sent to Karelia</h1>
+
+
+<p>
+Following up on a user who was concerned about privacy after hearing of Watson tracking the user's operating system, I thought I would post a full disclosure of what is transmitted to Karelia.
+</p>
+<p>
+When Watson launches and it connects to its "home base" server to check for the latest version of Watson and any new tools, it includes three bits of data as part of the request:
+</p>
+<ul>
+	<li>Whether or not the app is registered</li>
+	<li>What version of the application is running</li>
+	<li>What version of the "application kit" is running (which corresponds to the OS version)</li>
+</ul>
+<p>
+One could argue that there is also inherent information in the fact that Watson was launched and contacts our servers, and that each contact comes from a specific IP address.
+</p>
+<p>
+The above information is currently stored in our web server's logs for one day, and then deleted.  However, we may, from time to time, collect these statistics for usage analysis.
+</p>
+<p>
+I believe that this is in line with our privacy policy, <a href="http://www.karelia.com/watson/watsonFAQ.html">here</a>:
+</p>
+<blockquote>
+Karelia respects your privacy. We don't disclose information about you as user or purchasers of Watson to any party without your consent. Watson conforms to that as well: Any personal information you enter in the "Preferences" dialog is used as a starting point for use by the tools, but none of this information is transmitted until the user confirms this. (Our development guidelines include this requirement for us to consider hosting third-party plug-ins.) 
+</blockquote>
+<p>
+I want to emphasize that <em>none</em> of the information about you, as stored in the preferences window of Watson, nor any information about you or your friends and associates that any application can extract from your address book, is transmitted to Karelia.  None of the information that you provide to the third-party web sites (such as your zip code or what you are searching for) is sent to Karelia at all; it is transmitted directly to other web sites.
+</p>

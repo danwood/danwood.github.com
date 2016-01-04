@@ -1,0 +1,14 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>Coming Soon: No Relaunching When Tools Update</title>
+</head>
+<body>
+<h1>Coming Soon: No Relaunching When Tools Update</h1>
+
+
+Watson users are used to the annoyance of having to re-launch Watson when it downloads updates to its tools.  You know the drill: Launch Watson.  Get notified of tools to update.  Wait for them to download.  Quit Watson, and then launch it again.
+<p />
+This has generated many complaints and requests to improve things.  Until now, I had thought that there wasn't a workaround -- Cocoa doesn't allow you to "unload" a plugin once it has been loaded, so you have to re-launch to get the new plugins recognized by Watson.  Well, it turns out that there are ways to detect the version of a plugin without actually loading it.  For the technically inclined readers, it's using <tt>CFBundle</tt> in place of <tt>NSBundle</tt> to do the checking part.
+<p />
+This means that a forthcoming version of Watson will not require relaunching.  I think I will include a preference to allow the updates to come through without notification, so that you can avoid even being aware that an update has taken place, as long as you are on a reasonably fast connection.

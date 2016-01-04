@@ -1,0 +1,254 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>Making a "Do not show this warning again" alert</title>
+</head>
+<body>
+<h1>Making a "Do not show this warning again" alert</h1>
+
+
+<p>One user interface element that has become common in Mac applications is a warning alert sheet with a checkbox saying "Do not show this warning again" (or words to that effect).  The idea is that the user is given ample warning about some impending action, but is given the opportunity to prevent future warnings.</p>
+<p>The general idea is to bring up an <a href="http://developer.apple.com/documentation/Cocoa/Conceptual/Sheets/Tasks/UsingCustomSheets.html">alert sheet by loading a custom nib</a> with the checkbox in it, and to have the preference to stop showing the sheet attached to a NSUserDefaults key.  That's pretty straightforward.  The question is how to create the sheet and invoke the action after confirmation, while keeping the <i>calling code</i> as simple as possible. </p>
+<p> I came up with an interesting approach to the problem, using an approach similar to a <a href="http://www.cocoadev.com/index.pl?TrampolineObject">Trampoline Object</a>.  Essentially, you replace a warning-less call to a method:</p>
+<pre>
+    [self doSomeWarnableAction:param1]
+</pre>
+<p>with a call like (simplified here):</p>
+<pre>
+    [[self confirmFirst (...) ]
+        doSomeWarnableAction:param1];
+</pre>
+<!-- more -->
+<p>In actuality, the "<tt>confirmFirst</tt>" has a number of parameters specifying the confirmation message to display as well as a NSUserDefaults key to use to remember if the confirmation is needed.  But this is general idea, from the calling code's point of view.</p>
+<p>So how does this work?  Let's take a bottom-up approach to the workings.</p>
+<p><b>The Core: Message Forwarding</b></p>
+<p>I have written an class which I call <tt>KTSilencingConfirmSheet</tt>. It is the class of the object that is actually sent the above <tt>doSomeWarnableAction:</tt> method. At its heart is two methods: <tt>forwardInvocation:</tt> and <tt>methodSignatureForSelector:</tt>, documented <a href="http://developer.apple.com/documentation/Cocoa/Conceptual/ObjectiveC/RuntimeOverview/chapter_4_section_3.html">here</a>.</p>
+<p>The idea of <tt>forwardInvocation:</tt> is that it is called when the object is passed a message it doesn't know how to handle (e.g. our method <tt>doSomeWarnableAction:</tt>).  Imagine a simplification of our original problem that just forwards the message to the original target object.</p>
+<pre>
+-(void)forwardInvocation:(NSInvocation *)anInvocation
+{
+    [anInvocationinvokeWithTarget:[self target]]
+}
+</pre>
+<p>In order for this to work, we need to define the companion method to cause our <tt>KTSilencingConfirmSheet</tt> to believe that it can actually handle the selector that we are asking to forward to its target:  This is easy; we just ask the target object to figure it out.</p>
+<pre>
+-(NSMethodSignature *)methodSignatureForSelector:
+    (SEL)aSelector
+{
+    NSMethodSignature *result
+        = [super methodSignatureForSelector:aSelector];
+    if (nil == result)
+    {
+        result = [[self target]
+            methodSignatureForSelector:aSelector];
+    }
+    return result;
+}
+</pre>
+<p><b>Hooking up the Alert</b></p>
+<p>The next step is to get our message sent after our confirmation sheet is dismissed.  First, we need to implement actions for the OK and Cancel buttons to end the sheet.</p>
+<pre>
+- (IBAction)sheetOK: (id)sender
+{
+    [NSApp endSheet:oSheetWindow returnCode:NSOKButton];
+}
+- (IBAction)sheetCancel: (id)sender
+{
+    [NSApp endSheet:oSheetWindow
+         returnCode:NSCancelButton];
+}
+</pre>
+<p>Since a sheet is document-modal, it does not sit around and wait for your answer.  Instead, you specify a callback method to be invoked after the sheet is dismissed.  To simplify things for now, let's ignore the issue of the checkbox and whether the user choses "Cancel," and assume we have already set up our nib.</p>
+<pre>
+-(void)forwardInvocation:(NSInvocation *)anInvocation
+{
+    if (nil != oSheetWindow)
+        // a non-nil window means we must verify first
+    {
+        [self setInvocation:anInvocation];
+            // We'll need this later
+        [self retain];
+            // need to keep self around until sheet
+            // is dismissed
+        [NSApp beginSheet: oSheetWindow
+           modalForWindow: [self parentWindow]
+            modalDelegate: self
+           didEndSelector:
+          @selector(didEndSheet:returnCode:contextInfo:)
+              contextInfo: nil];
+    }
+    else    // no confirm sheet; do the deed right away
+    {
+        [anInvocation performSelector:
+            @selector(invokeWithTarget:)
+                           withObject:[self target]
+                           afterDelay:0.0];
+    }
+}
+</pre>
+<p>If we need to confirm, we kick off our sheet, saving the invocation to perform for later.  For the case that confirmation is not needed, I have changed the invocation so that it its performed on the next runloop using <tt>-[NSObject performSelector: withObject: afterDelay:]</tt>. This is just to make things symmetrical &mdash; our method is going to be invoked asynchronously, whether there is a confirmation sheet or not.</p>
+<p>To cause the invocation to be called after the sheet is dismissed, we call the invocation (which we had saved) in our callback method, <tt>didEndSheet:returnCode:contextInfo:</tt>.</p>
+<pre>
+- (void)didEndSheet:(NSWindow *)sheet
+         returnCode:(int)returnCode
+        contextInfo:(void *)contextInfo
+{
+    [sheet orderOut:self];
+    [[self invocation] invokeWithTarget:[self target]];
+    [self autorelease];
+}
+</pre>
+<p>Note the <tt>[self retain]</tt> and balancing <tt>[self autorelease]</tt> in the above two methods; we need to make sure that our object is kept around while the dialog is opened.</p>
+<p><b>Silencing and Canceling</b></p>
+
+<p>How do we deal with the checkbox to silence these warnings, and what if the user presses "Cancel"?  And how do these buttons interact?</p>
+<p>The interaction is a bit tricky. The user is presented with a warning where they can cancel the operation from taking place.  But pressing a Cancel button on a dialog should cause any changes in the dialog to be discarded.  So we decided that the "Do not show this warning again" checkbox should be ignored if the user presses Cancel.  After all, the user is not likely to be thinking "I want to cancel the operation <i>this</i> time, but in the future, I don't want to be warned at all."</p>
+<p>We therefore improve <tt>didEndSheet:returnCode:contextInfo:</tt> a bit to examine the return code and check the checkbox's state.  The invocation does not happen if the user chose Cancel!</p>
+<pre>
+- (void)didEndSheet:(NSWindow *)sheet
+         returnCode:(int)returnCode
+        contextInfo:(void *)contextInfo
+{
+    [sheet orderOut:self];
+    
+    if (NSOKButton == returnCode)
+    {
+        if ([oSilenceCheckbox state])
+            // Only heed the checkbox if you hit OK
+        {
+            [[NSUserDefaults standardUserDefaults]
+                setBool:YES
+                 forKey:[self silencingDefaultsKey]];
+        }
+        [[self invocation]
+            invokeWithTarget:[self target]];
+    }
+    [self autorelease];
+        // balance retain when sheet began
+}
+</pre>
+<p><b>Creating and Invoking the Object</b></p>
+<p>I've described the basic strategy here.  Here are some more details.</p>
+<p>First, the <tt>KTSilencingConfirmSheet </tt>object itself.  It is a subclass of NSObject, not NSProxy <a href="http://www.cocoadev.com/index.pl?WhenToUseProxies">as many other message-forwarding objects are</a>.  I made it an NSObject so that it can be a controller for a nib file; nibs don't know about NSProxy objects. </p>
+<p>The class has several outlets to the nib. (My convention is to prefix outlet instance variables with "o", to distinguish them in my code. If you don't like that, tough.)</p>
+<pre>
+    IBOutlet NSButton        *oCancelButton;
+    IBOutlet NSButton        *oOKButton;
+    IBOutlet NSWindow        *oSheetWindow;
+    IBOutlet NSButton        *oSilenceCheckbox;
+    IBOutlet NSTextField     *oTitleText;
+    IBOutlet NSTextField     *oMessageText;
+</pre>
+<p>The instance variables are more important.  (Note my convention to use "my" prefix to distinguish ivars from local variable in my code; dorky but effective.) I need to store the target to be sent the intended message, the invocation object to send, the defaults key to set if the checkbox is chosen, and the parent window for the sheet.</p>
+<pre>
+    id                myTarget;
+    NSInvocation      *myInvocation;
+    NSString          *mySilencingDefaultsKey;
+    NSWindow          *myParentWindow;
+</pre>
+<p>The initializer for the object gets things ready for the invocation, and, if the dialog will be needed, prepares its interface.</p>
+<pre>
+-(KTSilencingConfirmSheet *)initWithTarget:(id)aTarget
+            window:(NSWindow *)aParentWindow
+      silencingKey:(NSString *)aSilencingKey
+         canCancel:(BOOL)aCanCancel
+          OKButton:(NSString *)anOKTitle   // can be nil
+             title:(NSString *)aTitle
+           message:(NSString *)aMessage
+{
+    [super init];
+    [self setTarget:aTarget];
+    if (![[NSUserDefaults standardUserDefaults]
+        boolForKey:aSilencingKey])
+    {
+        [self setParentWindow:aParentWindow];
+        [self setSilencingDefaultsKey:aSilencingKey];
+        BOOL instantiatedNib
+            = [[KTSilencingConfirmSheet sharedNib]
+            instantiateNibWithOwner:self
+                    topLevelObjects:nil];
+        NSAssert(instantiatedNib,
+            @"Nib not instantiated");
+        
+        [oCancelButton setHidden:!aCanCancel];
+        if (nil != anOKTitle)
+        {
+            [oOKButton setTitle:anOKTitle];
+        }
+        [oTitleText setStringValue:aTitle];
+        [oMessageText setStringValue:aMessage];
+    }
+    return self;
+}
+</pre>
+<p>There are a bunch of <a href="http://www.kevincallahan.org/software/accessorizer.html">Accessorizer</a>-generated setters and getters for the instance variables; the only other method of note is the class method that loads a shared NSNib object.</p>
+<pre>
++ (NSNib *)sharedNib
+{
+    static NSNib *sSilencingConfirmNib = nil;
+    if (nil == sSilencingConfirmNib)
+    {
+        sSilencingConfirmNib
+            = [[NSNib alloc]
+               initWithNibNamed:@"SilencingWarningSheet"
+                bundle:[NSBundle bundleForClass:
+                    [self class]]];
+        NSAssert(sSilencingConfirmNib,
+            @"nib could not be loaded");
+    }
+    return sSilencingConfirmNib;
+}
+</pre>
+<p><b>Making it Easy to Call</b></p>
+
+<p>To simplify the creation of the <tt>KTSilencingConfirmSheet</tt>, I made a category method on NSObject to simplify the calling process.  (I also made use of the variable arguments so that our message is specified as a format.)  The object is returned autoreleased so we don't need to worry about disposing of it.</p>
+<pre>
+- (KTSilencingConfirmSheet *)
+    confirmWithWindow:(NSWindow *)aWindow
+         silencingKey:(NSString *)aSilencingKey
+            canCancel:(BOOL)aCanCancel
+             OKButton:(NSString *)anOKTitle
+                 title:(NSString *)aTitle
+                 format:(NSString *)format, ...
+{
+    va_list argList;
+    va_start(argList, format);
+    NSString *formatted
+        = [[[NSString alloc] initWithFormat:format
+            arguments:argList] autorelease];
+    va_end(argList);
+        
+    return [[[KTSilencingConfirmSheet alloc]
+                initWithTarget:self
+                       window:aWindow
+                 silencingKey:aSilencingKey
+                    canCancel:aCanCancel
+                     OKButton:anOKTitle
+                        title:aTitle
+                      message:formatted] autorelease];
+}
+</pre>
+<p><b>Usage Notes</b></p>
+
+<p>Here is a simple example of how you might invoke <tt>KTSilencingConfirmSheet</tt>.</p>
+<pre>
+- (IBAction)changeSortOrder: (id)sender
+{
+    SortOrder *sortOrder = [sender representedObject];
+    
+    [[self confirmWithWindow:[self window]
+                silencingKey:@"shutUpSortingWarning"
+                   canCancel:YES
+                    OKButton:@"Resort"
+                       title:@"Changing Sort Order"
+                      format:@"Are you sure you wish to \
+                      change the sort order to %@?",
+                                              sortOrder]
+            resortBy: sortOrder];
+}
+</pre>
+<p>It is important to remember that the actual invocation of <tt>resortBy:</tt> will happen asynchronously.  Don't write code below <tt>confirmWithWindow:</tt>... expecting the sort to have completed!</p>
+<p><b>Improvements</b></p>
+<p>This works well, though one improvement I plan to make at some point is dynamic resizing of the nib contents to match the size of the text to display in the title, message, and "OK" button.  We'll leave this as an exercise to the reader.  (And dear reader, when you're done, post your code in the comments!)</p>
+<hr />
+<p><i>Note to self:</i> This format is way too narrow for code!  I need a better weblog setup!</p>

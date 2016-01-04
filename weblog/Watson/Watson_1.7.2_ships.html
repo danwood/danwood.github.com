@@ -1,0 +1,23 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>Watson 1.7.2 ships. It's ready for Panther -- are you?</title>
+</head>
+<body>
+<h1>Watson 1.7.2 ships. It's ready for Panther -- are you?</h1>
+
+
+A minor update to Watson just went out the door; we're at version 1.7.2 now.
+<p />
+As promised, it's more or less 'Panther'-compatible.  There were a few glitches in the developer release of Panther that we had to work around, and there are still a few issues remaining that weren't worth tackling right now, but it's definitely useable if you're one of the few thousand lucky Mac OS X developers with Panther already.  Plus, it has one new Panther-only feature <a href="http://weblog.karelia.com/2003/06/25#Panther_and_Apple_s">described previously</a>.
+<p />
+Otherwise, this is just an update to take care of some problems.  The READ ME file (the little newspaper icon next to the doctor's bag on the disk image, in case you hadn't noticed it) has the whole list, but here are a few highlights:
+<ul>
+<li>eBay has been changing things on their servers over the last few days.  Hopefully this catches up with them and things will start working properly all around.</li>
+<li>Due to the recent discovery of an incompatibility with NetBlockade (part of <a href="http://www.aladdinsys.com/internetcleanup/mac/index.html">Internet Cleanup</a> from Aladdin), Watson checks to see if it's installed (in kind of a fun way -- when Watson connects to the 'home base' server when it launches to check the status of tools, there's a simulated banner ad in there.  If NetBlockade is installed, the 'banner' gets deleted, and Watson notices the change) and warns the user.</li>
+<li>After listening to user comments and playing around with the translation tool, I finally figured out a way to make it a bit easier to translate back and forth between two languages.  When you change the source language to be the same as the current destination language, the destination language switches to the previously selected source language, rather than just choosing the first available language in the popup menu.  For example to translate some text from Italian to English and then some other text from English to Italian, and then more text from Italian to English, I would just alternate between 'English' and 'Italian' in the Source menu, and the Destination menu will take care of itself!</li>
+<li>The preference to not notify the user when there is a new 'What's new' message has been extended to also turn off the announcements of new minor tool updates.  Many users have expressed annoyance with Watson demands their attention when it is not the frontmost application, and I can't say I blame them.</li>
+</ul>
+
+Onward and upward!
+

@@ -1,0 +1,62 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>Preprocessing Info.plist files: not well documented</title>
+</head>
+<body>
+<h1>Preprocessing Info.plist files: not well documented</h1>
+
+
+<p>
+In Sandvox, we have a lot of plug-ins, each with their own Info.plist file.  Plus the application, of course.  I had really wanted to employ some automated system to keep the version numbers of everything in sync, plus have "build numbers" so it's easy to determine exactly which version of the program is running, especially now that it's getting very, <em>very</em> close to being seen by people other than its developers.
+</p>
+<p>
+I had scratched my head over <tt>agvtool</tt> from time to time; reading the man pages this time didn't help.  But I remembered that XCode 2.1+ can preprocess the info.plist files.  I figured this was a good route to take.
+</p>
+<p>
+Problem is, there's scarce documentation on how to go about actually doing the preprocessing.   Apple has a page <a href="http://developer.apple.com/documentation/DeveloperTools/Conceptual/XcodeUserGuide21/Contents/Resources/en.lproj/BuildSettingTitles/chapter_53_section_2.html">here</a> and <a href="http://developer.apple.com/documentation/DeveloperTools/Conceptual/XcodeUserGuide21/Contents/Resources/en.lproj/05_02_bs_targets/chapter_30_section_6.html">here</a> that is a start.  Jonathan Wight was the only obvious resource on the web that talked about the syntax of what to put in for a substitution, in his weblog post that provided a <a href="http://toxicsoftware.com/blog/index.php/weblog/xcode_21_problems_with_pre_processing_infoplist_files/">handy hint</a>.  But I couldn't really get it to work other than using Jonathan's <tt>$(PRODUCT_NAME)</tt> substitution.  I wanted to include a file containing the substitution values, but I couldn't figure out what format that file should be in.
+</p>
+<p>
+I stumbled upon a mention of preprocessing in the change logs for <a href="http://www.growl.info/">Growl</a>, so I checked out the latest version of the source.  It was a little hard to figure out what the included file looked like, because it is not in the source; it's built by a script.  Eventually, I figured out that the format of the file to include is essentially like a ".h" file: lines of #define <em>keyword</em> <em>substitution</em>.
+</p>
+<p>
+Interestingly, with the exception of the XCode variables like <tt>$(PRODUCT_NAME)</tt>, it seems to be a strict substitution with no special characters.  So if you have this defined in your include file:
+<blockquote>
+<pre>
+#define SVN_VERSION 1838
+#define APP_VERSION 1.0b1
+</pre>
+</blockquote>
+... then you would want your info.plist to contain something like this:
+<blockquote>
+<pre>
+&lt;key&gt;CFBundleShortVersionString&lt;/key&gt;
+&lt;string&gt;APP_VERSION&lt;/string&gt;
+&lt;key&gt;CFBundleVersion&lt;/key&gt;
+&lt;string&gt;SVN_VERSION&lt;/string&gt;
+</pre>
+</blockquote>
+</p>
+<p>
+Of course, you still need a shell script to generate your include file to put the current source code version in there.  We get the current subversion head's number by using this snippet:
+<blockquote>
+<tt>
+svnVersion=`/usr/local/bin/svn info -r HEAD | awk '$1=="Revision:" { print $2 }'`;
+</tt>
+</blockquote>
+</p>
+<p><b>Update:</b> Mark notes something from WWDC in the comments; I thought I'd paste it here:
+<blockquote>
+<pre>
+#ifdef _RELEASE_ 
+&lt;string&gt;Copyright (c) 2005&lt;/string&gt; 
+#else 
+&lt;string&gt;_CONFIGURATION_ version built on __DATE__ __TIME__&lt;/string&gt; 
+#endif
+</pre>
+</blockquote>
+So that's cool, you can use C-style processing right in the file, and you have substitutions for date and time available.
+</p>
+<p>
+I'll post more here if I discover other goodies.
+</p>

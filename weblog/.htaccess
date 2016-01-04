@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteCond %{QUERY_STRING} ^flav=rss$
+RewriteRule ^(.*)$ http://gigliwood.com/blog/index.xml? [R=301,L]
+

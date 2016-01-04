@@ -1,0 +1,622 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+ 	<channel>
+		<title>Dan Wood: The Eponymous Weblog   </title>
+		<link>http://gigliwood.com/weblog/</link>
+		<description>ARCHIVED OLD BLOG</description>
+		<language>en</language>
+		<docs>http://blogs.law.harvard.edu/tech/rss</docs>
+		<generator>blosxom/2.0</generator>
+
+<item>
+<title>This Feed Has Moved</title>
+<link>http://gigliwood.com/blog/</link>
+<description>&lt;p&gt;I've switched to a new blog. Please update your feed to &lt;a href="feed://gigliwood.com/blog/index.xml"&gt;feed://gigliwood.com/blog/index.xml&lt;/a&gt;.&lt;/p&gt;
+</description>
+<pubDate>Wed, 10 Oct 2012</pubDate>
+<guid>http://gigliwood.com/weblog/moved</guid>
+</item>
+
+
+
+
+
+
+
+
+
+
+<item>
+	<title>&quot;Nighthawks&quot; fixed for 10.6.3</title>
+	<link>http://gigliwood.com/weblog/MacOSX/nighthawks.html</link>
+	<description>&lt;p&gt;
+&lt;img width=&quot;200&quot; height=&quot;182&quot; style=&quot;float:right; margin-left:10px;&quot; src=&quot;http://gigliwood.com/weblogpix/NightHawks-in-Chicago.JPG&quot; alt=&quot;Nighthawks at the Chicago Art Institute&quot; /&gt;
+
+I love &lt;i&gt;&lt;a href=&quot;http://www.artic.edu/artaccess/AA_Modern/pages/MOD_7.shtml#&quot;&gt;Nighthawks&lt;/a&gt;&lt;/i&gt; by Edward Hopper.  So while I was pleased to see that Apple included the image (along with several other classic paintings) as desktop backgrounds in Snow Leopard, I was extremely disappointed that the quality of the image was just &lt;b&gt;terrible&lt;/b&gt;.
+&lt;/p&gt;
+&lt;p&gt;
+I got the see the original at the Chicago Art Institute when I was at C4 last year, and I couldn't stand that the Mac, which stands for aesthetics, could have such a horrible image. You could even see artifacts from what looked like a broken digital scanner!
+&lt;/p&gt;
+
+&lt;p&gt;
+
+So, like any programmer would do, I filed a bug report &amp;lt;&lt;a href=&quot;rdar://7152962&quot;&gt;rdar://7152962&lt;/a&gt;&amp;gt; about it.
+&lt;/p&gt;
+&lt;p&gt;
+I'm pleased to see that &lt;i&gt;Nighthawks&lt;/i&gt; has been fixed in Snow Leopard 10.6.3.  The new image is awesome.
+&lt;/p&gt;
+&lt;p&gt;
+&lt;img src=&quot;http://gigliwood.com/weblogpix/nighthawks-comparison.png&quot; alt=&quot;Comparison of Nighthawks in 10.6.2 vs. 10.6.3&quot; /&gt;
+&lt;/p&gt;
+&lt;p&gt;
+Compare the overall picture at 10,000 feet.  The new version is on the right; its colors are richer and it is cropped differently; you can see the yellow door on the right, though you see one fewer window in the building in the background.
+&lt;/p&gt;
+&lt;p&gt;But you really can see the differences in the details. Check out the detail of the couple, shown at 100% size. Notice the odd horizontal lines in the first image; the new image is vastly improved!
+&lt;/p&gt;
+&lt;p&gt;
+&lt;img src=&quot;http://gigliwood.com/weblogpix/Nighthawks-detail-10.6.2.jpg&quot; alt=&quot;Nighthawks, detail, in 10.6.2&quot; /&gt;
+&lt;br /&gt;
+Nighthawks in 10.6.2
+&lt;/p&gt;
+&lt;p&gt;
+&lt;img src=&quot;http://gigliwood.com/weblogpix/Nighthawks-detail-10.6.3.jpg&quot; alt=&quot;Nighthawks, detail, in 10.6.3&quot; /&gt;
+&lt;br /&gt;
+Nighthawks in 10.6.3
+&lt;/p&gt;
+&lt;p&gt;
+(When originally filing the bug report, I found &lt;a href=&quot;http://kulturportfolioeinmalanders.files.wordpress.com/2009/03/hopper-nighthawks1.jpg&quot;&gt;this version&lt;/a&gt;, embedded in &lt;a href=&quot;http://kulturportfolioeinmalanders.wordpress.com/2009/03/30/edward-hopper/&quot;&gt;this page&lt;/a&gt;; it's very high in detail but a bit over-sharpened for my taste. Still, it's useful to see it in its uncropped glory; notice that there are four windows visible in the background building.)
+&lt;/p&gt;
+&lt;p&gt;
+Thanks for fixing it, Apple!
+&lt;/p&gt;
+</description>
+	<pubDate>Thu, 01 Apr 2010</pubDate>
+	<guid>http://gigliwood.com/weblog/MacOSX/nighthawks.html</guid>
+	<category>/MacOSX</category>
+</item>
+<item>
+	<title>A better way to get Twitter feeds with NetNewsWire</title>
+	<link>http://gigliwood.com/weblog/General/twitter-feeds-netne.html</link>
+	<description>&lt;p&gt;
+&lt;a href=&quot;http://www.karelia.com/stf/&quot;&gt;Smart Twitter Feed&lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;
+On Twitter, there are some tweeters that have such interesting tweets that I don't want to miss anything of theirs, so I subscribe to the RSS feed of their tweets.
+&lt;/p&gt;
+&lt;p&gt;
+What's always annoyed me is that, when I see the tweet in &lt;a href=&quot;http://www.newsgator.com/INDIVIDUALS/NETNEWSWIRE/&quot;&gt;NetNewsWire&lt;/a&gt; and I want to go to the web page that their tweet links to, I can't just double-click on the news entry.  I have to click on the short URL in their tweet, because the tweet links to the original tweet page.  Not very useful. 
+&lt;/p&gt;
+&lt;p&gt;
+This bugged me enough that I wrote a script that processes the tweets in a feed (from a particulur user, or a search) and re-links things a bit. And I'm sharing this with &lt;b&gt;you&lt;/b&gt;.
+&lt;/p&gt;
+&lt;p&gt;
+Now you can subscribe to a twitter feed, and just double-click on the tweet itself to open any single linked URL in the tweet.  (The script marks such tweets with ## and takes the URL out of the headline, since you don't really need to see the URL there.)
+&lt;/p&gt;
+&lt;p&gt;
+But there are other cool things it does.  It recognizes yfrog.com URLs and embeds a thumbnail of the linked image.  It filters out @replies from people in their tweet stream so you only have to see their original content, not their replies to people you don't know.  It hyperlinks all #hashtag and @username mentions.  It adds direct links for you to reply, retweet or view the original tweet's web page.
+&lt;/p&gt;
+&lt;p&gt;
+Go try it out at its home, &lt;a href=&quot;http://www.karelia.com/stf/&quot;&gt;http://www.karelia.com/stf/&lt;/a&gt;, where you can learn more details.
+&lt;/p&gt;
+&lt;p&gt;
+&lt;b&gt;Just remember, this requires NetNewsWire&lt;/b&gt;, though I suppose it could be adapted to other PHP-script-compatible platforms.
+&lt;/p&gt;&lt;p&gt;
+Enjoy!
+&lt;/p&gt;
+</description>
+	<pubDate>Fri, 05 Mar 2010</pubDate>
+	<guid>http://gigliwood.com/weblog/General/twitter-feeds-netne.html</guid>
+	<category>/General</category>
+</item>
+<item>
+	<title>Converting Rich Text to TEXT/styl resources for an SLA on a Disk Image</title>
+	<link>http://gigliwood.com/weblog/Cocoa/Converting_Rich_Tex.html</link>
+	<description>&lt;p&gt;&lt;i&gt;&lt;b&gt;Update:&lt;/b&gt; &lt;a href=&quot;http://brockerhoff.net/&quot;&gt;Rainer Brockerhoff&lt;/a&gt; told me that you can actually put an 'RTF ' resource in the resource file, rather than TEXT/styl, so it turns out that this is not the easiest solution.&lt;/i&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+One thing that I try to accomplish each January is to update our copyright statements in all the right places. The only straggler that remained was the Software License Agreement that is embedded in our disk images.
+&lt;/p&gt;
+&lt;p&gt;
+Unfortunately, the text for this is not stored in any way that makes it easy to update things. The rich text is stored as an old-fashioned Circa 1984 resource fork, as TEXT and styl resources. (Apple's &quot;Software License Agreements for UDIFs&quot; SDK &lt;a href=&quot;ftp://ftp.apple.com/developer/Development_Kits/SLAs_for_UDIFs_1.0.dmg&quot;&gt;[Download DMG]&lt;/a&gt; has all the gory details.)
+&lt;/p&gt;
+&lt;p&gt;
+It's barely possible to even edit a resource file nowadays.  There is the open-source &lt;a href=&quot;http://resknife.sourceforge.net/&quot;&gt;ResKnife&lt;/a&gt; but it doesn't seem to have TEXT/styl support.  There's &lt;a href=&quot;http://www.ljug.com/sw/resfool.html&quot;&gt;ResFool&lt;/a&gt;, but at least as of this writing the website isn't even loading.  There are of course options like ResEdit and Resorcerer that one can run under Classic mode from older versions of Mac OS X, but that's not particularly convenient!
+&lt;/p&gt;
+&lt;p&gt;
+I really was hoping I could just store our SLA text as rich text (like .rtf files) and have the conversion to the resources handled for me automagically!
+&lt;/p&gt;
+&lt;p&gt;
+No wonder many developers use tools like &lt;a href=&quot;http://c-command.com/dropdmg/&quot;&gt;DropDMG&lt;/a&gt; and &lt;a href=&quot;http://www.araelium.com/dmgcanvas/&quot;&gt;DMGCanvas&lt;/a&gt;. The trouble is, we have all of our build/package/upload process as a shell script, run from a build phase on Xcode. So I really needed a scriptable tool to produce the correct resources.
+&lt;/p&gt;
+&lt;p&gt;
+I did some digging, and I found a nice hint (at the bottom of &lt;a href=&quot;http://www.cocoadev.com/index.pl?ExtractstylResourceFromNSAttributedString&quot;&gt;this page&lt;/a&gt;) for converting rich text to TEXT/styl resources by using NSPasteboard.  
+&lt;/p&gt;
+&lt;p&gt;
+So I whipped up some code that goes something like this.  
+&lt;/p&gt;
+
+&lt;pre&gt;
+int main (int argc, const char * argv[])
+{
+    NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
+
+	if (2 != argc)
+	{
+		NSLog(@&quot;Usage: %@ srcpath\n&quot;, [[NSString stringWithUTF8String:argv[0]] lastPathComponent]);
+		return -1;
+	}
+
+	NSString *sourcePath = [NSString stringWithUTF8String:argv[1]];
+	NSAttributedString *str = [[NSAttributedString alloc] initWithPath:sourcePath documentAttributes:nil];
+	NSData *data = [str RTFFromRange:NSMakeRange(0, [str length]) documentAttributes:nil];
+
+	NSPasteboard *pb = [NSPasteboard generalPasteboard];
+	[pb declareTypes:[NSArray arrayWithObject:NSRTFPboardType] owner:nil];
+	[pb setData:data forType:NSRTFPboardType];
+
+	NSData *textData  = [pb dataForType:@&quot;CorePasteboardFlavorType 0x54455854&quot;];   // TEXT
+	NSData *styleData = [pb dataForType:@&quot;CorePasteboardFlavorType 0x7374796C&quot;];   // styl
+&lt;/pre&gt;
+
+&lt;p&gt;
+All I needed to do was to write the NSData to a &quot;.r&quot; file. I found a bit of code via Google, from an app called 
+&lt;a href=&quot;http://shigematsu.org/index.php?JPEGBatcherX&quot;&gt;JPEGBatcherX&lt;/a&gt;.  It looks like the author was doing something similar.  I adapted his &lt;tt&gt;dump_rsrc&lt;/tt&gt; method from this source file which was directly indexed by Google: &lt;a href=&quot;http://shigematsu.org/index.php?plugin=attach&amp;amp;openfile=rtf2r.m&amp;amp;refer=JPEGBatcherX%2FDevelopment&quot;&gt; rtf2r.m&lt;/a&gt;.   (I don't want to reproduce the code here because it's not clear what the copyright on the code is.)
+&lt;/p&gt;
+&lt;p&gt;
+So the above function should be able to end like this:
+&lt;/p&gt;
+&lt;pre&gt;
+	dump_rsrc(&quot;TEXT&quot;, textData);
+	dump_rsrc(&quot;styl&quot;, styleData);
+
+	[pool drain];
+    return 0;
+}
+&lt;/pre&gt;
+
+&lt;p&gt;
+However, I hit a snag. When running on my Intel Mac, this is an invalid 'styl' resource.  I had to dig up an old copy of Resorcerer and run it under Classic on my old G5 to figure out why.
+&lt;/p&gt;
+&lt;p&gt;
+A valid 'styl' resource starts something like this:
+&lt;/p&gt;
+&lt;p&gt;
+&lt;tt&gt;0060 0000 0000 000F 000C 0400 0100 000C&lt;/tt&gt;
+&lt;/p&gt;
+&lt;p&gt;
+This corresponds to: 0x0060 style runs, 0x00000000 first offset, 0x000F line height, 0x000C font ascent, 0x0400 font family, 0x0100 char style, 0x000c pixel size, and so forth.
+&lt;/p&gt;
+&lt;p&gt;
+However, the style data I was getting from the pasteboard was more like this:
+&lt;/p&gt;
+&lt;p&gt;
+&lt;tt&gt;6000 0000 0000 0f00 0C00 0004 0001 0C00&lt;/tt&gt;
+&lt;/p&gt;
+&lt;p&gt;
+It sure looks like a little-endian &lt;i&gt;vs.&lt;/i&gt; big-endian issue.  This perplexed me, considering I was not manipulating numbers; I was just asking the pasteboard for a bit of data that I ought to be able to write into the 'styl' resource.
+&lt;/p&gt;
+&lt;p&gt;
+Fortunately Daniel Jalkut &lt;a href=&quot;http://twitter.com/danielpunkass/status/7532594215&quot;&gt;mentioned&lt;/a&gt; some methods that were designed to flip resource data around.  He later &lt;a href=&quot;http://twitter.com/danielpunkass/status/7533163887&quot;&gt;explained&lt;/a&gt; &quot;Apple provided flippers for many common resource types, but left us to our own devices for some of the less common/modern ones.&quot;
+&lt;/p&gt;
+&lt;p&gt;
+I guess this make a small amount of sense.  Rather than Apple rewriting the resource manager code to deal with endian issues, we just flip the data afterwards. Still, it's a bit tricky if you don't expect that!
+&lt;/p&gt;
+&lt;p&gt;
+So all I needed was to copy the bytes to a writeable block and call the appropriate routine to flip them around. Note my &lt;tt&gt;#ifdef&lt;/tt&gt; in the code so that in case the code is big-endian, no real flipping will happen.
+&lt;/p&gt;
+
+&lt;pre&gt;
+	int len = [styleData length];
+	char *bytes = malloc(len);
+	[styleData getBytes:bytes length:len];
+
+	OSStatus status = CoreEndianFlipData (
+	  kCoreEndianResourceManagerDomain, //OSType dataDomain,
+	  'styl', //OSType dataType,
+	  0, //SInt16 id,
+	  bytes, //void *data,
+	  len, //ByteCount dataLen,
+#ifdef __BIG_ENDIAN__
+	  true
+#else
+	  false	//Boolean currentlyNative
+#endif
+	  );
+
+	NSData *newStyleData = [[[NSData alloc] initWithBytesNoCopy:bytes length:len freeWhenDone:YES] autorelease];
+&lt;/pre&gt;
+
+&lt;p&gt;
+That does the trick! Now all I have to do is to concatenate the TEXT/styl resources produced with this tool to with the other (un-changing) resources I'm storing in a common &quot;.r&quot; file and build them into my disk image, using the 'Rez' tool.
+&lt;/p&gt;
+</description>
+	<pubDate>Fri, 08 Jan 2010</pubDate>
+	<guid>http://gigliwood.com/weblog/Cocoa/Converting_Rich_Tex.html</guid>
+	<category>/Cocoa</category>
+</item>
+<item>
+	<title>Mac Indie Marketing - starting a new blog</title>
+	<link>http://gigliwood.com/weblog/Business/mac-indie-marketing.html</link>
+	<description>&lt;p&gt;
+I thought I would announce a new blog that I'm starting up (Yes, not enough room on twitter!) having to do with marketing for Mac Indies.
+&lt;/p&gt;
+&lt;p&gt;
+&lt;a href=&quot;http://www.karelia.com/mac_indie_marketing/&quot;&gt;http://www.karelia.com/mac_indie_marketing/&lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;
+Since it's more business related, and this is my personal blog, I thought it would make sense to have that stuff there.  Enjoy it!
+&lt;/p&gt;
+
+</description>
+	<pubDate>Thu, 29 Oct 2009</pubDate>
+	<guid>http://gigliwood.com/weblog/Business/mac-indie-marketing.html</guid>
+	<category>/Business</category>
+</item>
+<item>
+	<title>WWDC wrap-up</title>
+	<link>http://gigliwood.com/weblog/Business/WWDC_wrap-up.html</link>
+	<description>Last week, Mike and I engrossed ourselves in WWDC.  (Terrence was, and still is, on a vacation/family event and thus missed the whole thing.  Alas!)&lt;/p&gt;
+&lt;p&gt;
+What a wonderful week!  Of course we are under nondisclosure agreement, so I can't tell you anything else, so that's the end of this post.&lt;/p&gt;
+&lt;p&gt;
+OK, not really.  A lot happened that wasn't under the veil of secrecy. (And what was protected isn't really a big deal - it's just the technical specifics of Snow Leopard that aren't yet public.)&lt;/p&gt;
+&lt;p&gt;
+The technical &quot;curriculum&quot; was great of course, but as many long-time attendees will readily agree, what was the most valuable was the interaction with fellow developers and engineers from Apple - in labs, in the hallway, over Twitter, over meals, and at the many parties.  Compared to previous years, I feel like there were more people I wanted to chat with in person, after having connected in some way over Twitter in the last year.  140 characters is nice, but a handshake and conversation is much more memorable.&lt;/p&gt;
+&lt;p&gt;
+On the party scene, I especially enjoyed the &lt;a href=&quot;http://upcoming.yahoo.com/event/2505372/&quot;&gt;sfMacIndie&lt;/a&gt; party on Sunday evening, put on by &lt;a href=&quot;http://www.veladg.com/&quot;&gt;Chuck Soper&lt;/a&gt; (Whoops, I had to correct an accidentally typed &quot;Super&quot; there -- a very apt Freudian slip, since Chuck did a super job in almost singlehandedly organizing the event).  The &lt;a href=&quot;http://webkit.org/blog/372/fourth-annual-webkit-open-source-party/&quot;&gt;WebKit party&lt;/a&gt; was a blast as well, especially since the WebKit team members are so fun.&lt;/p&gt;
+&lt;p&gt;
+I talked to a lot of fellow developers about the marketing blog posts I had written just before the conference.  It was nice to hear that it was appreciated.  It was a bit disheartening how many indie developers are currently doing very little actively to &quot;catch fish&quot; (to borrow a metaphor that Daniel Jalkut used in a &lt;a href=&quot;http://www.coreint.org/2009/06/episode-19-fishing-for-customers/&quot;&gt;recent podcast&lt;/a&gt;).  Hopefully some people will pick out a few of these suggestions and pick up some extra compensation for their hard work as programmers.  (If you do, please let me know!)&lt;/p&gt;
+&lt;p&gt;
+Somewhat related to marketing, I was pleased to find that many developers -- including us -- are planning on going Snow Leopard in a big way.  Ken Case of OmniGroup and AJ of MarketCircle mentioned they were going to start working on Snow-Leopard-only apps and updates, and we are going to be doing that as well.  (Right now, Sandvox and iMedia Browser work on 10.4 and up; our next major versions will require 10.6.)  With the upgrade cost from Leopard to Snow Leopard so inexpensive, it seems a no-brainer to target that version.  There are so many advantages as a developer to use the modern Snow Leopard libaries.  We've started digging in already and are looking forward to a day when we are no longer working on legacy systems like Tiger.&lt;/p&gt;
+&lt;p&gt;
+Oh, I heard that there were a bunch of iPhone developers at the conference as well as us Mac developers.  &lt;tt&gt;:-)&lt;/tt&gt;
+&lt;/p&gt;
+&lt;p&gt;
+All in all, a great event.  Kudos to the engineers at Apple who put on such a worthwhile week!&lt;/p&gt;</description>
+	<pubDate>Thu, 18 Jun 2009</pubDate>
+	<guid>http://gigliwood.com/weblog/Business/WWDC_wrap-up.html</guid>
+	<category>/Business</category>
+</item>
+<item>
+	<title>Fun with Google Website Optimizer</title>
+	<link>http://gigliwood.com/weblog/Business/Fun_with_Google_Web.html</link>
+	<description>&lt;p&gt;
+In my previous posts, I mentioned Google's Website Optimizer.  I got quite a few reactions to that, so I thought I'd follow up a bit.
+&lt;/p&gt;
+&lt;p&gt;
+First of all, I should say that I had heard of it for a while, but it wasn't until I read &lt;a href=&quot;http://c.karelia.com/160&quot;&gt;Always Be Testing&lt;/a&gt; did I realize how important and useful of a tool it is.  If you are thinking about this, I recommend the book highly.
+&lt;/p&gt;
+&lt;p&gt;
+The goal that I am testing is this: do people download the program after visiting the main Sandvox page?  The reason this is the goal is because it's the most obvious action for somebody to take.  Sure, I could track &lt;em&gt;sales&lt;/em&gt;, but that's a bit trickier.  One problem is that about half of our users buy Sandvox from the store that is built into the application.  It's just a webview, so it's possible that the cookies from the optimizer would carry through, but if the visitor was using Firefox &amp;mdash; which many are &amp;mdash; it's not as easy.
+&lt;/p&gt;
+&lt;p&gt;
+Plus, as you might expect, more people will download a free trial than will end up purchasing something.   And this kind of testing requires big numbers to get any statistical significance, so a test with a higher base conversion rate is going to get some conclusive results a lot more quickly.
+&lt;/p&gt;
+&lt;p&gt;
+(So if the page you are measuring is not getting &lt;em&gt;at least&lt;/em&gt; several hundred visitors and conversions daily, testing is going to take you a &lt;em&gt;long&lt;/em&gt; time.)
+&lt;/p&gt;
+&lt;p&gt;
+A few months ago, I realized that all I really cared to measure for conversions was people visiting our website with a Mac.  There's no point in measuring random visitors from other platforms.  (About 16 percent of visitors to the main Sandvox page are on other platforms.) What I did was to use PHP and only include Google's JavaScript that you put at the bottom of the tracked and goal pages.  Something like this:
+&lt;/p&gt;
+&lt;pre&gt;
+&amp;lt;?php
+$userAgent = $_SERVER['HTTP_USER_AGENT'];
+if ((''==$userAgent) || (FALSE !== strpos($userAgent,'Macintosh')))
+{
+?&amp;gt;
+	&amp;lt;!-- insert GWSO stuff here --&amp;gt;
+&amp;lt;?php
+}
+else
+{
+	echo &quot;\n\n&amp;lt;!-- No GWSO --&amp;gt;\n\n&quot;;
+}
+?&amp;gt;
+&lt;/pre&gt;
+&lt;p&gt;
+I've tried to take notes over the months as I've worked with the tool to adjust our main Sandvox web page.  It might be interesting for some folks to read about what we did.  Here are handful of our recent experiments:
+&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+Moved our Apple Design Award badge from the top of the sidebar to below the download/buy buttons.
+&lt;/li&gt;
+&lt;li&gt;
+Various experiments in button colors and fonts.  We used to have flat, dull, gray buttons.  Brightly colored, glossy buttons did much better.
+&lt;/li&gt;
+&lt;li&gt;
+Experimented with the font of our body text.  I was expecting sans-serif to win, but Serif did better.  Later, we did another experiment and the Optima font we used did slightly better.
+&lt;/li&gt;
+&lt;li&gt;
+We did several experiments to tweak the headline and sub-headline for Sandvox.
+&lt;/li&gt;
+&lt;li&gt;
+Our website used to be more greenish than blue.  Blue did better.  (We actually have an entirely new design in the works for release soon.)
+&lt;/li&gt;
+&lt;li&gt;
+We tested whether to run a &quot;box shot&quot; as if the software were something you could pick up in a computer store (you can't) vs. the icon, and the icon won.
+&lt;/li&gt;
+&lt;li&gt;
+How about a nice little perspective screeenshot instead of the icon?  Nope, the icon still rules.
+&lt;/li&gt;
+&lt;li&gt;
+We did some variations on our list of sandvox features: one or two columns, large or small icons, etc.  Smaller icons and one column was better.
+&lt;/li&gt;
+&lt;li&gt;
+We had a lot of &quot;copy&quot; that I tried just taking out, and it was better to have it gone.  Sayonara!
+&lt;/li&gt;
+&lt;li&gt;
+Would a bigger Apple Design Award badge convince more people to download?  Nope.
+&lt;/li&gt;
+&lt;li&gt;
+We originally had our &quot;slide show&quot; of websites built with Sandvox up near the top.  I tried a smaller version above the download button in the sidebar, and also just move it way out of the way, and the version where the images were way out of the way did best.  I guess people don't want images to get in the way of reading the juicy details!
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+Anyhow, the experiments continue.  I'll probably have to start a bunch over again when we get our new design in place, since the new metrics and colors will probably impact some of the choices we made.
+&lt;/p&gt;
+&lt;p&gt;
+See you at WWDC!
+&lt;/p&gt;
+</description>
+	<pubDate>Thu, 04 Jun 2009</pubDate>
+	<guid>http://gigliwood.com/weblog/Business/Fun_with_Google_Web.html</guid>
+	<category>/Business</category>
+</item>
+<item>
+	<title>13 Lucky Marketing Tips for Indie Developers - Part 3 of 3</title>
+	<link>http://gigliwood.com/weblog/Business/indie-marketing-3.html</link>
+	<description>&lt;p style=&quot;padding:10px; border:3px dashed gray; margin:10px;&quot;&gt;
+This is part 3 of a three-part series.  &lt;a href=&quot;http://gigliwood.com/weblog/Business/indie-marketing-1.html&quot;&gt;Part 1&lt;/a&gt; and &lt;a href=&quot;http://gigliwood.com/weblog/Business/indie-marketing-2.html&quot;&gt;part 2&lt;/a&gt; have been archived on the World Wide Web, for your convenience.
+&lt;/p&gt;
+
+&lt;h3&gt;10. Make Launches into Big Events&lt;/h3&gt;
+&lt;p&gt;
+In the past, I assumed that the best way to launch a product was to be as secretive as possible about the product until the big announcement.  After all, that's how Apple does it!  But, face it, we are not Apple.  Apple is able to build up a fever-pitch frenzy by being secretive and letting the rumors fly.  Indies, on the other hand, need to make their own buzz.  You can build up to your product launch with gradual hints put up on your website, sent to your email list, mentioned on forums, &quot;leaked&quot; to rumors sites as Wil Shipley suggests, and so forth.  Make sure to collect an interest email list so that people will be able to buy your program the moment it's out.  Perhaps you can partner up others to help you get the word out about your upcoming launch, especially if you have an incentive for the readers of your partner's messages and/or the partner promoting your launch.
+&lt;/p&gt;
+&lt;p&gt;
+Hopefully your launch will not conflict with some other big event in the Mac community.  If you start making noises about Launch Day, other developers will probably work their launches around you so as not to saturate the news cycle.  Fortunately Apple is pretty good about warning us in advance when they are going to launch something big, so it's easy to work around their schedule as well.
+&lt;/p&gt;
+&lt;p&gt;
+(Today's &lt;a href=&quot;http://www.mupromo.com/&quot;&gt;MacUpdate promo bundle&lt;/a&gt; is an example of how &lt;i&gt;not&lt;/i&gt; to do this.  They could have built up a frenzy for weeks, the way that Panic did for their sale.  Instead, they just issued a press release today.  No anticipation!)
+&lt;/p&gt;
+&lt;h3&gt;11. Keep up to date on the main Mac sites&lt;/h3&gt;
+&lt;p&gt;
+Be sure that you always update your listings for your software on the main software tracker websites.  The main listing sites are currently &lt;a href=&quot;http://www.macupdate.com/&quot;&gt;MacUpdate&lt;/a&gt; and &lt;a href=&quot;http://osx.iusethis.com/&quot;&gt;IUseThis&lt;/a&gt;; you should get an account and list your software with each version update.  You should strive to get your software &lt;a href=&quot;https://adcweb.apple.com/downloads/&quot;&gt;listed with the Apple Downloads&lt;/a&gt; site: if your product is picked as a featured download, you will get a lot of downloads (and hopefully sales) during that time.  Make sure to keep your software updated frequently so its listing doesn't expire!  While &lt;a href=&quot;http://www.versiontracker.com/macosx/&quot;&gt;VersionTracker&lt;/a&gt; used to be the king of these sites &amp;mdash; we'd get huge spikes in Watson sales directly from VersionTracker back in the day &amp;mdash; it's now hardly worth the hassle of registering now that it's been bought out by CNET.  
+&lt;/p&gt;
+&lt;h3&gt;12. Allow your software licenses to be sold and bought by third parties&lt;/h3&gt;
+&lt;p&gt;
+There are a lot of other models besides a person buying a license for themselves on your website.  Try to consider other ways people might buy your software.  A simple change in your licensing setup might allow somebody to buy a license as a gift for another, for example.  But how about people who want a piece of the action?  While individual Mac users are likely to recommend your product to their friends as a courtesy, there are many consultants whose livelihood depends on setting up people's Macs and getting a cut of the sale.  So ideally you would set up your selling system so that you could have affiliates (codes that allow you to track how somebody heard about your product so you can compensate the referrer with some percent of the sale).  Another approach would be to have an online storefront that allows somebody to perform the transaction themselves to purchase your software on behalf of somebody else, while taking a commission.
+&lt;/p&gt;
+&lt;p&gt;
+Of course the biggest step of all, one which most indies are not willing to take, is to go into boxed product retail stores.  You may wish to listen to the &lt;a href=&quot;http://www.niallkennedy.com/blog/2004/10/how-to-run-your.html&quot;&gt;audio&lt;/a&gt; of the &lt;a href=&quot;http://www.oreillynet.com/mac/blog/2004/10/how_to_run_your_own_software_b.html&quot;&gt;panel discussion&lt;/a&gt; that I put together back in 2004 for the O'Reilly Mac OS X Conference, &quot;How to Run Your Own Software Business.&quot;  Wil Shipley (Sorry to keep mentioning him here!) ranted eloquently about why this wasn't a good idea, especially in the United States, and I don't see any indications that things have changed at all since this conference.  Unless you know something I don't know, I'd suggest ix-nay on the ox-bay.
+&lt;/p&gt;
+&lt;h3&gt;13. Give away licenses liberally&lt;/h3&gt;
+&lt;p&gt;
+Look, there are something like 20 million people running Tiger or Leopard currently.  Of course you'll never reach all of them, but if you can sell your software to a few &lt;em&gt;thousand&lt;/em&gt; per year &amp;mdash; just a tiny fraction &amp;mdash; you are making a living.  
+&lt;/p&gt;
+&lt;p&gt;
+So again inspired by Shipley, think of how you can give away licenses of your software to some of the others (the other 19,990,000 people) and use that as leverage.  If they write a blog review of your software, you may sell a few more copies to somebody else.
+&lt;/p&gt;
+&lt;p&gt;
+Another place to give away your software is to Apple employees. (Sure, some of them might have paid for your software, but if you can ignite a passionate response in somebody who works for Apple as a sales engineer or a genius at the Apple store, you will sell more copies. We know of many cases where people come into Apple stores and get sold on Sandvox for cases where iWeb won't do the job, for instance.)  Contact the &lt;a href=&quot;mailto:thirdpartypromos_at_the_obvious_domain&quot;&gt;Third Party Promo manager&lt;/a&gt; for this. Give your software to consultants like members of the &lt;a href=&quot;http://consultants.apple.com/&quot;&gt;Apple Consultants Network&lt;/a&gt;.  Offer discounts and free door-prize licenses to members of &lt;a href=&quot;http://www.apple.com/usergroups/contact/&quot;&gt;Mac User Groups&lt;/a&gt;.  You get the picture.
+&lt;/p&gt;
+&lt;p style=&quot;padding:10px; border:3px dashed gray; margin:0 10px;&quot;&gt;
+Wow that turned out to be long, and I feel like I've just scratched the surface.  Do you agree or disagree with these points?  Any further insight you want to share?   Add your comments and let me know what you think I should address further, or add your ideas that I didn't mention &amp;mdash; maybe I'll find some fodder for another post.  And be sure to tell me if you start using some of these ideas, and how it works out.
+&lt;/p&gt;
+&lt;p&gt;
+&lt;img src=&quot;/weblogpix/dan_wood_tshirt.jpg&quot; alt=&quot;&quot; style=&quot;float:right; border:3px solid gray;&quot; /&gt;
+BTW, I'll be at WWDC (and the pre-WWDC &lt;a href=&quot;http://sfmacindie.com/&quot;&gt;sfMacIndie Party&lt;/a&gt;) in a couple of weeks &amp;mdash; look for me sometimes wearing a Karelia T-shirt - no wolves, sorry! (See simulation picture here; the shirts haven't actually arrived yet!)  If you'd like to chat about some of these ideas over coffee/beer/Jamba, I'd be more than happy to continue the conversation!  
+&lt;/p&gt;
+&lt;p&gt;
+
+&lt;/p&gt;
+&lt;p&gt;
+</description>
+	<pubDate>Thu, 28 May 2009</pubDate>
+	<guid>http://gigliwood.com/weblog/Business/indie-marketing-3.html</guid>
+	<category>/Business</category>
+</item>
+<item>
+	<title>13 Lucky Marketing Tips for Indie Developers - Part 2 of 3</title>
+	<link>http://gigliwood.com/weblog/Business/indie-marketing-2.html</link>
+	<description>&lt;p style=&quot;padding:10px; border:3px dashed gray; margin:0 10px;&quot;&gt;
+This is part 2 of a three-part series.  &lt;a href=&quot;http://gigliwood.com/weblog/Business/indie-marketing-1.html&quot;&gt;Read part 1&lt;/a&gt; if you dare!  (By the way, I think today's &lt;a href=&quot;http://www.panic.com/sale/&quot;&gt;big sale by Panic&lt;/a&gt; is a good illustration of point #1 from yesterday's post!)
+&lt;/p&gt;
+
+&lt;h3&gt;5. Do Search Engine Optimization (SEO)&lt;/h3&gt;
+&lt;p&gt;
+SEO &amp;mdash; I'm not advocating any &quot;black hat&quot; trickery here &amp;mdash; is the act of making sure that your website provides the content and structure that the people out there &amp;mdash; who are looking for what you provide &amp;mdash; need, in order to find you via Google (or its lesser brethren).  I'm amazed at how few indies seem to be paying attention to this.  I've been studying this for a while now (something that came naturally out of creating a website builder), and although it does require a modicum of understanding and work, it's not rocket science!  It really boils down to three prongs:  (1) making sure that your site is properly indexed by Google, (2) making sure that your website contains the words and phrases that people are likely to be searching for, and (3) getting lots of links from other websites with good reputations.  (Having a useful blog that people will link to, and sending out free or paid press releases through &lt;a href=&quot;http://prmac.com/?prpoints=16&quot;&gt;PRMac.com&lt;/a&gt; is a good way to get this going.)  Of course the nuts and bolts are a bit more detailed.  If you are interested in learning more about this, we have found that besides Google's documents (which are of course very useful and accurate but don't tell the whole story), the company StomperNet has tremendous, well-tested knowledge that they have made available either for free or very little cost.  Though their own marketing style is a bit too &quot;slick&quot; for my tastes, their information is first-rate.  You can get their &lt;a href=&quot;http://c.karelia.com/159&quot;&gt;seven-part free course&lt;/a&gt;, and if that whets your appetite, you can get their full SEO course for &amp;mdash; golly, gosh &amp;mdash; one dollar.  (Yeah, they are obviously making money on the &quot;back end&quot; here.  Actually the magazine they are trying to get you to subscribe to is amazingly good and I'm very likely to stay subscribed to it.)
+&lt;/p&gt;
+&lt;h3&gt;6. Tune your &quot;Free Google Ad&quot;&lt;/h3&gt;
+&lt;p&gt;
+Yes, you can pay for ads in Google (we tried it &amp;mdash; it wasn't worth it; there were too many PC users out there clicking on our ads and Google doesn't let you only serve ads based on the user-agent) but did you know that you get a free ad on Google for each and every one of your pages?  I'm talking about the organic search results!  By controlling what I am coining the &quot;aspect&quot; of your web pages &amp;mdash; the title tag and the meta description &amp;mdash; you have the opportunity to create a headline and description that people will want to click on when your website shows up in the Search Engine Results Page (SERP).
+&lt;/p&gt;
+&lt;p&gt;
+We recently added the capacity in &lt;a href=&quot;http://www.sandvox.com/&quot;&gt;Sandvox&lt;/a&gt; to control this when we realized how important this was.  You get up to 65 characters for your title tag and 156 characters for your meta description tag before Google starts adding ellipses (which, according to StomperNet, drastically reduces the likelihood of people to click on your listing), so use them wisely.
+&lt;/p&gt;
+&lt;p&gt;
+Actually there's one other aspect of your aspect that you should consider &amp;mdash; the URL of the web page, which shows up in green in your Google listing.  If the domain name and path to your file name have words that are close to what the searcher was looking for, that's also a plus for their likelihood to click through and get to your website.
+&lt;/p&gt;
+&lt;h3&gt;7. Optimize your Website&lt;/h3&gt;
+&lt;p&gt;
+Last year I read the amazing book &lt;a href=&quot;http://c.karelia.com/160&quot;&gt;Always Be Testing&lt;/a&gt;.  I was, uncharacteristically, moved to write a (glowing) review of it on Amazon.com.  It really opened up my eyes to the importance of having clearly-defined action for visitors when they get to your site.  By using Google Website Optimizer, you can perform experiments on your website and see which variation causes more people to take action &amp;mdash; e.g., download your free software demo.  Examples are adjusting placement of elements, adding social proof like testimonials, case studies, and award badges, changing colors and fonts, adjusting headline text, adding reassurances at the point of action, and so forth.)  The book is a great guide to Google's software, and provides a number of suggestions for what to vary to improve your site.  We have been constantly testing and improving our main Sandvox page since last September.  If your website gets a decent amount of traffic, you can do this too.  (In order to get statistically significant measurements, you need hundreds or thousands of visits, so it may not be feasible to actually run the tests if your website is just getting off the ground.)
+&lt;/p&gt;
+&lt;p&gt;
+Here's an example of an experiment I tried.  I got a comment that it wasn't that obvious that our website was selling software, and we should have a &quot;box shot&quot; &amp;mdash; a fake (but tastefully rendered) image of a simulated product box, as if our product could be found on the shelves.  I found some decent software and created an image, which I then tested in contrast with the program's icon.  The results came in pretty quickly &amp;mdash; it was a failure.  More people downloaded our demo when there was a simple Mac icon than when there was a box shot.  (I'm only measuring visitors who are browsing from a Mac.)  It might be that we inadvertantly gave the impression that it's not downloadable software, or maybe it looked too much like a Windows image!
+&lt;/p&gt;
+&lt;p&gt;
+One of the insights I learned from the book was that there are four types of visitors to your website.  Those who are ready to buy, those who are interested but haven't decided, those who are just &quot;window shopping&quot;, and those who really didn't belong on your website in the first place (e.g. the Windows user).  It's good if you have actions for the three visitor types who count: as an indie developer, that might correspond to the following: a button to purchase, a button to download a demo, and a form to get on your email list.
+&lt;/p&gt;
+&lt;p style=&quot;padding:10px; border:3px dashed gray; margin:0 10px;&quot;&gt;
+If you have been paying attention, you may have noticed that the last three points are a kind of funnel &amp;mdash; getting your website to show up in the search engine listings, getting people to click on your listing, and then getting your visitor to actually do something.  Yes, I did that on purpose.
+&lt;/p&gt;
+&lt;h3&gt;8. Give your customer choices&lt;/h3&gt;
+&lt;p&gt;
+People love to make an order that fits them just so.  Look at Apple's options when you buy a Mac through their store, for example.  You can do something similar by offering a &quot;Pro&quot; edition of your application. (Or even a third ... uh ... &quot;studio&quot; edition ... read &lt;a href=&quot;http://www.amazon.com/exec/obidos/ASIN/0061854549/karelsofwa-20&quot;&gt;Predicably Irrational&lt;/a&gt; for some ideas why three choices is better than two.)  Those who are on a budget can get your lower-priced offering; those with money to spend or the desire for power will go for the Pro version.  (We have found that Sandvox Pro outsells the regular version by 2 to 1.)
+&lt;/p&gt;
+&lt;h3&gt;9. Give away free stuff&lt;/h3&gt;
+&lt;p&gt;
+Other products, add-ons, PDF &quot;e-books&quot;, anything like that.  If you haven't figured it out by now, people love free stuff.  You can use them as incentives for people to join your list, or buy your product by bundling them in as bonuses, or just send out something cool to the members of your email list every so often as an unannounced bonus.  You can have a free version of your paid product.  If it's free, people will like you for it!
+&lt;/p&gt;
+
+&lt;p style=&quot;padding:10px; border:3px dashed gray; margin:0 10px;&quot;&gt;
+One more chunk to go.  Don't forget to leave some comments with your violent disagreements or statements of love and solidarity, or anything in between.
+&lt;/p&gt;
+</description>
+	<pubDate>Wed, 27 May 2009</pubDate>
+	<guid>http://gigliwood.com/weblog/Business/indie-marketing-2.html</guid>
+	<category>/Business</category>
+</item>
+<item>
+	<title>13 Lucky Marketing Tips for Indie Developers - Part 1 of 3</title>
+	<link>http://gigliwood.com/weblog/Business/indie-marketing-1.html</link>
+	<description>&lt;p&gt;
+Since I started being an indie developer for Mac OS X (FYI &quot;indie developer&quot; is the same as &quot;Micro-ISV&quot; in Windows-speak) in late 2001 &amp;mdash; a long time ago, actually, when most Cocoa software titles available were ports from NeXT &amp;mdash; I found myself wearing the &quot;marketer&quot; hat as well as doing programming.  Back with Watson, I just followed my intuition and was met with wild success; with our current &lt;a href=&quot;http://www.sandvox.com/&quot;&gt;Sandvox, mac website builder,&lt;/a&gt; I think our success has come from a more thoughtful approach to the topic now that the marketplace is much more crowded.
+&lt;/p&gt;
+&lt;p&gt;
+Over the years, I've been learning more and more about marketing as it relates to the indie developer.  Some of it comes from my own experimentation, some from maestros like &lt;a href=&quot;http://www.wilshipley.com/blog/&quot;&gt;Wil Shipley&lt;/a&gt;, and much from some excellent books as well as websites that, even though many contain a lot of good information, make me want to wash my Cinema Displays for a while after visiting them.  (If you've seen those &quot;Squeeze pages&quot; with lots of &lt;span style=&quot;font-family:Impact;&quot;&gt;Impact&lt;/span&gt; font, &lt;b&gt;black&lt;/b&gt; and &lt;span style=&quot;color:red;&quot;&gt;&lt;b&gt;red&lt;/b&gt;&lt;/span&gt; text, and &lt;span style=&quot;background:yellow;&quot;&gt;yellow highlighting&lt;/span&gt;, you know what I'm talking about.  They must be appealing to Windows users; I think Mac users have a more refined sense of aesthetics!)
+&lt;/p&gt;
+&lt;p&gt;
+I thought I'd make a little post about marketing that may be of use to other indie developers.  Well, it started out being little but it got kind of large, so I'm splitting it into multiple parts!
+&lt;/p&gt;
+&lt;p&gt;
+I have to say that we at Karelia are not yet practicing all these suggestions &amp;mdash; though I'd love to be, it does take a while to actually implement some of these ideas &amp;mdash; especially the first one I'll list here.  We'll get there soon.  In the meantime, these tidbits will hopefully be of use to you.
+&lt;/p&gt;
+&lt;p&gt;
+Before I dive in, I guess I should define marketing.  To me, it's more about general promotion and getting people to want your software product.  It's not about &quot;sales,&quot; which I've never been very comfortable with, but instead, making sure that the people who might want to use your software know about it and its benefits, and once they have it, are happy users that are likely to spread the word to others.  So for me, marketing is giving more value to our potential customers.
+&lt;/p&gt;
+&lt;h3&gt;1. Sell &amp;mdash; or plan for &amp;mdash; more than one active product.&lt;/h3&gt;
+&lt;p&gt;
+I've mentioned over the years that this is the one piece of advice I wish somebody had given me when I was just getting started as an indie developer.
+&lt;/p&gt;
+&lt;p&gt;
+From a purely technical standpoint, it would have forced me to build our back-end infrastructure (like customer database) in such a way that when we have a second commercial product in addition to Sandvox, it will be easier to bring it to market.
+&lt;/p&gt;
+&lt;p&gt;
+From a marketing standpoint, there are some great advantages to having a second or third revenue-generating product on the market at the same time.  One is that every time you get in the Mac &quot;news&quot; for doing something interesting (like issuing an update), your company and all its products will benefit.  For instance, each time we issue a new update to our &lt;a href=&quot;http://www.karelia.com/imedia/&quot;&gt;free iMedia Browser&lt;/a&gt;, we get a bump in sales of Sandvox for a few days.  Having more than one product also means that people who came to buy one item may also decide to buy another while they're at it, either spontaneously, or through a &quot;bump&quot; or &quot;upsell&quot; you do when they go to check out.  (&quot;Do you want Yogurt with your McSalad?&quot;)
+&lt;/p&gt;
+&lt;p&gt;
+Another advantage to having more than one product is that you can do &quot;loss leaders&quot; where one product, sold for very little, will bring people into your fold &amp;mdash; see the next tip &amp;mdash; where you then have the opportunity to sell them other products later.  This is a technique used frequently by retail stores that advertise one item at a great discount but make up for it by the other things you purchase.  &lt;a href=&quot;http://www.macheist.com/&quot;&gt;MacHeist&lt;/a&gt;, I recently realized, is a perfect example of that, so if you have a product you can sell for next to nothing as a leverage for selling your other applications, it can be a long-term win for you as a developer.
+&lt;/p&gt;
+&lt;h3&gt;2. Have an email list for customers and prospective customers&lt;/h3&gt;
+&lt;p&gt;
+Back in the Watson days, we didn't have an email list so we had no idea who was trying or buying our software.  There was no way to communicate with our entire community.  We set one up when Sandvox was in pre-launch phase of Sandvox, so now we have a huge list of people who either bought Sandvox or are interested in our stuff.  We can send out monthly emails with tips and tricks for the Sandvox and iMedia Browser, make sure people are up to date, and point out other cool Mac software that our subscribers will find useful.  And when we have a new product, there are thousands of people who will be the first to know about it!
+&lt;/p&gt;
+&lt;p&gt;
+If you set up a mailing list, be sure to do all the right non-spammy things like confirm people's intention to sign up and give them an easy way to unsubscribe.  You can sign people up the first time they launch your program (as a demo or a paid user), or from a form on your website, or both.  (You will probably want to offer some incentive (like a free program or PDF) to entice people to bother to sign up from the web.)
+&lt;/p&gt;
+&lt;p&gt;
+(BTW, You can sign up for &lt;a href=&quot;http://www.karelia.com/download/email_alerts.html&quot;&gt;Karelia's Email List&lt;/a&gt; yourself.  Don't be shy!)
+&lt;/p&gt;
+&lt;p&gt;
+Your mailings, whether they are frequent or infrequent, should at least be consistent, and provide some value to the reader.  If it's just hype, your subscribers may not stay subscribed for long.
+&lt;/p&gt;
+&lt;p&gt;
+Here's a tip: If you have URLs in your email linking to your site, you are not going to be able to tell where they are coming from when you examine your server logs or use Google Analytics.  We worked around this problem by creating a little home-made URL shortener script on our website.  We found when using this that a large percentage of our site visitors are actually coming in from our mailings, a fact not evident before.
+&lt;/p&gt;
+&lt;p&gt;
+You can also use your email list to send out periodic emails directly to your new customers to follow up on their purchase.  Give them tips and tricks, suggestions, and offers of help.  Welcome them to your extended family!
+&lt;/p&gt;
+&lt;h3&gt;3. Build an Ecosystem&lt;/h3&gt;
+&lt;p&gt;
+I think I first heard Tim O'Reilly apply the term ecosystem as it relates to Software.  If you can make your software part of a bigger universe of other developers or content providers, you will get a lot of marketing juice over the Internet, and find other benefits from time to time.  I had designed Watson with an SDK, and it encouraged developers to jump in and build their own modules.  (It gave the product more credibility and it may have provided some benefit to the developers &amp;mdash; one of them landed his dream job at ESPN after writing a sports module; one has since become &lt;a href=&quot;http://toxicsoftware.com/&quot;&gt;a successful indie developer&lt;/a&gt;, and one, Terrence Talbot, wound up becoming a partner at Karelia!)  With Sandvox, our open design specification has allowed half a dozen designers to create &amp;mdash; and in some cases sell, as part of their business &amp;mdash; their own designs.  (Check out our &lt;a href=&quot;http://www.SandvoxDesigns.com/&quot;&gt;showcase these independent Sandvox designs&lt;/a&gt;, a website which is itself a marketing effort.)
+&lt;/p&gt;
+&lt;h3&gt;4. Practice &quot;Integration Marketing&quot;&lt;/h3&gt;
+&lt;p&gt;
+Integration Marketing, coined by marketer &lt;i&gt;(or as I like to say, meta-marketer, because he is one of the many marketers who markets the art of marketing)&lt;/i&gt; Mark Joyner, is the act of finding and taking advantage of points where others can market your stuff, or you can market other's stuff.  There are usually a number of opportunities for you in your contacts with your customers and prospects to promote useful and complementary products or services.  Putting amazon.com affiliate links or Google ads on your own website are two obvious examples.  With Sandvox, we have three web hosting partners that we refer people to, so that they will have a good experience publishing their website.  (Without such ideas, Sandvoxers might still find a decent host by themselves, or they might just default to GoDaddy and regret it later!)  It's topical and helpful, because it fits in with website building software.  So yes, it's an additional source of income, but integrating with them is also adding value to our customers.  We even added additional value by creating &lt;a href=&quot;http://www.karelia.com/sandvox/hosting_screencasts/&quot;&gt;screencasts&lt;/a&gt; for each of the hosts, to walk Sandvoxers through the process of signing up for a domain name and hosting. 
+&lt;/p&gt;
+&lt;p&gt;
+Of course, the important thing is to find good partners.  You could do joint venture (&quot;JV&quot;) partnerships with other indie companies, promoting their software (either for a commission, or as we sometimes do, just for what we like to call &quot;good karma&quot;) and have them promote your stuff, which of course translates to sales that somebody else made without you doing any work.  It doesn't have to be just Mac software companies teaming up with other Mac software companies.  It really depends on what your product's domain is.  
+&lt;/p&gt;
+&lt;p&gt;
+If you are looking for opportunities for integration marketing, a good idea is to build a process map of your own company.  What are your points of customer contact?  What flow do they go through in visiting your website, downloading, buying, signing up, confirming, getting follow-up emails, etc.?  Where are there opportunities to reach your prospects and customers in a helpful way?
+&lt;/p&gt;
+&lt;p&gt;
+Note: if you are paying or receiving commissions/affiliate payments, there are various accounting/tax implications of this, so make sure you know what you are doing.
+&lt;/p&gt;
+&lt;p style=&quot;padding:10px; border:3px dashed gray; margin:0 10px;&quot;&gt;
+OK, that's all for now.  In part 2 I'll have some things to say about websites and prices.  Be sure to leave some comments here if you agree, disagree, or have some other thoughts!
+&lt;/p&gt;</description>
+	<pubDate>Tue, 26 May 2009</pubDate>
+	<guid>http://gigliwood.com/weblog/Business/indie-marketing-1.html</guid>
+	<category>/Business</category>
+</item>
+<item>
+	<title>Get Thee to the Maker Faire!</title>
+	<link>http://gigliwood.com/weblog/General/Get_Thee_to_the_Mak.html</link>
+	<description>&lt;p&gt;
+Every year I try very hard to go to O'Reilly's &lt;a href=&quot;http://makerfaire.com/&quot;&gt;Maker Faire&lt;/a&gt;, held at the fairgrounds in San Mateo, California.  It's one of the highlights of my year, seriously.  (I missed last year, but I was having fun in Europe, so that's OK.)
+&lt;/p&gt;
+&lt;p&gt;
+I haven't heard a lot of twitter about it this year, so I wanted to make sure people knew about it.
+&lt;/p&gt;
+&lt;p&gt;
+I'm personally not into DIY (other than software) but I love to see what others are working on.  There are a lot of amazing creations, both &quot;techno&quot; and &quot;retro&quot; (or a combination of the two).  Many items that have been to Burning Man and back.  Lots of interactivity, too.  The way I've described the event, especially since it's held at the fairgrounds, is as a &quot;county fair for geeks.&quot;  It is really an amazing event, both for adults (at least of the geeky persuasion) and certainly for curious kids.
+&lt;/p&gt;
+&lt;p&gt;
+I'll be spending my birthday there with my kids (and perhaps their friends) in tow.  If you've never been, you owe it to yourself to check it out.
+&lt;/p&gt;</description>
+	<pubDate>Mon, 25 May 2009</pubDate>
+	<guid>http://gigliwood.com/weblog/General/Get_Thee_to_the_Mak.html</guid>
+	<category>/General</category>
+</item>
+<item>
+	<title>Using Twitter to get references for somebody you don't know</title>
+	<link>http://gigliwood.com/weblog/General/Using_Twitter_to_ge.html</link>
+	<description>&lt;p&gt;
+OK, I haven't been blogging much here.  If you read this with NetNewsWire, my feed has probably been a deep shade of brown.  Truth is, I tend to post pithy comments on &lt;a href=&quot;http://twitter.com/danwood&quot;&gt;Twitter&lt;/a&gt; most of the time rather than blog here.
+&lt;/p&gt;
+&lt;p&gt;
+But occasionally I have something interesting to share that goes beyond the 140 character limit.  So here I am!
+&lt;/p&gt;
+&lt;p&gt;
+Ironically, this blog post is &lt;i&gt;about&lt;/i&gt; Twitter.  Specifically, how to use it as a tool to get references for somebody you don't know.
+&lt;/p&gt;
+&lt;p&gt;
+I posted a question a few days ago asking if anybody knew somebody who could help us with some system administration stuff.  And I got a response, from somebody who was interested in helping us out.
+&lt;/p&gt;
+&lt;p&gt;
+Trouble is, I didn't know that person.  Of course when hiring somebody you can ask you for references.  But I thought I'd try something different &amp;mdash;&amp;#160;I figured out some references on my own.
+&lt;/p&gt;
+&lt;p&gt;
+I did this manually, but then fellow twitterer and Mac/iPhone developer Chuck Soper (&lt;a href=&quot;http://twitter.com/ChuckSoper&quot;&gt;@ChuckSoper&lt;/a&gt;) pointed me to a cool web service &lt;a href=&quot;http://tweepdiff.com/&quot;&gt;TweepDiff&lt;/a&gt;.
+&lt;/p&gt;
+&lt;p&gt;
+There are a number of options here, but the operation which will help with this particular case is to compare your &lt;i&gt;friends&lt;/i&gt; with the other guy's &lt;i&gt;followers&lt;/i&gt;.  In other words, find out what people whom you follow also follow the other guy.  Hopefully, anybody that follows this other person knows him or at least finds him interesting enough to follow.
+&lt;/p&gt;
+&lt;p&gt;
+With that list (after filtering out any institutional twitter accounts who auto-follow), I was able to contact some of my colleagues and ask what they think of him.  And, lo and behold, I learned some useful stuff!  In this case, it was positive....
+&lt;/p&gt;
+</description>
+	<pubDate>Fri, 08 May 2009</pubDate>
+	<guid>http://gigliwood.com/weblog/General/Using_Twitter_to_ge.html</guid>
+	<category>/General</category>
+</item>
+<item>
+	<title>Trending: New unofficial Twitter feed</title>
+	<link>http://gigliwood.com/weblog/General/trending.html</link>
+	<description>&lt;p&gt;
+Earlier this afternoon, &lt;a href=&quot;http://twitter.com/al3x&quot;&gt;Alex Payne&lt;/a&gt; &lt;a href=&quot;http://twitter.com/al3x/statuses/932214859&quot;&gt;announced on Twitter&lt;/a&gt; the availability of some &lt;a href=&quot;http://apiwiki.twitter.com/Search+API+Documentation&quot;&gt;new APIs&lt;/a&gt;, built by &lt;a href=&quot;http://twitter.com/mzsanford&quot;&gt; Matt Sanford&lt;/a&gt; that would allow programmers to make use of the searches and trends found at &lt;a href=&quot;http://search.twitter.com/&quot;&gt; search.twitter.com&lt;/a&gt;
+&lt;/p&gt;
+&lt;p&gt;I checked it out, from curiosity, and immediately thought of an interesting use of this.  Why not set up a twitter account that people can follow to hear about the &quot;trending topics&quot; of people's twitter messages?  You could follow that account, and learn about the things which people around the twitterverse are talking about.
+&lt;/p&gt;
+&lt;p&gt;
+I was stunned to find that the account &lt;a href=&quot;http://twitter.com/trending&quot;&gt;&quot;trending&quot;&lt;/a&gt; was not yet taken. So I set up an account and got to work on a quick little project.
+&lt;/p&gt;
+&lt;p&gt;
+And I mean quick.  After just an hour or two of programming and setting up a simple database, I had my &quot;bot&quot; set up.  Every five minutes, it checks the latest topics, and checks to see if anything is new.  If it is, it posts each topic, along with a URL to perform that search on the web, as a new tweet.
+&lt;/p&gt;
+&lt;p&gt;
+It took a while to wait around for some new topics to come on the horizon, in order to verify that the automatic aspect was working properly. But, about three hours after the announcement, I &lt;a href=&quot;http://twitter.com/danwood/statuses/932369760&quot;&gt;announced&lt;/a&gt; this new account/service.
+&lt;/p&gt;
+&lt;p&gt;
+So if you use Twitter, give it a whirl &amp;mdash;&amp;#160;follow &lt;a href=&quot;http://twitter.com/trending&quot;&gt;trending&lt;/a&gt;.  It's fascinating to become aware, in real time, of what people are twittering about.&lt;/p&gt;
+&lt;p&gt;
+Also, if you are so inclined, you can &lt;a href=&quot;http://twitter.com/danwood&quot;&gt;follow me&lt;/a&gt; on twitter, and also &lt;a href=&quot;http://twitter.com/karelia&quot;&gt;Karelia Software&lt;/a&gt;. Fellow Karelians &lt;a href=&quot;http://twitter.com/MIkeAbdullah&quot;&gt;Mike&lt;/a&gt; and &lt;a href=&quot;http://twitter.com/tjtjt&quot;&gt;Terrence&lt;/a&gt; are also on Twitter as well.</description>
+	<pubDate>Tue, 23 Sep 2008</pubDate>
+	<guid>http://gigliwood.com/weblog/General/trending.html</guid>
+	<category>/General</category>
+</item>
+</channel>
+</rss>

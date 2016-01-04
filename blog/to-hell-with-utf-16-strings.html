@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<script type="text/javascript">
+		  (function() {
+		    var config = {
+		      kitId: 'fwg6fzg',
+		      scriptTimeout: 3000
+		    };
+		    var h=document.getElementsByTagName("html")[0];h.className+=" wf-loading";var t=setTimeout(function(){h.className=h.className.replace(/(\s|^)wf-loading(\s|$)/g," ");h.className+=" wf-inactive"},config.scriptTimeout);var tk=document.createElement("script"),d=false;tk.src='//use.typekit.net/'+config.kitId+'.js';tk.type="text/javascript";tk.async="true";tk.onload=tk.onreadystatechange=function(){var a=this.readyState;if(d||a&&a!="complete"&&a!="loaded")return;d=true;clearTimeout(t);try{Typekit.load(config)}catch(b){}};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(tk,s)
+		  })();
+		</script>		<title>To Hell with UTF-16 &quot;.strings&quot; Files | Dan Wood: The Eponymous Blog</title>
+		<meta name="robots" content="all" />
+		<meta name="generator" content="Sandvox 2.10.3" />
+		<meta name="viewport" content="width=760" />
+		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+		<link rel="image_src" href="http://gigliwood.com/blog/_Media/screen_shot_2012-10-05_at_med_hr.png" type="image/png" />
+		<link rel="canonical" href="http://gigliwood.com/blog/to-hell-with-utf-16-strings.html" />
+		
+		<script>
+		WebFontConfig={google:{families:["Droid Serif",]},timeout:3e3};(function(){document.documentElement.className='wf-loading';var e=document.createElement('script');e.src=('https:'==document.location.protocol?'https':'http')+'://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';e.type='text/javascript';e.async='true';var t=document.getElementsByTagName('script')[0];t.parentNode.insertBefore(e,t);window.setTimeout(function(){if((' '+document.documentElement.className+' ').indexOf(' wf-active ')<0){document.documentElement.className='wf-punt'}},3e3)})()
+		</script>
+		<link rel="stylesheet" type="text/css" href="sandvox_SlateManifest_green/main.css" title="Slate Manifest Green" /><!--[if lt IE 6]>
+		<link rel="stylesheet" type="text/css" href="sandvox_SlateManifest_green/ie.css" /><![endif]-->
+		<!--
+		Photo credits for this website's design: <http://gigliwood.com/blog/sandvox_SlateManifest_green/Credits.rtf>
+		Licensing for this website's design:     <http://gigliwood.com/blog/sandvox_SlateManifest_green/License.rtf>
+		-->
+		
+		<script type="text/javascript">
+		
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', 'UA-40201594-1']);
+		  _gaq.push(['_trackPageview']);
+		
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+		
+		</script>
+	</head>
+	<body class="sandvox has-page-title no-sidebar no-custom-banner no-navigation no-IR" id="gigliwood_com" >
+				<div id="page-container">
+			<div id="page">
+				<div id="page-top" class="has-logo has-title has-tagline">
+					<div id="title">
+						<a href="./" class="imageLink"><span id="logo-container"><img id="logo" src="_Media/imgp3949jpg_med_hr.jpeg" alt="IMGP3949.JPG" width="105" height="105" /></span></a>
+						<h1 class="title in"><a href="./"><span class="in">Dan Wood: The Eponymous Blog<br /></span></a></h1>
+						<p id="tagline"><span class="in"><span style="font-size: 12px; font-family: Georgia;">Dan Wood is president of Karelia Software, creators of the </span><a href="http://www.karelia.com/sandvox/" style="font-family: Georgia; font-size: 12px;">Sandvox website builder for the Mac</a><span style="font-size: 12px; font-family: Georgia;">. He is the father of two kids, lives in the Bay Area of California USA, keeps bees in the back yard, volunteers with his kids’ theatre company, and prefers bicycles to cars. This site is his new blog, which mostly covers geeky topics like Macs and Mac Programming. (Visit the </span><a href="http://gigliwood.com/weblog/" style="font-family: Georgia; font-size: 12px;">older blog</a><span style="font-size: 12px; font-family: Georgia;">.) </span><em style="font-family: Georgia; font-size: 12px;"><a href="https://twitter.com/danwood">Twitter</a></em><br /></span></p>
+					</div><!-- title -->
+					<div id="sitemenu-container">
+						
+					</div> <!-- sitemenu-container -->
+				</div> <!-- page-top -->
+				<div class="clear below-page-top"></div>
+				<div id="page-content" class="no-navigation">
+					<div id="main">
+						<div id="main-top"></div>
+						<div id="main-content">
+							<h2 class="title"><span class="in">To Hell with UTF-16 ".strings" Files</span></h2>
+							<div class="article">
+								<div class="article-content">
+									<div class="RichTextElement">
+										<div><p>For years, we've followed Apple's <a href="https://developer.apple.com/library/mac/#documentation/MacOSX/Conceptual/BPInternational/Articles/StringsFiles.html">documented recommendation</a> that .strings files should be saved in UTF-16 format:</p>
+											
+											<div class="first blockquote-container wide center">
+												<div style="" class="graphic"><blockquote class="figure-content">
+														<p>Note: It is recommended that you save strings files using the UTF-16 encoding, which is the default encoding for standard strings files. It is possible to create strings files using other property-list formats, including binary property-list formats and XML formats that use the UTF-8 encoding, but doing so is not recommended. For more information about Unicode and its text encodings, go to <a href="http://www.unicode.org/">http://www.unicode.org/</a> or <a href="http://en.wikipedia.org/wiki/Unicode">http://en.wikipedia.org/wiki/Unicode</a>.</p>
+														
+													</blockquote>
+												</div>
+											</div><p>But this has caused so many headaches, that I finally decided it's time to defy this recommendation, and go UTF-8 for our .strings files.</p><p>UTF-8 is a file format that is consistent across all machines and byte-order architectures.  There is never any ambiguity.  It also works pretty well for file comparisons, especially when most of the characters are in the Roman alphabet. Yeah, maybe it's not as efficient at storing double-byte languages, but that's not really a big concern.</p><p>UTF-16, on the other hand, has turned into a big nightmare for us. We get localizations from people around the world (some using old PowerPC machines, some using Intel machines). It's never clear whether we are going to get:</p><ul><li>Little-endian, without the Byte Order Marker (BOM), a.k.a. UTF-16LE</li><li>Big-endian, without the BOM, a.k.a UTF-16BE</li><li>Little-endian, with <em>FF FE</em> BOM, a.k.a. UTF-16 sometimes</li><li>Big-endian, with <em>FE FF</em> BOM, a.k.a. UTF-16 othertimes.</li></ul><span data-img-src="_Media/screen_shot_2012-10-05_at_med.png" data-img-src-hr="_Media/screen_shot_2012-10-05_at_med_hr.png" data-alt="Screen Shot 2012-10-05 at 5.07.53 PM" data-width="173" data-height="66" style="width:173px; height:66px;" class="not-first-item narrow right graphic-container">
+												<noscript><img src="_Media/screen_shot_2012-10-05_at_med.png" alt="Screen Shot 2012-10-05 at 5.07.53 PM" width="173" height="66" /></noscript>
+											</span><p>It's amazing how many times I've gotten an update from a localizer, and when I try to merge it into our source base, it looks like everthing has changed. Opening the file with <a href="http://www.codingmonkeys.de/subethaedit/">SubEthaEdit</a> (the best text editor I've found for dealing with character encoding issues), I often find that the looks like dense bunch of oriental characters. (The Japanese call this <em><a href="http://en.wikipedia.org/wiki/Mojibake">mojibake</a>.</em>) Then I have to fiddle with the encoding for a bit until it's a consistent, um, little-endian UTF-16. After re-saving, I can finally find out if any contents of the file really were changed.</p><p><strong>No more!</strong> I've converted every .strings file to UTF-8! Everything seems to work even though I have dared to stand up to the forces of UTF-16.</p><p>The crazy thing is, I had to write my own little Cocoa tool to convert the strings files to UTF-8. I call it "UTF8ifier".  Apple's built-in utility, <a href="http://developer.apple.com/library/mac/#documentation/Darwin/Reference/ManPages/man1/iconv.1.html">iconv</a>, has never been particularly useful. My utility, on the other hand, uses +[NSString stringWithContentsOfFile: usedEncoding: error:] for reading, and if the encoding wasn't already UTF-8, then it writes it back out. </p><p>Have I committed a cardinal sin here by using UTF-8?  Or is this something that other developers have done? Any interest in making UTF8ifier public?</p><p><strong><span style="color: rgb(0, 0, 0); font-family: Helvetica; background-color: rgb(247, 251, 0); ">Update:</span> </strong>@bwebster commented on Twitter that Xcode now converts strings files to UTF-16 in the built product, so that means I shouldn't have to worry about manipulating and storing them in my source tree as UTF-8. Another good reason to use UTF-8 in source files is that GitHub can actually show differences. (If they are UTF-16, it treats the files like binary blobs!)</p><p>There's one more hoop I realized I have to jump through. When we build an archive, we run <em>genstrings</em>, which sadly has no option for output in UTF-8. So I think I need to add in a line to all of our projects, after the genstrings — as <a href="http://www.stevestreeting.com/2010/05/18/os-x-localisation-incremental-genstrings-and-utf-8-files/">these</a> <a href="http://fi.am/entry/keeping-your-localizablestrings-in-utf-8/">guys</a> do — to convert the UTF-16 to UTF-8, so that only legitimate changes get checked back into our source tree.</p><p>I guess I should file a Radar, requesting <em>genstrings</em> to be ablet to output in UTF-8. </p><p><strong><span style="color: rgb(0, 0, 0); font-family: Helvetica; background-color: rgb(247, 251, 0); ">Update 2:</span> </strong>@cocoanetics and @0xced suggested <a href="https://github.com/Cocoanetics/DTLocalizableStringScanner">DTLocalizableStringScanner</a>, which has re-built genstrings as open-source.  I've added a "-utf8" output option <a href="https://github.com/karelia/DTLocalizableStringScanner">in a branch</a>.</p>
+											
+										</div>
+									</div>
+								</div> <!-- /article-content -->
+								<div class="article-info">
+															<!-- comments -->
+															
+															
+						                                    <div id="disqus_thread"></div>
+						                                    
+															
+															
+															<!-- comments -->		</div> <!-- /article-info -->
+							</div> <!-- /article -->
+						</div> <!-- main-content -->
+						<div id="main-bottom"></div>
+					</div> <!-- main -->
+				</div> <!-- content -->
+				<div class="clear below-content"></div>
+				<div id="page-bottom">
+					<div id="page-bottom-contents">
+						<div>© Dan Wood 2012-2016. <a href="comments-policy.html">My Comments Policy</a></div>
+						<div class="hidden"> <a rel="nofollow" href="#title">[Back To Top]</a></div>
+					</div>
+				</div> <!-- page-bottom -->
+			</div> <!-- container -->
+			<div id="extraDiv1"><span></span></div><div id="extraDiv2"><span></span></div><div id="extraDiv3"><span></span></div><div id="extraDiv4"><span></span></div><div id="extraDiv5"><span></span></div><div id="extraDiv6"><span></span></div>
+		</div> <!-- specific body type -->
+		<script src="//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js"></script>
+		<script>
+		if (typeof jQuery === 'undefined') document.write('<scr'+'ipt src="_Resources/jquery-1.9.1.min.js"></scr'+'ipt>');
+		</script>
+		
+		<script>
+		$(document).ready(function(){var e=window.devicePixelRatio&&window.devicePixelRatio>1?window.devicePixelRatio:1,t=window.innerWidth>window.innerHeight?screen.height:screen.width;$("span[data-img-src-hr]").each(function(){var n=$(this).data("width"),r=$(this).data("height"),i=$(this).data("alt"),s='<img src="',o=e>1&&n<2*t,u=0,a=$(this)[0].attributes;if(o){s+=$(this).data("img-src-hr")}else{s+=$(this).data("img-src")}s+='"';if(i)s+=' alt="'+i+'"';if(n)s+=' width="'+n+'"';if(r)s+=' height="'+r+'"';for(l=a.length;u<l;u++){var f=a[u].name;if(!f.match(/(data-width|data-height|data-alt|data-img-src)/g)){s+=" "+f+'="'+a[u].value+'"'}}s+=" />";$(this).replaceWith($(s))})})
+		var disqus_shortname = 'danwood';
+		var disqus_url = 'http://gigliwood.com/blog/to-hell-with-utf-16-strings.html';
+		var disqus_title = 'To Hell with UTF-16 ".strings" Files';
+		(function() {
+		var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+		dsq.charset = 'utf-8';
+		dsq.src = '//danwood.disqus.com/embed.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		})();
+		</script>
+		
+	</body>
+</html>

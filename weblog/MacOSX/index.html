@@ -1,0 +1,732 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+		<meta http-equiv="content-type" content="text/html;charset=ISO-8859-1" />
+		<title>Dan Wood: The Eponymous Weblog (Archives) | by Dan Wood, Karelia Software</title>
+		<meta name="description" content="Useful Tidbits and Egotistical Musings from Dan Wood, co-owner of Karelia Software. This blog mostly covers geeky topics like Mac Programming." />
+
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://gigliwood.com/weblog/index.rss" />
+
+
+
+<style type="text/css">
+
+/* color palette: tinyurl.com/tgq5o */
+
+body {
+	background:#9191FF;
+	margin:0;
+	padding:0;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif; font-size:76%;
+	word-wrap:break-word;
+	}
+
+
+pre { word-wrap:normal !important;
+		font:9px monaco;
+		margin-right:-3px;
+	background:white; padding: 3px; overflow:auto; }
+
+
+.bio { font-size:80%; margin:auto; text-align:center; padding:10px 40px; }
+.description { clear:all; color:white; font-weight:bold; font-size:120%; margin:auto; text-align:center; }
+
+.categories { text-align:center; border-top:1px dashed #888; border-bottom:1px dashed #888; }
+
+#frame {
+	margin-left:auto;
+	margin-right:auto;
+	padding:0px;
+	width:785px;
+	overflow:auto;
+	margin-bottom:80px;
+	}
+	
+#heady {
+	background:#12127D;
+	color:#B37D00;
+	padding:20px 10px 10px 10px;
+}
+
+#heady a:link              { color:#FFB200; text-decoration:underline; }
+#heady a:visited           { color:#FFB200; text-decoration:none; }
+#heady a:hover             { color:#C8C8FF; text-decoration:underline; }
+#heady a:active            { color:#FFFFFF; text-decoration:underline; }
+
+h1, h2, h3, h4 {
+	margin:0;
+}
+
+h1 {
+	padding-bottom:20px;
+	font-weight:normal;
+	font-family:Zapfino, Georgia, serif;
+	text-shadow:white 0 0 20px;
+	text-align:center;
+}
+	
+#contentcenter {
+	width: 565px;
+	}
+
+div.dateHeader {
+	text-align:right;
+	padding:5px;
+	font-weight:bold;
+	}
+
+/* holds one item */
+div.item {
+	background:white;
+	overflow:auto;
+	}
+
+/* sub-holds one item */
+div.row {
+  		}
+
+div.row .label {
+		float: left;
+		width: 105px;
+		}
+		
+p.postinfo {
+		text-align: right;
+		padding:10px 10px 5px 5px;
+		font-size:70%;
+		margin:0;
+}
+		
+.label h2 {
+	color:#12127D;
+	font-size:140%;
+	background:#ffB200;
+	text-shadow:white 2 0 2px;
+	padding:5px;
+	margin:0;
+	font-family:Georgia, serif;
+	font-weight:normal;
+}
+
+.label img {
+	padding:3px 0;
+}
+
+.label a:link              { color:#1919B3; text-decoration:none; }
+.label a:visited           { color:#9191FF; text-decoration:none; }
+.label a:hover             { color:#12127D; text-decoration:underline; }
+.label a:active            { color:#B37D00; text-decoration:underline; }
+
+
+div.row .value {
+		float: left;
+		width: 440px;
+		text-align: left;
+		padding:0 10px 60px 10px;
+		background:#FFECBF;
+		font-family:Georgia, serif;  font-size:110%;
+		}
+
+.value a:link              { color:#1919B3; text-decoration:none; }
+.value a:visited           { color:#9191FF; text-decoration:none; }
+.value a:hover             { color:#12127D; text-decoration:underline; }
+.value a:active            { color:#B37D00; text-decoration:underline; }
+
+
+#sidebar {
+	background:#FFD980;
+	width:200px;
+	padding:20px 10px 80px 10px;
+	height:100%;
+	text-align:center;
+	float:right;
+	font-size:80%;
+	}
+
+#sidebar a:link              { color:#1919B3; font-weight:normal; text-decoration:underline; }
+#sidebar a:visited           { color:#9191FF; font-weight:bold; text-decoration:none; }
+#sidebar a:hover             { color:#12127D; font-weight:bold; text-decoration:underline; }
+#sidebar a:active            { color:#B37D00; font-weight:bold; text-decoration:underline; }
+	
+div.calendar {
+}
+table.month-calendar {
+	margin-left:auto;
+	margin-right:auto;
+	width:80%;
+}
+
+.month-calendar, .year-calendar {
+	border-collapse:	collapse; 
+}
+.month-calendar-head, .year-calendar-head {
+	background:		#cccccc;
+	font-size:		110%;
+	font-weight:		bold;
+}
+.month-calendar-day-head, .year-calendar-subhead {
+	font-weight:		normal;
+}
+
+.month-calendar-day-noday,
+.month-calendar-day-link,     .year-calendar-month-link,
+.month-calendar-day-nolink,   .year-calendar-month-nolink,
+.month-calendar-day-this-day, .year-calendar-this-month,
+.month-calendar-day-future,   .year-calendar-month-future  {
+	text-align:		center;
+}
+
+.month-calendar-day-future, .year-calendar-month-future {
+	color:			#83660F;
+}
+
+.Saturday, .Sunday {
+	background:		#eeeeee;
+}
+
+.month-calendar-day-this-day, .year-calendar-this-month {
+	background:		#a5e4ff;
+}
+
+</style>
+
+</head>
+
+<body>
+<div id="frame">
+	<div id="heady">
+		<h1>Dan Wood: The Eponymous Weblog <span style="font-size:70%;">(Archives)</span></h1>
+		<p class="bio">
+			<img style="float:right; margin-top:-20px; border:2px solid gray;" src="http://gigliwood.com/weblogpix/dan_wood.jpeg
+" alt="Dan Wood" height="82" width="49" />
+		<i>Dan Wood is co-owner of <a href="http://www.karelia.com/">Karelia Software</a>, creating programs for the Macintosh computer.  He is the father of two kids, lives in the Bay Area of California USA, and prefers bicycles to cars.  This site is his older weblog, which mostly covers geeky topics like Macs and Mac Programming.  <a href="http://gigliwood.com/blog">Go visit the current blog here.</a></i>
+		</p>
+		<p class="description">Useful Tidbits and Egotistical Musings from Dan Wood</p>
+		<p class="categories"> <em>Categories:</em> 
+		<a href="../Business/index.html">Business</a> &middot; 
+		<a href="index.html">Mac OS X</a> &middot; 
+		<a href="../Cocoa/index.html">Cocoa Programming</a> &middot; 
+		<a href="../General/index.html">General</a> &middot; 
+		<a href="../index.html"><b>All Categories</b></a>
+		</p>
+	</div>
+	<div id="sidebar">
+		<h3>Calendar</h3>
+		<div class="calendar">
+			<table class="month-calendar"><caption class="month-calendar-head"><a title="April 2010 (1)" href="../2010/04/index.html">&larr;</a><a title="May 2010 ()" href="../2010/05/index.html">May</a>&rarr;</caption>
+<tr>
+<th class="month-calendar-day-head Sunday">Sun</th>
+<th class="month-calendar-day-head Monday">Mon</th>
+<th class="month-calendar-day-head Tuesday">Tue</th>
+<th class="month-calendar-day-head Wednesday">Wed</th>
+<th class="month-calendar-day-head Thursday">Thu</th>
+<th class="month-calendar-day-head Friday">Fri</th>
+<th class="month-calendar-day-head Saturday">Sat</th>
+</tr>
+<tr>
+<td class="month-calendar-day-noday Sunday">&nbsp;</td>
+<td class="month-calendar-day-noday Monday">&nbsp;</td>
+<td class="month-calendar-day-noday Tuesday">&nbsp;</td>
+<td class="month-calendar-day-noday Wednesday">&nbsp;</td>
+<td class="month-calendar-day-noday Thursday">&nbsp;</td>
+<td class="month-calendar-day-noday Friday">&nbsp;</td>
+<td class="month-calendar-day-nolink Saturday">1</td>
+</tr>
+<tr>
+<td class="month-calendar-day-nolink Sunday">2</td>
+<td class="month-calendar-day-nolink Monday">3</td>
+<td class="month-calendar-day-nolink Tuesday">4</td>
+<td class="month-calendar-day-nolink Wednesday">5</td>
+<td class="month-calendar-day-nolink Thursday">6</td>
+<td class="month-calendar-day-nolink Friday">7</td>
+<td class="month-calendar-day-nolink Saturday">8</td>
+</tr>
+<tr>
+<td class="month-calendar-day-nolink Sunday">9</td>
+<td class="month-calendar-day-nolink Monday">10</td>
+<td class="month-calendar-day-nolink Tuesday">11</td>
+<td class="month-calendar-day-nolink Wednesday">12</td>
+<td class="month-calendar-day-nolink Thursday">13</td>
+<td class="month-calendar-day-nolink Friday">14</td>
+<td class="month-calendar-day-nolink Saturday">15</td>
+</tr>
+<tr>
+<td class="month-calendar-day-nolink Sunday">16</td>
+<td class="month-calendar-day-nolink Monday">17</td>
+<td class="month-calendar-day-nolink Tuesday">18</td>
+<td class="month-calendar-day-nolink Wednesday">19</td>
+<td class="month-calendar-day-nolink Thursday">20</td>
+<td class="month-calendar-day-nolink Friday">21</td>
+<td class="month-calendar-day-nolink Saturday">22</td>
+</tr>
+<tr>
+<td class="month-calendar-day-nolink Sunday">23</td>
+<td class="month-calendar-day-nolink Monday">24</td>
+<td class="month-calendar-day-nolink Tuesday">25</td>
+<td class="month-calendar-day-nolink Wednesday">26</td>
+<td class="month-calendar-day-nolink Thursday">27</td>
+<td class="month-calendar-day-nolink Friday">28</td>
+<td class="month-calendar-day-nolink Saturday">29</td>
+</tr>
+<tr>
+<td class="month-calendar-day-nolink Sunday">30</td>
+<td class="month-calendar-day-this-day Monday">31</td>
+<td class="month-calendar-day-noday Tuesday">&nbsp;</td>
+<td class="month-calendar-day-noday Wednesday">&nbsp;</td>
+<td class="month-calendar-day-noday Thursday">&nbsp;</td>
+<td class="month-calendar-day-noday Friday">&nbsp;</td>
+<td class="month-calendar-day-noday Saturday">&nbsp;</td>
+</tr>
+</table>
+
+		</div>
+
+		<h3><a href="http://amzn.com/w/2663V7TM8IKKC">My Amazon WishList</a></h3>
+
+
+		<p>Subscribe:
+		   <a href="http://gigliwood.com/weblog/index.rss" title="RSS Feed for this category; drag link into a news reader program."><img  src="http://gigliwood.com/weblogpix/rss.gif" alt="RSS" border="0" /></a>
+		</p>
+		<p>
+				<a href="mailto: dan at this domain">Feedback</a></i>
+		</p>
+		
+		<p>
+			<b>Also on this website</b>
+			<a href="http://gigliwood.com/abcd/">A Basic Course in Dvorak</a> &middot;
+			<a href="http://gigliwood.com/kenwood/Pickle/">The Pickle Machine</a> &middot;
+			<a href="http://gigliwood.com/mentos/">The Mentos Gallery</a> &middot;
+			<a href="http://gigliwood.com/tabletester">Cocoa Table Tester</a> &middot;
+			<a href="http://gigliwood.com/wedding">Making your Wedding Make a Difference</a> &middot;
+			</p>
+		<p>
+			<b>Sites I also work on</b>
+			<a href="http://www.bikealameda.org/">BikeAlameda</a> &middot;
+			<a href="http://progala.blogspot.com/">A Progressive Alamedan (my political blog)</a> &middot;
+			<a href="http://www.karelia.com/">Karelia Software</a>
+		</p>
+		
+		<p>
+			<b>I'm also here:</b>
+			<a href="http://twitter.com/danwood">danwood</a> on Twitter
+		</p>
+	</div> <!-- end sidebar -->
+
+	<div id="contentcenter">
+
+
+
+
+
+<div class="dateHeader">Thu, 01 Apr 2010</div>
+<div class="item">
+	<div class="row">
+		<div class="label">
+			<h2>"Nighthawks" fixed for 10.6.3</h2>
+			<p class="postinfo">
+				<a href="nighthawks.html">permanent link</a>
+				&middot; Topic<a href="../MacOSX/">/MacOSX</a>
+				<br />
+				<a href="../MacOSX/"><img border="0" src="http://gigliwood.com/weblogpix/MacOSX.gif" alt="/MacOSX" /></a>
+				
+			</p>
+		</div>
+		<div class="value"><p>
+<img width="200" height="182" style="float:right; margin-left:10px;" src="http://gigliwood.com/weblogpix/NightHawks-in-Chicago.JPG" alt="Nighthawks at the Chicago Art Institute" />
+
+I love <i><a href="http://www.artic.edu/artaccess/AA_Modern/pages/MOD_7.shtml#">Nighthawks</a></i> by Edward Hopper.  So while I was pleased to see that Apple included the image (along with several other classic paintings) as desktop backgrounds in Snow Leopard, I was extremely disappointed that the quality of the image was just <b>terrible</b>.
+</p>
+<p>
+I got the see the original at the Chicago Art Institute when I was at C4 last year, and I couldn't stand that the Mac, which stands for aesthetics, could have such a horrible image. You could even see artifacts from what looked like a broken digital scanner!
+</p>
+
+<p>
+
+So, like any programmer would do, I filed a bug report &lt;<a href="rdar://7152962">rdar://7152962</a>&gt; about it.
+</p>
+<p>
+I'm pleased to see that <i>Nighthawks</i> has been fixed in Snow Leopard 10.6.3.  The new image is awesome.
+</p>
+<p>
+<img src="http://gigliwood.com/weblogpix/nighthawks-comparison.png" alt="Comparison of Nighthawks in 10.6.2 vs. 10.6.3" />
+</p>
+<p>
+Compare the overall picture at 10,000 feet.  The new version is on the right; its colors are richer and it is cropped differently; you can see the yellow door on the right, though you see one fewer window in the building in the background.
+</p>
+<p>But you really can see the differences in the details. Check out the detail of the couple, shown at 100% size. Notice the odd horizontal lines in the first image; the new image is vastly improved!
+</p>
+<p>
+<img src="http://gigliwood.com/weblogpix/Nighthawks-detail-10.6.2.jpg" alt="Nighthawks, detail, in 10.6.2" />
+<br />
+Nighthawks in 10.6.2
+</p>
+<p>
+<img src="http://gigliwood.com/weblogpix/Nighthawks-detail-10.6.3.jpg" alt="Nighthawks, detail, in 10.6.3" />
+<br />
+Nighthawks in 10.6.3
+</p>
+<p>
+(When originally filing the bug report, I found <a href="http://kulturportfolioeinmalanders.files.wordpress.com/2009/03/hopper-nighthawks1.jpg">this version</a>, embedded in <a href="http://kulturportfolioeinmalanders.wordpress.com/2009/03/30/edward-hopper/">this page</a>; it's very high in detail but a bit over-sharpened for my taste. Still, it's useful to see it in its uncropped glory; notice that there are four windows visible in the background building.)
+</p>
+<p>
+Thanks for fixing it, Apple!
+</p>
+</div>
+	</div>
+</div>
+<div class="dateHeader">Fri, 08 Aug 2008</div>
+<div class="item">
+	<div class="row">
+		<div class="label">
+			<h2>Beta Season</h2>
+			<p class="postinfo">
+				<a href="Beta_Season.html">permanent link</a>
+				&middot; Topic<a href="../MacOSX/">/MacOSX</a>
+				<br />
+				<a href="../MacOSX/"><img border="0" src="http://gigliwood.com/weblogpix/MacOSX.gif" alt="/MacOSX" /></a>
+				
+			</p>
+		</div>
+		<div class="value"><p>At Karelia, we will be releasing a couple of new bit of software, and I'm looking for people to try to break things!</p>
+<p>Next week, we are planning on releasing a new 1.1.1 version of the standalone <a href="http://www.karelia.com/imedia/">Karelia iMedia Browser</a>.  The many people working on this code &mdash;&#160;more on that below &mdash;&#160;have apparently fixed a lot of "crash" kinds of bugs, but I'd like to really see if that is true!</p>
+<p>If you have a few minutes to explore this handy utility, could you <a href="http://www.karelia.com/beta/iMediaBrowser.dmg">download it here</a> and exercise it a bit?  See if you find any problems.  There is a built-in feedback reporter and problem reporter so if you do encounter any issues, please report them so we can track them down.</p>
+<p>While I'm here, I want to gush for a minute about the open-source community that has rallied around the <a href="http://imedia.googlecode.com/">iMedia Browser Framework</a>, the guts of this utility that is being used in a number of applications.  There are about a dozen developers who have contributed code to this, but I wanted to give a big shout-out to the folks at <a href="http://plasq.com/">Plasq</a> and <a href="http://www.boinx.com/">Boinx</a> for their amazing contributions of late.  They are making this a more useful and stable bit of code on an almost daily basis.</p>
+<p>In a few weeks, we are planning on releasing a new Sandvox, which we hope will have some amazing stability improvements over the current version.  If you have Sandvox and you'd like to see what the new version has to offer, or you don't have Sandvox and you want to give it a spin, this is a good chance to kick its tires.  We've had a few reports of "hanging" that we are trying to solve before we can certify it for release.  (We've added a lot of extra logging to help us track down some of these issues.)  So if you have a few minutes to try it out, I'd appreciate it! <a href="http://www.karelia.com/sandvox-beta.html">Download it here.</a>  And send in your feedback using the menu items from the Sandvox menu.
+</p>
+<p><i>Thanks!</i></p></div>
+	</div>
+</div>
+<div class="dateHeader">Tue, 19 Feb 2008</div>
+<div class="item">
+	<div class="row">
+		<div class="label">
+			<h2>Making a screencast with ScreenFlow</h2>
+			<p class="postinfo">
+				<a href="Making_a_screencast.html">permanent link</a>
+				&middot; Topic<a href="../MacOSX/">/MacOSX</a>
+				<br />
+				<a href="../MacOSX/"><img border="0" src="http://gigliwood.com/weblogpix/MacOSX.gif" alt="/MacOSX" /></a>
+				
+			</p>
+		</div>
+		<div class="value"><p>
+When we were exhibiting at Macworld Expo last month, we got the idea to make a screencast to show how we used <a href="http://www.sandvox.com/">Sandvox</a> to create our <a href="http://www.karelia.com/">Karelia Software</a> website because several people said they hadn't realized our own site was built with our product.  Hey, we "eat our own dogfood" but I guess it's not obvious!
+</p>
+<p>
+We didn't act on it right away &mdash; the thought of doing a big production like we did for our <a href="http://www.karelia.com/screencast.html">Sandvox Introductory Screencast</a>  (We hired <a href="http://www.clickablebliss.com/consulting/screencast_production">Clickable Bliss</a> to make that for us) was a bit daunting.  I was really hoping for a tool that would make it easy to create some informal screencasts from time to time.
+</p>
+<p>
+Last week, Vara Software, an indie company based here in the Bay Area, introduced <a href="http://www.varasoftware.com/products/screenflow/">ScreenFlow</a>.  I immediately gave it a try, and I was quite impressed.  It's a Leopard-only application (so plenty of good  visuals and animation effects) and it is <i>very</i> nice.  I dove into it for a couple of half-days, and I managed to create a screencast pretty quickly.  It's not as polished as our main screencast, but I was able to get it looking pretty good!
+</p>
+<p>
+After having  a few false starts in which I struggled trying to narrate while going through my script, I read <a href="http://www.37signals.com/svn/posts/775-ask-37signals-how-do-you-make-screencast-videos">one piece of advice</a> about how to make a screencast.  Technology aside, the advice was: write the script, read it, and <i>then</i> "shoot" the screencast while listening to the voiceover track.   I was much more relaxed after splitting the job into the "audio" and "video" portions.
+</p>
+<p>
+The contents of this screencast are more about "showing" than "doing" since we have an already-built website.  I was able to work in a couple of edits to the site within the screencast, most notably the insertion of a new entry in <a href="http://www.karelia.com/news/">Karelia's Weblog</a>  highlighting the new screencast.  A bit self-referential, if you ask me!
+</p>
+<p>
+Post-production was where I needed to make the most intense use of ScreenFlow, to add in the title cards, remove flubs in what I said or what I did, and try to synchronize the words with the action.  I could definitely feel that ScreenFlow was a "young" application (Vara just released 1.0.1 while I was in the process of editing) but I'm sure that most of the shortcomings I found (especially in manipulating the tracks) will be addressed soon.
+</p>
+<p>
+I was very impressed with the ability to do transitions.  The approach is quite unlike, say, iMovie, but it's pretty intuitive.  I was able to whip up some nice graphics using <a href="http://www.flyingmeat.com/acorn/">Acorn</a> and import them into my screencast at the beginning and end.  There were a number of cool features that ScreenFlow provides that I didn't even take advantage of; perhaps I'll try them next time around.
+</p>
+<p>
+I think <a href="http://www.karelia.com/news/new_screencast_how_the_kare.html">the resulting screencast</a> came out really well, especially considering how quickly I was able to put it together.  I'm looking forward to doing more screencasts in the future with ScreenFlow.  Anybody have any suggestions for what Sandvox topics to cover?
+</p>
+<p style="text-align:center;">
+<a href="http://www.karelia.com/news/new_screencast_how_the_kare.html"><img src="http://gigliwood.com/weblogpix/screenflow.png" /></a>
+</p>
+</div>
+	</div>
+</div>
+<div class="dateHeader">Mon, 09 Jul 2007</div>
+<div class="item">
+	<div class="row">
+		<div class="label">
+			<h2>Tech Support Help Wanted</h2>
+			<p class="postinfo">
+				<a href="Tech_Support_Help_W.html">permanent link</a>
+				&middot; Topic<a href="../MacOSX/">/MacOSX</a>
+				<br />
+				<a href="../MacOSX/"><img border="0" src="http://gigliwood.com/weblogpix/MacOSX.gif" alt="/MacOSX" /></a>
+				
+			</p>
+		</div>
+		<div class="value"><p>From <a href="http://www.karelia.com/news/help_wanted_tech_support.html">The Karelia Blog</a>:
+</p>
+<blockquote>
+<p>Are you a savvy Mac/Sandvox user with a couple of hours of spare time each day to help other Sandvox users? We're looking for a friendly person to work as a contractor to perform front-line technical support for Sandvox.</p>
+<p>
+</p>
+<p>Prior experience with technical support is not necessary; we have procedures in place that will make it easy to do the job. What is required is a thorough understanding of Sandvox, consistent time availability (about two hours a day, 5 to 7 days a week), problem-solving abilities, excellent English communication, and good skills dealing with other people (over email, using our web-based support system). &nbsp;Communication with the other Karelia folks would be done over email, chat, and voice; the support work can be performed at home or anywhere!</p>
+<p>
+</p>
+<p>If you are interested in becoming a part of the Karelia team, <a href="http://www.karelia.com/contact_us.html">drop us a line</a>.</p>
+</blockquote></div>
+	</div>
+</div>
+<div class="dateHeader">Thu, 22 Mar 2007</div>
+<div class="item">
+	<div class="row">
+		<div class="label">
+			<h2>LazyWeb: A Keychain item that won't unlock?</h2>
+			<p class="postinfo">
+				<a href="LazyWeb__A_Keychain.html">permanent link</a>
+				&middot; Topic<a href="../MacOSX/">/MacOSX</a>
+				<br />
+				<a href="../MacOSX/"><img border="0" src="http://gigliwood.com/weblogpix/MacOSX.gif" alt="/MacOSX" /></a>
+				
+			</p>
+		</div>
+		<div class="value"><p>
+Has anybody seen this before?  In Keychain Access, there are many items that I can't unlock to see the current password.  Clicking on the "show password" checkbox, which normally should ask you permission and then show the current password in the field next to the checkbox, has no effect ... clicking the checkbox registers briefly, but the checkbox won't stay checked.
+</p>
+			<object classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B"
+					width="150"
+					height="49"
+					codebase="http://www.apple.com/qtactivex/qtplugin.cab">
+				<param name="src" value="http://gigliwood.com/weblogpix/keychain%20clicking.mov">
+				<param name="autoplay" value="true" />
+				<param name="controller" value="false" />
+				<param name="kioskmode" value="true" />
+				<param name="loop" value="true" />
+				<param name="scale" value="tofit" />
+				<param name="type" value="video/quicktime" />
+				<param name="pluginspage" value="http://www.apple.com/quicktime/download/indext.html" />
+				<embed src="http://gigliwood.com/weblogpix/keychain%20clicking.mov"
+					width="150"
+					height="49"
+					scale="tofit"
+					autoplay="true"
+					controller="false"
+					kioskmode="true"
+					loop="true"
+					type="video/quicktime"
+					pluginspage="http://www.apple.com/quicktime/download/indext.html"></embed></object>
+<p>
+I've tried repairing the keychain with "Keychain First Aid" but it checks out just fine....
+</p>
+<p>
+Any ideas on what might be happening?  I sort of want to be able to access these items...
+</p>
+</div>
+	</div>
+</div>
+<div class="dateHeader">Wed, 14 Mar 2007</div>
+<div class="item">
+	<div class="row">
+		<div class="label">
+			<h2>Fun with the Mac: Race Spotlight!</h2>
+			<p class="postinfo">
+				<a href="Fun_with_the_Mac__R.html">permanent link</a>
+				&middot; Topic<a href="../MacOSX/">/MacOSX</a>
+				<br />
+				<a href="../MacOSX/"><img border="0" src="http://gigliwood.com/weblogpix/MacOSX.gif" alt="/MacOSX" /></a>
+				
+			</p>
+		</div>
+		<div class="value"><p>
+Spotlight on the Mac is useful, but it's still terribly slow, especially at finding Applications, I've found.  I have come up with a little game:
+</p>
+<ul>
+<li>
+Type the name of the application you want in the Spotlight menu, and hit return.
+</li>
+<li>
+Then start navigating in the Finder to the folder/subfolder where you think your application will be.
+</li>
+</ul>
+<p>
+Which one wins?  Almost always, the manual navigation.
+</p>
+<p>Maybe I should try LaunchBar or QuickSilver again....</p>
+</div>
+	</div>
+</div>
+<div class="dateHeader">Thu, 18 Jan 2007</div>
+<div class="item">
+	<div class="row">
+		<div class="label">
+			<h2>Screen Mimic 2.0</h2>
+			<p class="postinfo">
+				<a href="Screen_Mimic_2.0.html">permanent link</a>
+				&middot; Topic<a href="../MacOSX/">/MacOSX</a>
+				<br />
+				<a href="../MacOSX/"><img border="0" src="http://gigliwood.com/weblogpix/MacOSX.gif" alt="/MacOSX" /></a>
+				
+			</p>
+		</div>
+		<div class="value"><p>
+I hadn't heard of this <a href="http://www.polarian.com/products/ScreenMimic.php">Screen Mimic</a> before today, but the timing is perfect &mdash; I was just wishing for an application like this <i>yesterday</i>.  I am often in the need to make up a quick little screencast (of course not as polished as the <a href="http://www.karelia.com/screencast.html">Sandvox demo</a>) with live voice recording, so I can explain what I'm doing on my Mac.
+</p>
+<p>
+This is a really slick, useful program.  I can record a fixed area or have the window follow my mouse.  My clicks and my drags can be superimposed (with a little circle) so it's clearer what I'm doing.  (Maybe it needs the ability to also indicate that with sound effects!)
+</p>
+<p>
+What's really cool is that its author, Lee Falin, was <a href="http://www.leefalin.com/2005/12/12/how-i-got-started-in-cocoa-programming/">inspired to become an indie Mac developer</a> after hearing a panel that I put together at an O'Reilly Mac OS X conference.  (Oliver Breidenbach <a href="http://www.oreillynet.com/mac/blog/2007/01/lee_falin_how_i_got_started_in.html?CMP=OTC-13IV03560550&amp;ATT=Lee+Falin+How+I+got+started+in+Cocoa+Programming">mentioned this today</a> over on MacDevCenter.)
+</p>
+</div>
+	</div>
+</div>
+<div class="dateHeader">Mon, 15 Jan 2007</div>
+<div class="item">
+	<div class="row">
+		<div class="label">
+			<h2>Karelia Software Announces the iPhone Developer's Kit</h2>
+			<p class="postinfo">
+				<a href="Karelia_Software_An.html">permanent link</a>
+				&middot; Topic<a href="../MacOSX/">/MacOSX</a>
+				<br />
+				<a href="../MacOSX/"><img border="0" src="http://gigliwood.com/weblogpix/MacOSX.gif" alt="/MacOSX" /></a>
+				
+			</p>
+		</div>
+		<div class="value"><p>
+OK, just kidding.  This post is actually a recap of last week's Macworld Expo activity.
+</p>
+<p>
+The headline is a joke that I came up with at the "Mac Small Business" gathering last Wednesday.  Fellow developers and the few Apple employees there appreciated the idea that maybe if Karelia software announced a developer's kit, then Apple would be quick to get one released.  :-)
+</p>
+<p>
+The iPhone-lacking-a-developer's kit issue has become a big issue on the internets; I'm glad I'm not alone in wishing that one could develop software for it.  That's what I do for a living, and the iPhone is a droolworthy mini-micro-computer that is just begging for third-party add-ons.
+</p>
+<p>
+In any case, the iPhone may have been big news, but it only a tiny part of my week.  I arrived at the Expo on Wednesday; immediately before entering I bumped into StuFF mc of <a href="http://www.pomcast.com/">Pomcast</a>; he had interviewed us a while back about Sandvox.  I then spent most of the day wandering around the booths.  One of the best activities on the show floor is running into old friends, many from my days working with BMUG in the early days of the Macintosh.  I checked out the booths run by developers whom I know; many like <a href="http://www.memoryminer.com/">MemoryMiner</a> were at small "pod" booths and a few, like <a href="http://plasq.com/">Plasq</a>, had a larger setup.  (I find that the large booths run by the big companies are usually much less interesting than to the smaller ones run by small companies!)
+</p>
+<p>
+Wednesday evening, there were three events I wanted to go to.  I was scheduled to do a demonstration of Sandvox at a BoF (Birds-of-a-Feather) gathering hosted by <a href="http://www.dori.com/">Dori Smith</a>.  Alas, the video projection equipment had been taken away.  So I headed over to the aforementioned Mac Small Business gathering, which was a great opportunity to connect and re-connect with fellow developers who also wear the business-owner hat.  One of my more interesting conversations was with Paul of <a href="http://rogueamoeba.com/">Rogue Amoeba</a>, who had organized the very successful <a href="http://macsanta.com/">MacSanta</a> event a few weeks ago.  After that petered out, I went literally around the corner to another restaurant to spend some time with some other friends who had a big gathering there.
+</p>
+<p>
+Friday, I headed back into San Francisco for more fun.  I had a lunch meeting scheduled with a well-known User Interface Guru from Apple to pick his brain and get ideas for the UI of the next generation of our application.  We got a bit sidetracked, and instead he picked <i>my</i> brain about how can Apple's developer program be improved, including its website and developer conference.  It was fun to provide constructive feedback and brainstorm some ideas.  We ran out of time before we could talk about User Interface, so we'll have to set up another meeting down the road.
+</p>
+<p>
+After lunch, I wandered around some of the "pods" that I had missed on Wednesday.  On <a href="http://www.inessential.com/2007/01/10.php">Brent's recommendation</a>, I visited Dan of <a href="http://www.stuntsoftware.com/">Stunt Software</a>.  Some very nice stuff from a small shop!  I also stumbled upon a cool-looking offsite backup utility called <a href="http://www.crashplan.com/">CrashPlan</a> when <a href="http://www.zocalocoffeehouse.com/">Tim</a> beckoned me over.  This is an application that looks like it is going somewhere (and will probably double its usefulness when Leopard, with its "Time Machine" capabilities, is available).
+</p>
+<p>
+Overall, it was a good expo, and even though the SteveNote didn't have any Macintosh content to it, it's clear from the expo floor that the Macintosh software industry is alive and well.
+</p>
+</div>
+	</div>
+</div>
+<div class="dateHeader">Wed, 10 Jan 2007</div>
+<div class="item">
+	<div class="row">
+		<div class="label">
+			<h2>iPhone ... YAAAWWWWWNNN if you can't develop for it</h2>
+			<p class="postinfo">
+				<a href="iPhone_..._YAAAWWWW.html">permanent link</a>
+				&middot; Topic<a href="../MacOSX/">/MacOSX</a>
+				<br />
+				<a href="../MacOSX/"><img border="0" src="http://gigliwood.com/weblogpix/MacOSX.gif" alt="/MacOSX" /></a>
+				
+			</p>
+		</div>
+		<div class="value"><p>
+<img src="http://gigliwood.com/weblogpix/iphone_in_jail.jpg" style="float:right; padding:0 0 10px 10px;" />
+Yes, that's right.  YAAAWWWWWNNN to the iPhone.
+</p>
+<p>
+Sure, it has nice eye candy, and you can do a lot with it.  But it isn't that different from a lot of the other over-functional cellphone/PDA/Camera combinations out there as far as what it can do.
+</p>
+<p>
+What would set it apart would be if one could develop software for it in Cocoa.  But apparently that's not in Apple's plans.  From <a href="http://www.macintouch.com/specialreports/sf2007/">Macintouch</a>:
+</p>
+<blockquote>
+The only two iPhones at the show were under glass, and Apple representatives said it is a "closed platform", refusing even to identify the specific processor it uses, and there's apparently no developer kit for it, though "developers who want to do applications [for the iPhone] are welcome to contact Apple developer relations."
+</blockquote>
+<p>
+If they are really going to make this a closed-platform appliance, then I really do understand why they are not longer "Apple Computer, Inc."  It would be the nail on the coffin for Mac OS X as a computer platform.  If they are not going to open up the iPhone for development, then they might as well take the next logical step and release their next set of iMacs to also be appliances that one cannot develop software for.  With iLife and Dashboard pre-installed, who needs anything else?  Though this is a bit of a hyperbole, that seems to be the attitude.
+</p>
+<p>
+Me?  I'm going to be <a href="http://developer.apple.com/contact/">contacting Apple developer relations</a> and giving them my perspective.  Perhaps I'm not the only developer who would like to come up with some cool software for this little gadget, and if enough people express their interest in writing software for the device, maybe Apple will change their tune and we'll be learning all about it at WWDC 2007.
+</p>
+<p><b>Update:</b> <a href="http://rentzsch.com/cocoa/iphoneIndieAppDevelopment">Wolf suggests we file a bug report</a>.  Good plan.
+</p></div>
+	</div>
+</div>
+<div class="dateHeader">Wed, 20 Dec 2006</div>
+<div class="item">
+	<div class="row">
+		<div class="label">
+			<h2>itunes 7: turning some artists to "Various Artists"?</h2>
+			<p class="postinfo">
+				<a href="itunes_7__turning_s.html">permanent link</a>
+				&middot; Topic<a href="../MacOSX/">/MacOSX</a>
+				<br />
+				<a href="../MacOSX/"><img border="0" src="http://gigliwood.com/weblogpix/MacOSX.gif" alt="/MacOSX" /></a>
+				
+			</p>
+		</div>
+		<div class="value"><p>
+Is this a bug in iTunes 7?  Anybody else having this happen?
+</p>
+<p>
+I've noticed that many albums in my library have lost their "Artist" value, being replaced with "Various Artists".  So what used to be albums of songs now are split into multiple albums, or in the case here, just two songs of an album have lost their artist:</p>
+<p>
+<img src="http://gigliwood.com/weblogpix/itunes7.png" alt="itunes screenshot" />
+</p></div>
+	</div>
+</div>
+<div class="dateHeader">Tue, 19 Dec 2006</div>
+<div class="item">
+	<div class="row">
+		<div class="label">
+			<h2>Ho Ho Ho, Santa is here for independent Mac software</h2>
+			<p class="postinfo">
+				<a href="HoHoHo.html">permanent link</a>
+				&middot; Topic<a href="../MacOSX/">/MacOSX</a>
+				<br />
+				<a href="../MacOSX/"><img border="0" src="http://gigliwood.com/weblogpix/MacOSX.gif" alt="/MacOSX" /></a>
+				
+			</p>
+		</div>
+		<div class="value"><p>
+This is all over the blogsphere, but I thought I'd mention it here.
+<a href="http://www.macsanta.com/">MacSanta</a> is a grassroots
+website that popped up yesterday.  Within the period of a day or so,
+dozens of independent software companies have added their wares to
+this site. All of the products listed below are available for a 20%
+discount using a coupon code of MACSANTA.
+</p>
+<p>
+Naturally, Sandvox is there.  But some of my other favorite companies and
+products are listed there as well. There are dozens more applications  
+that I <i>haven't</i> heard of than I could have imagined.  This is a
+great starting point for all your Mac Geek Christmas shopping!
+</p>
+</div>
+	</div>
+</div>
+<div class="dateHeader">Thu, 05 Oct 2006</div>
+<div class="item">
+	<div class="row">
+		<div class="label">
+			<h2>NetNewsWire hint: preventing certain feeds from going through NewsGator</h2>
+			<p class="postinfo">
+				<a href="NetNewsWire_hint__p.html">permanent link</a>
+				&middot; Topic<a href="../MacOSX/">/MacOSX</a>
+				<br />
+				<a href="../MacOSX/"><img border="0" src="http://gigliwood.com/weblogpix/MacOSX.gif" alt="/MacOSX" /></a>
+				
+			</p>
+		</div>
+		<div class="value"><p>
+Here's a cool hint I learned from Brent Simmons.
+</p>
+<p>
+Some of the feeds I use in NetNewsWire are private feeds (code checkin notifications, support inquiries, etc.) that don't really make sense going through NewsGator.  I don't want any delays from NewsGator's caching.
+</p>
+<p>
+The "feature" in the current NetNewsWire is that if you add a feed while syncing is turned off, it won't be synced.  So if you have a local feed, turn off syncing temporarily, add the feed, and then turn syncing back on.
+</p>
+<p>
+Thanks, Brent!
+</p></div>
+	</div>
+</div>
+	</div> <!-- end contentCenter -->
+</div> <!-- end frame -->
+
+</body>
+</html>
+

@@ -1,0 +1,68 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>The Difficulty of Setting Up a New Installation</title>
+</head>
+<body>
+<h1>The Difficulty of Setting Up a New Installation</h1>
+
+
+<p>
+Being a developer, one thing that I need to do more than the average user (I hope) is to re-install the operating system.  As a new major operating system version gets close to release (e.g Tiger, which is supposedly due any time between two weeks and three months from now), I find myself installing the new builds every week or two.  And let me tell you: <em>it's really tedious.</em>
+</p>
+<p>
+Over the years, I've built up a document that I refer to (and modify as needed) every time I do an installation.  It takes about a half an hour after I get the operating system installed to where I can actually get back to work!
+</p>
+<p>
+The main reason that this is so tedious is that there are so many applications and extensions that I use that are (by default at least) installed on top of the operating system, as opposed to in my account.  And that a lot of tweaks require editing the system files, which of course get rewritten when I do a fresh installation.
+</p>
+<p>
+Another thing which makes this tedious is that so many items need to be installed from the user interface, as opposed to from the command line.  And even if they could be installed from the command line, it would take a lot of work to figure out how to "convert" those operations &mdash; which are easy to do with the mouse &mdash; to a script.
+</p>
+<!-- more -->
+<p>
+Here is my current "to do each installation" list, edited a bit for brevity and clarity, plus lots of commentary.
+</p>
+<ul>
+<li>Install the OS.  (I tend to do clean installations, which is often a requirement if doing developer builds.  Since I keep my home directory on a different partition, I don't have to worry about copying any useful data off of the system volume first, which saves a lot of hassle.)  Customize the installation so that it doesn't install the unnecessary (for me) Asian fonts, printer drivers, and language packages.  Create an initial "Admin" user, and quit (command-Q) when the installer ask me to register with them.</li>
+<li>Install the developer tools that come with the operating system.  (Useful since I'm a developer!)  Customize the installation to avoid the packages I don't need, like Java development.</li>
+<li>Launch the terminal (keeping it in the dock for easy future access), and remove the developer packages that I know I will not need. I paste in the following lines. (I'm considering finding more files at some point to reduce the clutter even more.)
+<blockquote><tt><pre>
+sudo find /Library/Application\ Support/Apple/Developer\ Tools -name '*Java*' -exec rm -rf {} \;
+sudo find /Library/Application\ Support/Apple/Developer\ Tools -name '*Sherlock*' -exec rm -rf {} \;
+</pre></tt></blockquote>
+</li>
+<li>Install from a bunch of installer packages.  I try to keep these installer package files around on a separate hard drive partition so they are easy to get to, or check their web sites to see if there is a new version I can install:
+    <ul>
+	    <li><a href="http://www.codingmonkeys.de/mbo/">Subversion</a> installer package</li>
+		<li>Classic Support, from the CPU_Classic.pkg file (from the "additional software" CD)</li>
+		<li><a href="http://www.grantedsw.com/p-vision/">Peripheral Vision</a>; I keep the registration code handy so I can register it right away</li>
+		<li>The driver for my <a href="http://usa.kyoceramita.com/KMAGlobalpub/jsp/Kyocera/products_printer.jsp?cid=10555">Kyocera Mita</a> printer (which I love!)</li>
+		<li><a href="http://www.stuffit.com/mac/expander/">Stuffit Expander</a> (which I don't use much anymore, but <a href="http://www.cocoatech.com/">Path Finder</a> seems to need this to be installed)</li>
+		<li><a href="http://www.unitkit.org/">UnitKit</a>, which I use for software testing</li>
+		<li>iWork and iLife from the DVDs (though I'm thinking of copying these applications over to another partition so that I don't have to keep installing them)</li>
+    </ul>
+</li>
+<li>Now that all the Apple software is installed, I run Software Update to make sure that I have all the latest updates.</li>
+<li>Run the Printer Setup utility to set up my printer</li>
+<li>Some Apache configuration which I won't bore you with</li>
+<li>Run System Preferences, and set up:
+    <ul>
+	    <li>Mouse tracking speed</li>
+	    <li>Add more user accounts: my main account (which doesn't have administrator privileges, which I prefer to make it harder to clobber system files, and since I want to make sure that the applications I write will work for a non-administrator user) and a "tester" account.</li>
+	    <li>Sharing: Rename computer from its default name, turn on file sharing, web sharing, etc.  Turn on firewall, then open up appropriate ports for Rendezvous/Bonjour sharing, iChat (5060,16384-16403, 17421), <a href="http://www.codingmonkeys.de/subethaedit/">SubEthaEdit</a> (30729).
+	    <li>Network: Set up my configurations</li>
+	    <li>Date/Time: turn on network time server</li>
+	    <li>QuickTime: Set up my connection speed and enter my QT Pro information</li>
+	</ul>
+</li>
+<li>Set up some information in the login window in case the computer is stolen and recovered; this involves editing <tt>/Library/Preferences/com.apple.loginwindow.plist</tt> and adding a string for the key  
+"LoginwindowText"</li>
+<li>In the terminal, add my main account the the sudo'ers list.  Also, set up a soft-link to where my user account really lives, on a separate partition.</li>
+</ul>
+<p>
+Well, there are a few more steps that I need to go through once I'm logged into my main account, but you get the idea.  The point is that I'm sure a lot of this could be avoided by allowing many packages and configurations to be installed in a location that isn't clobbered when you install a new operating system.  Having an easy way to collect up all the changes that were applied so that they can be re-applied later using a script would be nice, too.  Of course, I don't want to spend days and days working on techniques to save me half an hour every few weeks.  But if Apple could come up with a way to streamline system setup process, I'm sure we'd all benefit!
+</p>
+<p>
+If any readers have their own techniques for making a new installation a streamlined process, I'd love to hear about them in the comments.
+</p>

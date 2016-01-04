@@ -1,0 +1,24 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>AppleBugFriday: Premature Activation</title>
+</head>
+<body>
+<h1>AppleBugFriday: Premature Activation</h1>
+
+
+<p>
+Following up on an <a href="http://www.gigliwood.com/weblog/Cocoa/UI_conundrum__An_in.html">earlier post</a> about how to deal with a floating palette, we decided to just stick with the standard floating palette that hides when the application is not frontmost, nothing tricky.
+</p>
+<p>
+For the most part, this is workable for us. We want to be able to drag images into an "image well" in the floating inspector.  The trick is, what to do when the application is not frontmost, and the palette goes away?  Well, as it turns out, in most cases, you can keep Sandvox in the front, and initiate a drag from another application, still in the background, and the drag will not cause the palette to disappear, because Sandvox stays in the foreground.
+</p>
+<p>
+Well, that works with drags from, say, Finder, Safari, TextEdit, Mail, and so forth.  But it <em>doesn't</em> work with drags from iPhoto and a few others.
+</p>
+<p>
+When you start a drag from an iPhoto window in a layer behind the frontmost application, it immediately pops to the front!  And in doing so, sending Sandvox behind, the palette we were trying to target disappears.
+</p>
+<p>
+That is the essence of my Friday report to Apple, Radar ID <a href="rdar://4281046">4281046</a>.
+</p>

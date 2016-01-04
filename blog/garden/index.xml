@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/">
+ 	<channel>
+		<title>Garden | Dan Wood: The Eponymous Blog</title>
+		<link>http://gigliwood.com/blog/garden/</link>
+		<description></description>
+		<language>en</language>
+		<lastBuildDate>Thu, 18 Oct 2012 22:22:56 -0700</lastBuildDate>
+		<docs>http://blogs.law.harvard.edu/tech/rss</docs>
+		<generator>Sandvox 2.7</generator>
+		<item>
+			<title>garden.jpg</title>
+			<link>http://gigliwood.com/blog/garden/gardenjpg.html</link>
+			<description>
+				&lt;div class="article-summary"&gt;&lt;p&gt;For reference, this is what we, as members of &lt;em&gt;Homo Sapiens&lt;/em&gt;, can see. This garden is naturally colored, not artificially colored.
+					&lt;/p&gt;&lt;/div&gt;
+			</description>
+			<pubDate>Tue, 18 Oct 2011 16:59:32 -0700</pubDate>
+			<guid>http://gigliwood.com/blog/garden/gardenjpg.html</guid>
+            <enclosure url="http://gigliwood.com/blog/_Media/garden.jpeg" type="image/jpeg"></enclosure>
+			
+		</item>
+		<item>
+			<title>garden purple.jpg</title>
+			<link>http://gigliwood.com/blog/garden/garden-purplejpg.html</link>
+			<description>
+				&lt;div class="article-summary"&gt;&lt;p&gt;Purples don't get much out of this garden scene!
+					&lt;/p&gt;&lt;/div&gt;
+			</description>
+			<pubDate>Tue, 18 Oct 2011 16:59:32 -0700</pubDate>
+			<guid>http://gigliwood.com/blog/garden/garden-purplejpg.html</guid>
+            <enclosure url="http://gigliwood.com/blog/_Media/garden_purple.jpeg" type="image/jpeg"></enclosure>
+			
+		</item>
+		<item>
+			<title>garden blue.jpg</title>
+			<link>http://gigliwood.com/blog/garden/garden-bluejpg.html</link>
+			<description>
+				&lt;div class="article-summary"&gt;&lt;p&gt;This scene has very little blue in it. Just the flowers that we perceive as purple.
+					&lt;/p&gt;&lt;/div&gt;
+			</description>
+			<pubDate>Tue, 18 Oct 2011 16:59:32 -0700</pubDate>
+			<guid>http://gigliwood.com/blog/garden/garden-bluejpg.html</guid>
+            <enclosure url="http://gigliwood.com/blog/_Media/garden_blue.jpeg" type="image/jpeg"></enclosure>
+			
+		</item>
+		<item>
+			<title>garden green.jpg</title>
+			<link>http://gigliwood.com/blog/garden/garden-greenjpg.html</link>
+			<description>
+				&lt;div class="article-summary"&gt;&lt;p&gt;Greens are fortunate if they like the outdoors.
+					&lt;/p&gt;&lt;/div&gt;
+			</description>
+			<pubDate>Tue, 18 Oct 2011 16:59:32 -0700</pubDate>
+			<guid>http://gigliwood.com/blog/garden/garden-greenjpg.html</guid>
+            <enclosure url="http://gigliwood.com/blog/_Media/garden_green.jpeg" type="image/jpeg"></enclosure>
+			
+		</item>
+		<item>
+			<title>garden yellow.jpg</title>
+			<link>http://gigliwood.com/blog/garden/garden-yellowjpg.html</link>
+			<description>
+				&lt;div class="article-summary"&gt;&lt;p&gt;Yellows can at least make out the yellow components of plants, though it isn't pretty!
+					&lt;/p&gt;&lt;/div&gt;
+			</description>
+			<pubDate>Tue, 18 Oct 2011 16:59:32 -0700</pubDate>
+			<guid>http://gigliwood.com/blog/garden/garden-yellowjpg.html</guid>
+            <enclosure url="http://gigliwood.com/blog/_Media/garden_yellow.jpeg" type="image/jpeg"></enclosure>
+			
+		</item>
+		<item>
+			<title>garden orange.jpg</title>
+			<link>http://gigliwood.com/blog/garden/garden-orangejpg.html</link>
+			<description>
+				&lt;div class="article-summary"&gt;&lt;p&gt;Oranges get to see the yellow part of nature, but will also benefit from being able to see red.
+					&lt;/p&gt;&lt;/div&gt;
+			</description>
+			<pubDate>Tue, 18 Oct 2011 16:59:32 -0700</pubDate>
+			<guid>http://gigliwood.com/blog/garden/garden-orangejpg.html</guid>
+            <enclosure url="http://gigliwood.com/blog/_Media/garden_orange.jpeg" type="image/jpeg"></enclosure>
+			
+		</item>
+		<item>
+			<title>garden red.jpg</title>
+			<link>http://gigliwood.com/blog/garden/garden-redjpg.html</link>
+			<description>
+				&lt;div class="article-summary"&gt;&lt;p&gt;Reds are at the bottom of the pecking order. Except for the greys, of course.
+					&lt;/p&gt;&lt;/div&gt;
+			</description>
+			<pubDate>Tue, 18 Oct 2011 16:59:32 -0700</pubDate>
+			<guid>http://gigliwood.com/blog/garden/garden-redjpg.html</guid>
+            <enclosure url="http://gigliwood.com/blog/_Media/garden_red.jpeg" type="image/jpeg"></enclosure>
+			
+		</item>
+		<item>
+			<title>garden gray.jpg</title>
+			<link>http://gigliwood.com/blog/garden/garden-grayjpg.html</link>
+			<description>
+				&lt;div class="article-summary"&gt;&lt;p&gt;For greys, the world is monochromatic. Except for artificially colored objects, however that works!
+					&lt;/p&gt;&lt;/div&gt;
+			</description>
+			<pubDate>Tue, 18 Oct 2011 16:59:32 -0700</pubDate>
+			<guid>http://gigliwood.com/blog/garden/garden-grayjpg.html</guid>
+            <enclosure url="http://gigliwood.com/blog/_Media/garden_gray.jpeg" type="image/jpeg"></enclosure>
+			
+		</item>
+ 	</channel>
+</rss>

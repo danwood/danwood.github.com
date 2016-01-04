@@ -1,0 +1,49 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>WebKit: Forcing included files not to be cached</title>
+</head>
+<body>
+<h1>WebKit: Forcing included files not to be cached</h1>
+
+
+<p>
+When I have a development "stumper", I first search around on <a href="http://www.cocoabuilder.com/">CocoaBuilder</a> and <a href="http://www.cocoadev.com/">CocoaDev</a> to see if anybody else has asked and answered the same question.  Most of the time, I can find the answer there.  Or I can try posting a question to the lists, or asking around of some developers I know.  When all else fails, and I really need help, I use up one of the technical support incidents that comes with my Apple Developer Connection membership.  These don't come cheap, so they are a last resort.
+</p>
+<p>
+I've lately been doing some development with WebKit to display some HTML, and I've been looking for a way to prevent the display of a page from caching the files that it includes (images, stylesheets, javascript files, etc.).  Normally caching is fine, but if I'm planning on changing the contents of a file that the page request includes and then reloading the page, the newly-changed file is ignored.
+</p>
+<p>
+So I punted and asked Apple.  And since it's a generic solution, maybe other developers can make use of this little tidbit. So I'm sharing it here.
+</p>
+<!-- more -->
+<p>
+Basically, the way that it works is by intercepting and modifying the request that's about to happen.  You do this by setting the resource load delegate via <code>setResourceLoadDelegate:</code> and implementing <code>webView: resource: willSendRequest: redirectResponse: fromDataSource:</code>.  Here's the salient chunk of code, directly from Apple.
+
+<pre style="overflow:auto;">
+-(NSURLRequest *)webView:(WebView *)sender
+                resource:(id)identifier
+         willSendRequest:(NSURLRequest *)request
+        redirectResponse:(NSURLResponse *)redirectResponse
+          fromDataSource:(WebDataSource *)dataSource
+{
+    // Update the status message
+    [self updateResourceStatus];
+    if ([request cachePolicy] != NSURLRequestReloadIgnoringCacheData)
+    {
+        NSLog(@"changing cache policy for %@", [request URL]);
+        return [NSURLRequest requestWithURL:[request URL]
+                                cachePolicy:NSURLRequestReloadIgnoringCacheData
+                            timeoutInterval:[request timeoutInterval]];
+    } else {
+        return request;
+    }
+}
+</pre>
+</p>
+<p>
+Share and enjoy!
+</p>
+<p>
+<b>Update:</b> This method only works for pages loaded from a URL.  If you load from an HTML string via <code>-[WebFrame loadHTMLString:baseURL:] you're out of luck.
+</p>

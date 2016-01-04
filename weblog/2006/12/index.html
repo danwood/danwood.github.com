@@ -1,0 +1,851 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+		<meta http-equiv="content-type" content="text/html;charset=ISO-8859-1" />
+		<title>Dan Wood: The Eponymous Weblog (Archives) | by Dan Wood, Karelia Software</title>
+		<meta name="description" content="Useful Tidbits and Egotistical Musings from Dan Wood, co-owner of Karelia Software. This blog mostly covers geeky topics like Mac Programming." />
+
+<link rel="alternate" type="application/rss+xml" title="RSS" href="http://gigliwood.com/weblog/index.rss" />
+
+
+
+<style type="text/css">
+
+/* color palette: tinyurl.com/tgq5o */
+
+body {
+	background:#9191FF;
+	margin:0;
+	padding:0;
+	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif; font-size:76%;
+	word-wrap:break-word;
+	}
+
+
+pre { word-wrap:normal !important;
+		font:9px monaco;
+		margin-right:-3px;
+	background:white; padding: 3px; overflow:auto; }
+
+
+.bio { font-size:80%; margin:auto; text-align:center; padding:10px 40px; }
+.description { clear:all; color:white; font-weight:bold; font-size:120%; margin:auto; text-align:center; }
+
+.categories { text-align:center; border-top:1px dashed #888; border-bottom:1px dashed #888; }
+
+#frame {
+	margin-left:auto;
+	margin-right:auto;
+	padding:0px;
+	width:785px;
+	overflow:auto;
+	margin-bottom:80px;
+	}
+	
+#heady {
+	background:#12127D;
+	color:#B37D00;
+	padding:20px 10px 10px 10px;
+}
+
+#heady a:link              { color:#FFB200; text-decoration:underline; }
+#heady a:visited           { color:#FFB200; text-decoration:none; }
+#heady a:hover             { color:#C8C8FF; text-decoration:underline; }
+#heady a:active            { color:#FFFFFF; text-decoration:underline; }
+
+h1, h2, h3, h4 {
+	margin:0;
+}
+
+h1 {
+	padding-bottom:20px;
+	font-weight:normal;
+	font-family:Zapfino, Georgia, serif;
+	text-shadow:white 0 0 20px;
+	text-align:center;
+}
+	
+#contentcenter {
+	width: 565px;
+	}
+
+div.dateHeader {
+	text-align:right;
+	padding:5px;
+	font-weight:bold;
+	}
+
+/* holds one item */
+div.item {
+	background:white;
+	overflow:auto;
+	}
+
+/* sub-holds one item */
+div.row {
+  		}
+
+div.row .label {
+		float: left;
+		width: 105px;
+		}
+		
+p.postinfo {
+		text-align: right;
+		padding:10px 10px 5px 5px;
+		font-size:70%;
+		margin:0;
+}
+		
+.label h2 {
+	color:#12127D;
+	font-size:140%;
+	background:#ffB200;
+	text-shadow:white 2 0 2px;
+	padding:5px;
+	margin:0;
+	font-family:Georgia, serif;
+	font-weight:normal;
+}
+
+.label img {
+	padding:3px 0;
+}
+
+.label a:link              { color:#1919B3; text-decoration:none; }
+.label a:visited           { color:#9191FF; text-decoration:none; }
+.label a:hover             { color:#12127D; text-decoration:underline; }
+.label a:active            { color:#B37D00; text-decoration:underline; }
+
+
+div.row .value {
+		float: left;
+		width: 440px;
+		text-align: left;
+		padding:0 10px 60px 10px;
+		background:#FFECBF;
+		font-family:Georgia, serif;  font-size:110%;
+		}
+
+.value a:link              { color:#1919B3; text-decoration:none; }
+.value a:visited           { color:#9191FF; text-decoration:none; }
+.value a:hover             { color:#12127D; text-decoration:underline; }
+.value a:active            { color:#B37D00; text-decoration:underline; }
+
+
+#sidebar {
+	background:#FFD980;
+	width:200px;
+	padding:20px 10px 80px 10px;
+	height:100%;
+	text-align:center;
+	float:right;
+	font-size:80%;
+	}
+
+#sidebar a:link              { color:#1919B3; font-weight:normal; text-decoration:underline; }
+#sidebar a:visited           { color:#9191FF; font-weight:bold; text-decoration:none; }
+#sidebar a:hover             { color:#12127D; font-weight:bold; text-decoration:underline; }
+#sidebar a:active            { color:#B37D00; font-weight:bold; text-decoration:underline; }
+	
+div.calendar {
+}
+table.month-calendar {
+	margin-left:auto;
+	margin-right:auto;
+	width:80%;
+}
+
+.month-calendar, .year-calendar {
+	border-collapse:	collapse; 
+}
+.month-calendar-head, .year-calendar-head {
+	background:		#cccccc;
+	font-size:		110%;
+	font-weight:		bold;
+}
+.month-calendar-day-head, .year-calendar-subhead {
+	font-weight:		normal;
+}
+
+.month-calendar-day-noday,
+.month-calendar-day-link,     .year-calendar-month-link,
+.month-calendar-day-nolink,   .year-calendar-month-nolink,
+.month-calendar-day-this-day, .year-calendar-this-month,
+.month-calendar-day-future,   .year-calendar-month-future  {
+	text-align:		center;
+}
+
+.month-calendar-day-future, .year-calendar-month-future {
+	color:			#83660F;
+}
+
+.Saturday, .Sunday {
+	background:		#eeeeee;
+}
+
+.month-calendar-day-this-day, .year-calendar-this-month {
+	background:		#a5e4ff;
+}
+
+</style>
+
+</head>
+
+<body>
+<div id="frame">
+	<div id="heady">
+		<h1>Dan Wood: The Eponymous Weblog <span style="font-size:70%;">(Archives)</span></h1>
+		<p class="bio">
+			<img style="float:right; margin-top:-20px; border:2px solid gray;" src="http://gigliwood.com/weblogpix/dan_wood.jpeg
+" alt="Dan Wood" height="82" width="49" />
+		<i>Dan Wood is co-owner of <a href="http://www.karelia.com/">Karelia Software</a>, creating programs for the Macintosh computer.  He is the father of two kids, lives in the Bay Area of California USA, and prefers bicycles to cars.  This site is his older weblog, which mostly covers geeky topics like Macs and Mac Programming.  <a href="http://gigliwood.com/blog">Go visit the current blog here.</a></i>
+		</p>
+		<p class="description">Useful Tidbits and Egotistical Musings from Dan Wood</p>
+		<p class="categories"> <em>Categories:</em> 
+		<a href="../../Business/index.html">Business</a> &middot; 
+		<a href="../../MacOSX/index.html">Mac OS X</a> &middot; 
+		<a href="../../Cocoa/index.html">Cocoa Programming</a> &middot; 
+		<a href="../../General/index.html">General</a> &middot; 
+		<a href="../../index.html"><b>All Categories</b></a>
+		</p>
+	</div>
+	<div id="sidebar">
+		<h3>Calendar</h3>
+		<div class="calendar">
+			<table class="month-calendar"><caption class="month-calendar-head"><a title="November 2006 (1)" href="../11/index.html">&larr;</a><a title="December 2006 (11)" href="index.html">December</a><a title="January 2007 (10)" href="../../2007/01/index.html">&rarr;</a></caption>
+<tr>
+<th class="month-calendar-day-head Sunday">Sun</th>
+<th class="month-calendar-day-head Monday">Mon</th>
+<th class="month-calendar-day-head Tuesday">Tue</th>
+<th class="month-calendar-day-head Wednesday">Wed</th>
+<th class="month-calendar-day-head Thursday">Thu</th>
+<th class="month-calendar-day-head Friday">Fri</th>
+<th class="month-calendar-day-head Saturday">Sat</th>
+</tr>
+<tr>
+<td class="month-calendar-day-noday Sunday">&nbsp;</td>
+<td class="month-calendar-day-noday Monday">&nbsp;</td>
+<td class="month-calendar-day-noday Tuesday">&nbsp;</td>
+<td class="month-calendar-day-noday Wednesday">&nbsp;</td>
+<td class="month-calendar-day-noday Thursday">&nbsp;</td>
+<td class="month-calendar-day-nolink Friday">1</td>
+<td class="month-calendar-day-nolink Saturday">2</td>
+</tr>
+<tr>
+<td class="month-calendar-day-nolink Sunday">3</td>
+<td class="month-calendar-day-nolink Monday">4</td>
+<td class="month-calendar-day-nolink Tuesday">5</td>
+<td class="month-calendar-day-nolink Wednesday">6</td>
+<td class="month-calendar-day-nolink Thursday">7</td>
+<td class="month-calendar-day-nolink Friday">8</td>
+<td class="month-calendar-day-nolink Saturday">9</td>
+</tr>
+<tr>
+<td class="month-calendar-day-nolink Sunday">10</td>
+<td class="month-calendar-day-nolink Monday">11</td>
+<td class="month-calendar-day-nolink Tuesday">12</td>
+<td class="month-calendar-day-nolink Wednesday">13</td>
+<td class="month-calendar-day-nolink Thursday">14</td>
+<td class="month-calendar-day-link Friday"><a title="Friday, 15 December 2006 (1)" href="15/index.html">15</a></td>
+<td class="month-calendar-day-nolink Saturday">16</td>
+</tr>
+<tr>
+<td class="month-calendar-day-nolink Sunday">17</td>
+<td class="month-calendar-day-nolink Monday">18</td>
+<td class="month-calendar-day-link Tuesday"><a title="Tuesday, 19 December 2006 (1)" href="19/index.html">19</a></td>
+<td class="month-calendar-day-link Wednesday"><a title="Wednesday, 20 December 2006 (4)" href="20/index.html">20</a></td>
+<td class="month-calendar-day-nolink Thursday">21</td>
+<td class="month-calendar-day-link Friday"><a title="Friday, 22 December 2006 (3)" href="22/index.html">22</a></td>
+<td class="month-calendar-day-nolink Saturday">23</td>
+</tr>
+<tr>
+<td class="month-calendar-day-nolink Sunday">24</td>
+<td class="month-calendar-day-nolink Monday">25</td>
+<td class="month-calendar-day-nolink Tuesday">26</td>
+<td class="month-calendar-day-nolink Wednesday">27</td>
+<td class="month-calendar-day-link Thursday"><a title="Thursday, 28 December 2006 (1)" href="28/index.html">28</a></td>
+<td class="month-calendar-day-nolink Friday">29</td>
+<td class="month-calendar-day-link Saturday"><a title="Saturday, 30 December 2006 (1)" href="30/index.html">30</a></td>
+</tr>
+<tr>
+<td class="month-calendar-day-nolink Sunday">31</td>
+<td class="month-calendar-day-noday Monday">&nbsp;</td>
+<td class="month-calendar-day-noday Tuesday">&nbsp;</td>
+<td class="month-calendar-day-noday Wednesday">&nbsp;</td>
+<td class="month-calendar-day-noday Thursday">&nbsp;</td>
+<td class="month-calendar-day-noday Friday">&nbsp;</td>
+<td class="month-calendar-day-noday Saturday">&nbsp;</td>
+</tr>
+</table>
+
+		</div>
+
+		<h3><a href="http://amzn.com/w/2663V7TM8IKKC">My Amazon WishList</a></h3>
+
+
+		<p>Subscribe:
+		   <a href="http://gigliwood.com/weblog/index.rss" title="RSS Feed for this category; drag link into a news reader program."><img  src="http://gigliwood.com/weblogpix/rss.gif" alt="RSS" border="0" /></a>
+		</p>
+		<p>
+				<a href="mailto: dan at this domain">Feedback</a></i>
+		</p>
+		
+		<p>
+			<b>Also on this website</b>
+			<a href="http://gigliwood.com/abcd/">A Basic Course in Dvorak</a> &middot;
+			<a href="http://gigliwood.com/kenwood/Pickle/">The Pickle Machine</a> &middot;
+			<a href="http://gigliwood.com/mentos/">The Mentos Gallery</a> &middot;
+			<a href="http://gigliwood.com/tabletester">Cocoa Table Tester</a> &middot;
+			<a href="http://gigliwood.com/wedding">Making your Wedding Make a Difference</a> &middot;
+			</p>
+		<p>
+			<b>Sites I also work on</b>
+			<a href="http://www.bikealameda.org/">BikeAlameda</a> &middot;
+			<a href="http://progala.blogspot.com/">A Progressive Alamedan (my political blog)</a> &middot;
+			<a href="http://www.karelia.com/">Karelia Software</a>
+		</p>
+		
+		<p>
+			<b>I'm also here:</b>
+			<a href="http://twitter.com/danwood">danwood</a> on Twitter
+		</p>
+	</div> <!-- end sidebar -->
+
+	<div id="contentcenter">
+
+
+
+
+
+<div class="dateHeader">Sat, 30 Dec 2006</div>
+<div class="item">
+	<div class="row">
+		<div class="label">
+			<h2>A shell script to look in your receipts</h2>
+			<p class="postinfo">
+				<a href="../../Cocoa/A_shell_script_to_l.html">permanent link</a>
+				&middot; Topic<a href="../../Cocoa/">/Cocoa</a>
+				<br />
+				<a href="../../Cocoa/"><img border="0" src="http://gigliwood.com/weblogpix/Cocoa.gif" alt="/Cocoa" /></a>
+				
+			</p>
+		</div>
+		<div class="value"><p>
+Occasionally I want to find what package a particular Mac OS X tool was installed with.  I don't want to make the mistake of calling a library or tool (using NSTask) that is only installed with developer tools.
+</p>
+<p>
+For instance, you wouldn't want to have a non-developer Cocoa application invoke <tt>/usr/bin/atos</tt> because that is only installed as part of the developer tools, not part of the standard Mac OS X installation.  On the other hand, <tt>/usr/bin/curl</tt> is standard on all Macs (at least in recent years).
+</p>
+<p>
+How do you find out for sure?  One way is to have a mac laying around without developer tools installed.  Sorry, no-go for me!  A better way is to look inside your receipts to see what package the tool in question was installed from.  If it's in <b>Essentials.pkg</b> or <b>BSD.pkg</b> or <b>BaseSystem.pkg</b>, you can probably assume safely that all your users (at least on the version of the OS you are testing) have that tool available.  If it's in some other package, you might have to ensure that the package in question (such as developer tools or a specific Apple-created application) is part of the system requirements for your program.
+</p>
+<p>
+I have been trying to get comfortable in bourne shell scripting lately; here is my little script to find a string inside all of your computer's installation receipts (found in <tt>/Library/Receipts</tt>).  I call it <b>bomfind</b>; use it like <tt>bomfind </tt><i>pattern</i>.
+</p>
+<pre>
+#!/bin/sh
+
+# Go to main receipts directory.  Does not search in home dir.
+cd /Library/Receipts
+
+for PKG in *.pkg
+do
+    pushd "$PKG/Contents" > /dev/null
+    CONTENTS=`lsbom -s Archive.bom | grep $1`
+    if [ ! -z "$CONTENTS" ]; then
+        echo "$PKG:"
+        echo "$CONTENTS"
+        echo
+    fi
+    popd > /dev/null
+done
+</pre></div>
+	</div>
+</div>
+<div class="dateHeader">Thu, 28 Dec 2006</div>
+<div class="item">
+	<div class="row">
+		<div class="label">
+			<h2>Storing Per-Machine Preferences</h2>
+			<p class="postinfo">
+				<a href="../../Cocoa/Storing_Per-Machine.html">permanent link</a>
+				&middot; Topic<a href="../../Cocoa/">/Cocoa</a>
+				<br />
+				<a href="../../Cocoa/"><img border="0" src="http://gigliwood.com/weblogpix/Cocoa.gif" alt="/Cocoa" /></a>
+				
+			</p>
+		</div>
+		<div class="value"><p>
+Occasionally the developer may want to store a preference in User Defaults which is only applicable to a particular machine, meaning that if the application is launched on a different machine, that preference will not be in effect.  Imagine, for instance, a preference to show animation or not that is turned off on a slow machine, but then when the user upgrades to a fast machine and transfers her home directory, the old preference would no longer apply.
+</p>
+<p>
+There is actually a way to do it somewhat elegantly in Cocoa, using <tt>[ScreenSaverDefaults defaultsForModuleWithName:]</tt>, even if you're not writing a screen saver.  The defaults are stored per-machine in <tt>~/Library/Preferences/ByHost/</tt>, with the file name including the machine's MAC (Ethernet) address as part of the file name so that preferences are unique to each machine.
+</p>
+<p>
+We tried using this approach in Sandvox, but found it tricky to store some defaults there and others in <tt>[NSUserDefaults standardUserDefaults]</tt>.  
+So instead we came up with a new, simple approach: <em>use the MAC address as part of the defaults key</em>.
+</p>
+<p>
+For instance, we have a preference to remember if Core Image is accelerated on the particular machine.  (The test for this is a bit of a lenghty process, so it's best to perform it once when needed and store the result in user defaults for subsequent launches.)  Rather than writing the preference under the  key of "CoreImageAccelerated", we construct the key like this:
+</p>
+<pre>
+NSString *key = [NSString stringWithFormat:@"CoreImageAccelerated %@",
+    [[KTUtilities MACAddress] base64Encoding]];
+</pre>
+<p>
+As with the screen saver defaults, we use the MAC address.  Alas, there is no easy way to get the MAC address of your Mac, but Apple has provided <a href="http://developer.apple.com/samplecode/GetPrimaryMACAddress/listing1.html">some decent sample code</a> to get started on that method; I'll leave that as an exercise to the reader.
+</p>
+<p>
+
+We happen to have some methods to encode and decode in Base 64; it's a nice compact way to represent binary data as an ASCII string.  So we take the NSData returned by <tt>MacAddress</tt> and convert it into a string.  I won't go into the implementation details, but it's just a few lines of code wrapped around some library functions in <b>curl</b>, which every Mac has.  Base 64 encoding, for example, uses the function <tt>Curl_base64_encode</tt>.
+</p>
+<p>
+Each time the application is launched from the same machine, the key will remain constant.  If the user defaults are tranferred to another machine, then the value will be reset for that machine.  (The old key will remain in the defaults file, which might be useful if you have a shared home directory, where the same home directory and defaults file is used but from different machines.)
+</p></div>
+	</div>
+</div>
+<div class="dateHeader">Fri, 22 Dec 2006</div>
+<div class="item">
+	<div class="row">
+		<div class="label">
+			<h2>Class Posing as a useful Debugging Technique</h2>
+			<p class="postinfo">
+				<a href="../../Cocoa/Class_Posing_as_a_u.html">permanent link</a>
+				&middot; Topic<a href="../../Cocoa/">/Cocoa</a>
+				<br />
+				<a href="../../Cocoa/"><img border="0" src="http://gigliwood.com/weblogpix/Cocoa.gif" alt="/Cocoa" /></a>
+				
+			</p>
+		</div>
+		<div class="value">
+<p>
+Third past today!  Since I just posted a "gripe" entry, I thought I would also post something constructive.  I wanted to talk about how cool class posing is for debugging.
+</p>
+<p>
+We have used class posing quite a few times just to insert some extra warnings for our debug builds.  A lot of times, you can catch a nasty condition before it happens and provide some information about what's happening.  For instance, if you are only supposed to call a particular method from the main thread, a posed subclass could define your entry points to log an error message if it's being called from a background thread.
+</p>
+<p>
+For example, I wanted to log some information whenever an <b>NSThread</b> got detached, so I could see where all my application's threads were coming from.  So I created a subclass of <b>NSThread</b> called, unimaginatively, <b>MyThread</b>:
+</p>
+<pre>
+@interface MyThread : NSThread
+@end
+</pre>
+<p>
+This class has two methods (in an <tt>@implementation</tt> block, of course).  The first is used to force the subclass to be used in place of its parent class:
+</p>
+<pre>
++ (void) load
+{
+    [self poseAsClass:[NSThread class]];
+}
+</pre>
+<p>
+The second is a redefinition of <tt>+[NSThread detachNewThreadSelector: toTarget: withObject:]</tt>.  It logs some useful information and then calls the "super" implementation to actually do the work.  I've simplified my code a bit here but you should get the idea:
+</p>
+<pre>
++ (void)detachNewThreadSelector:(SEL)selector
+                       toTarget:(id)target
+                     withObject:(id)argument;
+{
+    LOG((@"Detach -[%@ %@%@]", target, NSStringFromSelector(selector),
+        argument));
+    [super detachNewThreadSelector:selector
+                          toTarget:target
+                        withObject:argument];
+}
+</pre>
+<p>
+Generally I don't need this logging to happen, so the code is normally commented out with <tt>#ifdef 0</tt>.  But when I need to know what's going on with threads, this is very helpful.
+</p>
+<p>
+I've also use this technique to debug my bindings and log each instance of <tt>-[NSObject bind:toObject: withKeyPath: options:]</tt> and <tt>-[NSObject unbind:]</tt>, all the initialization methods on <b>QTMovie</b> to make sure that the movies are created on the main thread, and so forth.
+</p></div>
+	</div>
+</div>
+<div class="item">
+	<div class="row">
+		<div class="label">
+			<h2>Things that make it hard to debug</h2>
+			<p class="postinfo">
+				<a href="../../Cocoa/Things_that_make_it.html">permanent link</a>
+				&middot; Topic<a href="../../Cocoa/">/Cocoa</a>
+				<br />
+				<a href="../../Cocoa/"><img border="0" src="http://gigliwood.com/weblogpix/Cocoa.gif" alt="/Cocoa" /></a>
+				
+			</p>
+		</div>
+		<div class="value"><p>
+I'm going to channel Andy Rooney for this post.  The difference is, you as a reader get to comment, so if I've been living in my debugging cave for so long that I've failed to learn the appropriate debugging techniques, feel free to enlighten me!
+</p>
+<p>
+<b>Gripe #1:</b> For some reason, Apple's crash catcher isn't noticing crashes in the app I'm working on, if I launch it normally (without XCode).  If you don't get the "unexpectedly quit" dialog, then you don't get a crash report.  And yet other applications get the crash report and log just fine &mdash; Safari crashed on me yesterday and I got the dialog and the log.
+</p>
+<p>
+<b>Gripe #2:</b>Some crash logs come back with an application version of '???'.  They must be launched improperly so that the info.plist is not readable.  It's hard to know what version I'm examining in that case!
+</p>
+<p>
+<b>Gripe #3:</b>Exceptions that were helpfully caught for me without giving me enough context information are really annoying.  for instance, check out this thing in a log:
+</p>
+<pre>
+*** NSRunLoop ignoring exception '*** -[NSCFDictionary setObject:
+forKey:]: attempt to insert nil value' that raised during posting of
+delayed perform with target 181d2ce0 and selector 'processTasks'
+</pre>
+<p>
+.... or ...
+</p>
+<pre>
+Exception raised during posting of notification.  Ignored.  exception:
+*** -[NSCFDictionary setHidden:]: selector not recognized
+[self = 0x6b95f90]
+</pre>
+<p>
+Yeah, I see that it's somewhere downstream from my method 'processTasks'.  But I don't know the dictionary or where it got set.
+</p>
+<p>
+<b>Gripe #4:</b>Sometimes, symbols in a backtrace are returned to us, and when we look them up on our symbols build with atos, the resulting strings make absolutely no sense.  Sometimes.
+</p>
+<p>
+OK, I'm done griping for now.  Back to happy, shiny thoughts of Christmas cheer!
+</p></div>
+	</div>
+</div>
+<div class="item">
+	<div class="row">
+		<div class="label">
+			<h2>Better description of data</h2>
+			<p class="postinfo">
+				<a href="../../Cocoa/Better_description_.html">permanent link</a>
+				&middot; Topic<a href="../../Cocoa/">/Cocoa</a>
+				<br />
+				<a href="../../Cocoa/"><img border="0" src="http://gigliwood.com/weblogpix/Cocoa.gif" alt="/Cocoa" /></a>
+				
+			</p>
+		</div>
+		<div class="value"><p>
+One thing that drives me crazy about debugging in XCode is how the default print-object command invokes <tt>debugDescription</tt> on an object.  Normally this is the same as <tt>description</tt>, but for certain data objects, it's much less readable than plain old <tt>description</tt>.  OK, it has a bit more information, but it's generally not what I'm looking for and it's formatted so poorly.
+</p>
+<p>
+What I do in our application is to redefine <tt>debugDescription</tt> in terms of <tt>description</tt> for debug builds.  (I bracket this code within and <tt>#ifdef</tt> so it's not built for the release version.)  Here's <b>NSDictionary</b>:
+</p>
+<pre>
+@implementation NSDictionary ( OverrideDebug )
+
+- (NSString *)debugDescription
+{
+    return [self description];
+}
+
+@end
+</pre>
+<p>
+I do something similar for <b>NSSet</b>.
+</p>
+<p>
+Easy enough, right?  For <b>NSArray</b>, I've gone a step further by only printing the first 20 or so items in the array.  That way an array with thousands of items won't fill up my terminal!
+</p>
+<pre>
+@implementation NSArray ( OverrideDebug )
+
+- (NSString *)debugDescription
+{
+    #define MAXARRAYSHOW 20
+    if ([self count] > MAXARRAYSHOW)
+    {
+        NSArray *subArray = [self subarrayWithRange:
+            NSMakeRange(0,MAXARRAYSHOW)];
+        return [NSString stringWithFormat:@"%@ [... %d items]",
+                    [subArray description], [self count]];
+    }
+    else
+    {
+        return [self description];
+    }
+}
+@end
+</pre>
+<p>
+For <b>NSDictionary</b>, I've gone all out and made a much more useable <tt>description</tt>.  This implementation shows the data in a nicely formatted Hex/ASCII dump that's much more scannable.  I also cut it off at 1024 bytes since I don't really want to see much more than this, and I hate to have to wait for a megabyte-long chunk of data to finish displaying.
+</p>
+<p>
+Note that I've also gone ahead and re-implemented <tt>description</tt>, not <tt>debugDescription</tt>, so I always get this new style of display.
+</p>
+<pre>
+@implementation NSData ( description )
+
+- (NSString *)description
+{
+#define MAXDATABYTES 1024
+    unsigned char *bytes = (unsigned char *)[self bytes];
+    unsigned length = [self length];
+    NSMutableString *buf = [NSMutableString stringWithFormat:
+        @"NSData %d bytes:\n", length];
+    int i, j;
+
+    for ( i = 0 ; i < length ; i += 16 )
+    {
+        if (i > MAXDATABYTES)       // don't print too much!
+        {
+            [buf appendString:@"\n...\n"];
+            break;
+        }
+        for ( j = 0 ; j < 16 ; j++ )    // Show the row in Hex
+        {
+            int offset = i+j;
+            if (offset < length)
+            {
+                [buf appendFormat:@"%02X ",bytes[offset]];
+            }
+            else
+            {
+                [buf appendFormat:@"   "];
+            }
+        }
+        [buf appendString:@"| "];   // now show in ASCII
+        for ( j = 0 ; j < 16 ; j++ )
+        {
+            int offset = i+j;
+            if (offset < length)
+            {
+                unsigned char theChar = bytes[offset];
+                if (theChar < 32 || theChar > 127)
+                {
+                    theChar ='.';
+                }
+                [buf appendFormat:@"%c", theChar];
+            }
+        }
+        [buf appendString:@"\n"];
+    }
+    [buf deleteCharactersInRange:NSMakeRange([buf length]-1, 1)];
+    return buf;
+}
+@end
+</pre>
+<p>
+Can anybody think of more improvements to the standard ways out describing objects?
+</p>
+</div>
+	</div>
+</div>
+<div class="dateHeader">Wed, 20 Dec 2006</div>
+<div class="item">
+	<div class="row">
+		<div class="label">
+			<h2>itunes 7: turning some artists to "Various Artists"?</h2>
+			<p class="postinfo">
+				<a href="../../MacOSX/itunes_7__turning_s.html">permanent link</a>
+				&middot; Topic<a href="../../MacOSX/">/MacOSX</a>
+				<br />
+				<a href="../../MacOSX/"><img border="0" src="http://gigliwood.com/weblogpix/MacOSX.gif" alt="/MacOSX" /></a>
+				
+			</p>
+		</div>
+		<div class="value"><p>
+Is this a bug in iTunes 7?  Anybody else having this happen?
+</p>
+<p>
+I've noticed that many albums in my library have lost their "Artist" value, being replaced with "Various Artists".  So what used to be albums of songs now are split into multiple albums, or in the case here, just two songs of an album have lost their artist:</p>
+<p>
+<img src="http://gigliwood.com/weblogpix/itunes7.png" alt="itunes screenshot" />
+</p></div>
+	</div>
+</div>
+<div class="item">
+	<div class="row">
+		<div class="label">
+			<h2>Karelia's technique for building "Apple Help" files</h2>
+			<p class="postinfo">
+				<a href="../../Cocoa/Karelia_s_technique.html">permanent link</a>
+				&middot; Topic<a href="../../Cocoa/">/Cocoa</a>
+				<br />
+				<a href="../../Cocoa/"><img border="0" src="http://gigliwood.com/weblogpix/Cocoa.gif" alt="/Cocoa" /></a>
+				
+			</p>
+		</div>
+		<div class="value"><p>
+One of the cool new features of Sandvox 1.1 is that we now have an Apple Help book.  
+</p>
+<p>
+Before, choosing "Sandvox Help" from the Help menu would just direct the user to view our online wiki. (Some people have wondered why we didn't chose Sandvox to build our help.  The answer is that although it is technically possible, Sandvox just isn't the right tool for that kind of content.)  We had originally chosen a wiki (<a href="http://www.mediawiki.org/wiki/MediaWiki">MediaWiki</a>) as the authoring system for our help because of the way that it is good at managing content; just by creating a link to a new page, it shows up on a list of orphan pages, so there's an automatic to-do list as you start authoring pages.  It's pretty easy to create a site without links to nonexistant pages this way.  We were also able to, during the early stages, rely on some user contributions to the site.  As we started dedicating some resources to building the help, we were able to edit the site "live" so that the help got better and better as time went by.
+</p>
+<p>
+At some point, we decided that we were ready to start documenting features that were not part of the current 1.0.x release.  To do that, we made a clone of the wiki and put it on a new subdomain, where only the official authors of the site (Myself, Terrence, and Mike) could view and edit.  A private wiki seems kind of strange, but we were documenting unreleased software, and I didn't want to confuse users of the released version.
+</p>
+<p>
+Many users were probably more confused by being directed to a wiki than helped by it.  There is a lot of extraneous information on a mediawiki page that really wasn't needed.  So I decided to work on exporting the wiki to a simpler page look.
+</p>
+<p>
+I built up some shell scripts to automate the process.  The first step is to download the wiki, as rendered as HTML, onto the local computer.  The second step, the bulk of the work, is to clean up the HTML so that only the essential content remains. The third step just merges the cleaned-up HTML into our source tree so it will be part of the application.
+</p>
+<p>
+Getting the HTML, the first step, is fairly brute-force.  There might be some cleverer way to extract information from the mediawiki database, but I wanted something simple.  It boils down to a single line of <tt><a href="http://www.gnu.org/software/wget/">wget</a></tt>:  (Simplified here just a bit)
+</p>
+
+<pre>
+wget --domains=<i>private_domain</i> --level=2
+	--no-parent --convert-links --html-extension
+	--recursive --reject "*\?*"
+	http://<i>private_domain</i>/Special:Allpages
+</pre>
+
+<p>
+<tt>wget</tt> is a great little utility; it's too bad it's not included with Mac OS X by default.  One thing that I find annoying is that it seems to match the patterns <i>after</i> downloading a URL, rather than <i>before</i>.  So it uses up a lot of time and bandwidth for the many special links on a mediawiki page that I don't actually want.  The download takes a while, but at least it works for putting a static copy of the main pages of the wiki onto my local system, ready for processing.
+</p>
+<p>
+The second step is just a big shell script that operates on the files.  It performs the following tasks:
+</p>
+<ol>
+<li>Copy the downloaded wiki into a new directory for editing the files (so that I don't have to re-download the original files if my script isn't quite right)</li>
+<li>Remove certain pages and directories that I don't want for the user documentation (developer &amp; designer pages, mediawiki "meta" pages, the top-level pages that are replaced in the Apple Help pages, etc.)</li>
+<li>Loop through all the pages and build up an index page, properly taking redirect pages into account</li>
+<li>Repair all links to "redirect" pages to point to the proper target pages</li>
+<li>Using the <tt><a href="http://developer.apple.com/documentation/Darwin/Reference/ManPages/man1/sips.1.html">sips</a></tt> utility, try converting the PNG files from the wiki to JPEG 2000 format.  Only the files that are actually smaller are kept as JP2.  (We also have a hand-maintained blacklist of files to exclude from this process because some of the images look terrible when converted to JP2.)  Overall, this technique shrinks the images from 8.4 megabytes to 4.3 megabytes!</li>
+<li>The remaining PNG files are run through <tt><a href="http://optipng.sourceforge.net/">optipng</a></tt> to shrink them down as much as possible. This shrinks the files down just a bit more.</li>
+<li>Using <tt>perl -pi -e 's/<i>source</i>/<i>destination</i>/g' ...</tt>, do a bunch of substitutions on the .html files to remove the junk we don't want, move keywords that we have explicitly defined at the bottom of each page into the <tt>&lt;meta&gt;</tt> tags, etc.  There are actually a lot of sub-steps here that I won't get into, but I will note that in order for this to really work, I first changed <tt>\n</tt> to <tt>\r</tt> so that it would essentially treat the file as a single line of text.  I just couldn't get perl to do its substitution across <tt>\n</tt> line breaks.</li>
+<li>Run <tt><a href="http://developer.apple.com/documentation/Darwin/Reference/Manpages/man1/tidy.1.html">tidy</a></tt> on the pages so the HTML is readable</li>
+<li>Do a check for dead links.</li>
+</ol>
+<p>
+The final step carefully merges the edited files into our source tree, careful not to clobber subversion tags; it also leaves alone the hand-built, static pages (such as the initial page and "Discover Sandvox").  With the CSS there, the final web site looks and behaves a lot like many of the other help books that come from Apple.
+</p>
+<p>
+I've replicated this process on our own server as well, so that the website <a href="http://docs.karelia.com/">docs.karelia.com</a> contains our help pages as well.  There are a few differences with the home page, and we don't remove the special categories such as the Developer and Designer pages.  This allows us to link to specific pages on the web when communicating with Sandvox users who need help.  (Now if Google would just index <a href="http://docs.karelia.com/">docs.karelia.com</a>, that website will be searchable as well!)
+</p>
+<p>
+On the pages for Apple help, the trickiest part was getting everything just right so that Apple Help would do the right things: list Sandvox in its list of applications, show the correct initial page, be searchable, and so forth.  The <a href="http://developer.apple.com/documentation/Cocoa/Conceptual/OnlineHelp/OnlineHelp.pdf">documentation</a> for Apple Help is sorely lacking, (Actually, this <a href="http://developer.apple.com/documentation/Cocoa/Conceptual/OnlineHelp/OnlineHelp.pdf">"preliminary" document from 2004</a> is probably the most useful) but their <a href="http://lists.apple.com/mailman/listinfo/apple-help-authoring">mailing list</a> fills in the gaps.
+</p>
+<p>
+OK, this post had nothing to do with Cocoa.  Sosumi.
+</p>
+</div>
+	</div>
+</div>
+<div class="item">
+	<div class="row">
+		<div class="label">
+			<h2>"The Luxurious Flower Shedding"</h2>
+			<p class="postinfo">
+				<a href="../../General/_The_Luxurious_Flow.html">permanent link</a>
+				&middot; Topic<a href="../../General/">/General</a>
+				<br />
+				<a href="../../General/"><img border="0" src="http://gigliwood.com/weblogpix/General.gif" alt="/General" /></a>
+				
+			</p>
+		</div>
+		<div class="value"><p>I had to share this with the world.  My mom recently bought this water pitcher with the most bizarre label on it:
+</p>
+<blockquote>
+Product this peculiar overlengthy
+groove is it design to surface, can
+stretch reach flowering shrubs
+preventing rivers from overflow
+effective when watering flowers.
+</blockquote>
+<p>
+<img src="http://static.flickr.com/117/252083017_738d9b872a.jpg?v=0" alt="the luxurious flower shedding" />
+</p>
+<p>
+Full size scan @ flickr: <a href="http://www.flickr.com/photos/78737624@N00/252083017/">The Luxurious Flower Shedding</a>
+</p></div>
+	</div>
+</div>
+<div class="item">
+	<div class="row">
+		<div class="label">
+			<h2>Nintendo Day &amp; Real Shooting...</h2>
+			<p class="postinfo">
+				<a href="../../General/NIntendo_Day___Real.html">permanent link</a>
+				&middot; Topic<a href="../../General/">/General</a>
+				<br />
+				<a href="../../General/"><img border="0" src="http://gigliwood.com/weblogpix/General.gif" alt="/General" /></a>
+				
+			</p>
+		</div>
+		<div class="value"><p>
+Today I kept reading blog posts and notice iChat status messages of people I know so excited about the <b>Nintendo Wii</b> (pronounced "why" &mdash; I don't care for computer gaming) ... 
+</p>
+<p>
+... But <a href="http://www.dailykos.com/story/2006/10/13/124259/59">this story</a> was certainly a sobering take on the phenomenon.</p>
+<blockquote>
+"Oh, you're buying those Nintendo tapes? You've got those ones that are all war.. I've been there. I've seen it." A few people were perplexed, but still curious about what the guy had to say.
+</blockquote>
+<blockquote>
+...
+</blockquote>
+<blockquote>
+"You remember that, when you're playing your little tapes," the man said as he gestured playing around with a controller, "you remember that there are people really doing that. They're shooting and they're getting shot at."
+</blockquote>
+<blockquote>
+...
+</blockquote>
+<blockquote>
+Not only was it a moment of intense frustration, but also introspection - I was sitting in line for a f[...] Nintendo while there are people dying for no reason. I'm programmed to buy the latest crap just because it's the latest crap, and play games that mock the reality of the horrifying environment of war. <i>You can try your best to change the status quo sonny, but it's not gonna work - so fire up your Sony NintendoBox 2000 and shut the hell up.</i>
+</blockquote>
+<p>
+<a href="http://www.dailykos.com/story/2006/10/13/124259/59">Read the whole story about the early-morning encounter at the mall.</a> 
+</p></div>
+	</div>
+</div>
+<div class="dateHeader">Tue, 19 Dec 2006</div>
+<div class="item">
+	<div class="row">
+		<div class="label">
+			<h2>Ho Ho Ho, Santa is here for independent Mac software</h2>
+			<p class="postinfo">
+				<a href="../../MacOSX/HoHoHo.html">permanent link</a>
+				&middot; Topic<a href="../../MacOSX/">/MacOSX</a>
+				<br />
+				<a href="../../MacOSX/"><img border="0" src="http://gigliwood.com/weblogpix/MacOSX.gif" alt="/MacOSX" /></a>
+				
+			</p>
+		</div>
+		<div class="value"><p>
+This is all over the blogsphere, but I thought I'd mention it here.
+<a href="http://www.macsanta.com/">MacSanta</a> is a grassroots
+website that popped up yesterday.  Within the period of a day or so,
+dozens of independent software companies have added their wares to
+this site. All of the products listed below are available for a 20%
+discount using a coupon code of MACSANTA.
+</p>
+<p>
+Naturally, Sandvox is there.  But some of my other favorite companies and
+products are listed there as well. There are dozens more applications  
+that I <i>haven't</i> heard of than I could have imagined.  This is a
+great starting point for all your Mac Geek Christmas shopping!
+</p>
+</div>
+	</div>
+</div>
+<div class="dateHeader">Fri, 15 Dec 2006</div>
+<div class="item">
+	<div class="row">
+		<div class="label">
+			<h2>Presentation at CocoaHeads</h2>
+			<p class="postinfo">
+				<a href="../../Cocoa/Presentation_at_Coc.html">permanent link</a>
+				&middot; Topic<a href="../../Cocoa/">/Cocoa</a>
+				<br />
+				<a href="../../Cocoa/"><img border="0" src="http://gigliwood.com/weblogpix/Cocoa.gif" alt="/Cocoa" /></a>
+				
+			</p>
+		</div>
+		<div class="value"><p>
+Scott Stevenson was nice enough to <a href="http://theocacao.com/">blog</a> about my presentation at the <a href="http://cocoaheads.org/us/SiliconValleyCalifornia/">Silicon Valley CocoaHeads</a> meeting, both <a href="http://theocacao.com/document.page/375">before</a> and <a href="http://theocacao.com/document.page/376">after</a> the fact.
+</p>
+<p>
+It was really fun.  I have gone to a meeting here and there; we even presented Sandvox at a special meeting at the Apple Store in San Francisco during last year's Macworld Expo.  But this gave me a chance to get really technical, talking about some of the design decisions we made for Sandvox, our use of open source, some client/server techniques we've used for bug reporting and payment, and so forth.
+</p>
+<p>
+The meeting really inspired me to start blogging about some of this here.  I've been in hiding for the last few months while we've hunkered down for this last release of Sandvox, but I don't want to stay hunkered down forever!  Maybe if I post some interesting stuff here, Scott will list this blog, or at least the <a href="http://gigliwood.com/weblog/Cocoa/">Cocoa section of it</a>, on <a href="http://www.cocoablogs.com/">CocoaBlogs</a>!
+</p></div>
+	</div>
+</div>
+	</div> <!-- end contentCenter -->
+</div> <!-- end frame -->
+
+</body>
+</html>
+

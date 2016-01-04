@@ -1,0 +1,67 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>Core Image, part 2</title>
+</head>
+<body>
+<h1>Core Image, part 2</h1>
+
+
+<p>
+As I mentioned in my <a href="http://weblog.karelia.com/Cocoa/Core_Image__Practic.html">previous post</a>, scaling with CIImage can be a bit tricky, if you want to do it just right.
+</p>
+<p>
+First off, the main CIFilter you should use is CILanczosScaleTransform.  Originally I started using an affine transformation, which was in some Apple sample code, but that didn't produce as good of a result.  You pass in the scale (along the Y dimension) that you want the image resized to, and an aspect ratio, usually of 1.0 unless you want something anamorphic going on. Here's a fragment:
+</p>
+<!-- more -->
+<pre>
+  float yscale = h / originalSize.height;
+  CIFilter *f = [CIFilter filterWithName:
+    @"CILanczosScaleTransform"];
+  [f setValue:[NSNumber numberWithFloat:yscale]
+       forKey:@"inputScale"];
+  [f setValue:[NSNumber numberWithFloat:1.0]
+       forKey:@"inputAspectRatio"];
+  [f setValue:im forKey:@"inputImage"];
+  im = [f valueForKey:@"outputImage"];
+</pre>
+<p>
+But what happens if you are scaling down an image such that the number of pixels  of the original image is not an even multiplier of the resulting size?  For instance, what if your original image is 335 pixels wide?  What will happen to the edge pixels &mdash; should the resulting pixel be 111 pixels wide, or 112?  
+</p>
+<p>
+Well, you have to deal with that &mdash; at least, you <em>can</em> deal with that.  If you don't, such an image will end up 112 pixels wide, with the rightmost column partially transparent!  This is fine in some circumstances, perhaps if you are going to rotate it next, or composite it on top of something else, but if you are trying to produce a bitmap image for saving to a file, that's probably not the ideal; you want it fully opaque.
+</p>
+<p>
+The solution that I came up with is to first process the source image with an affine clamp, CIAffineClamp.  This essentially repeats the edges of your image infinitely.  When you scale down the 335-pixel image, you will get your 112 pixels without an annoying strip of partial transparency.
+</p>
+<pre>
+    f = [CIFilter filterWithName:@"CIAffineClamp"];
+    [f setValue:[NSAffineTransform transform]
+         forKey:@"inputTransform"];
+    [f setValue:im forKey:@"inputImage"];
+    im = [f valueForKey:@"outputImage"];
+</pre>
+<p>
+Now if you have made your image infinite, as the affine clamp does, you'll need to crop the image to the appropriate size after the scale step.  Notice the strange way you specify the cropping rectangle (x, y, width, height), as X,Y,Z, and W parameters to a CIVector.  Whatever!
+</p>
+<pre>
+    CIVector *cropRect =[CIVector
+      vectorWithX:0.0 Y:0.0 Z: finalW W: finalH];
+    f = [CIFilter filterWithName:@"CICrop"];
+    [f setValue:im forKey:@"inputImage"];
+    [f setValue:cropRect forKey:@"inputRectangle"];
+    im = [f valueForKey:@"outputImage"];
+</pre>
+<p>
+Now a great thing to do after scaling down an image is to sharpen it, because the act of scaling down loses some of the crispness of an image.  (This step should be done last, so if you are going to, say, rotate the image, wait to sharpen it until after that.)  Apple has provided a great filter for this: CISharpenLuminance, which enhances the contrast between pixels but doesn't mess with the color information.
+</p>
+<p>
+<img style="float:left; margin:0 10px 10px 0;" src="http://www.karelia.com/images/weblog/notsharp.png" alt="not sharpened scaled-down image" />
+<img style="float:left; margin:0 10px 10px 0;" src="http://www.karelia.com/images/weblog/sharp.png" alt="sharpened scaled-down image" />
+Here is an example of a big image I scaled down: On the left just scaled without sharpening; on the right with luminance sharpening (a factor of 0.5).  Of course you have to get just the right amount of sharpness so that the image isn't <em>too</em> sharp.
+</p>
+<p>
+That's all for now.  Maybe I'll talk about compositing next time.
+</p>
+
+

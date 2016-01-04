@@ -1,0 +1,109 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>Core Image: Practical Uses, Part 1</title>
+</head>
+<body>
+<h1>Core Image: Practical Uses, Part 1</h1>
+
+
+<p>
+By now, developers have probably seen some of the demos of <a href="http://www.apple.com/macosx/features/coreimage/">Core Image</a>, or played with it using programs like Apple's Core Image Fun House (in /Developer/Applications/) or Stone's similar <a href="http://www.stone.com/iMaginator/iMaginator.html">iMaginator</a>. The list of image processing features that are built-in are pretty amazing, and you can make some wild effects.  
+</p>
+<p>
+But Core Image is about more than just cool effects; it's also a great workhorse.   When we decided that our forthcoming application would be Tiger-only, I started experimenting with Core Image to try and speed up some of our basic image processing needs, such as simple scaling of images.  I don't have any benchmarks comparing image-scaling between NSImage and Core Image, but it's noticeably faster.  Plus, you can take advantage of some subtle techniques to make your processed images look great.
+</p>
+<!-- more -->
+<p>
+First off, to start using Core Image in your applications, you'll need to get your data into the right format.  If you're used to working with NSImage, you will need to convert an NSImage into a CIImage.  It's simple to do the conversion; don't make the same mistake I made and look at the Fun House source code for the technique unless you want to get really close to the pixels!  I have a simple category method on NSImage to convert to a CIImage:
+</p>
+<pre>
+- (CIImage *)toCIImage
+{
+    NSBitmapImageRep *bitmapimagerep = [self bitmap];
+    CIImage *im = [[[CIImage alloc]
+      initWithBitmapImageRep:bitmapimagerep]
+        autorelease];
+    return im;
+}
+</pre>
+<p>
+While we're at it, let's get the conversion back to NSImage out of the way.  Here's a similar category method on CIImage.  Well, two actually: one that assumes you want the whole extent of the image; the other to grab just a particular rectangle:
+</p>
+<pre>
+- (NSImage *)toNSImageFromRect:(CGRect)r
+{
+    NSImage *image;
+    NSCIImageRep *ir;
+    
+    ir = [NSCIImageRep imageRepWithCIImage:self];
+    image = [[[NSImage alloc] initWithSize:
+      NSMakeSize(r.size.width, r.size.height)]
+        autorelease];
+    [image addRepresentation:ir];
+    return image;
+}
+
+- (NSImage *)toNSImage
+{
+  return [self toNSImageFromRect:[self extent]];
+}
+</pre>
+<p>
+Note that the above method returns an NSImage with a core image representation backing it.  I don't know of a super-easy way to convert a CIImage to an NSImage with an NSBitmapImageRep backing short of the <code>-[NSBitmapImageRep initWithFocusedViewRect:]</code> technique, which seems like a bit of overkill.
+</p>
+<p>
+Now processing a CIImage is done by creating a CIFilter object with a particular name, such as CIAffineTransform, CIGaussianBlur, CIConstantColorGenerator, and so forth.  (<a href="http://developer.apple.com/documentation/GraphicsImaging/Conceptual/CoreImaging/ci_filters/chapter_5_section_1.html">Here's the full list</a>.) You give the filter an image to process using simple key-value method <code>setValue:<i>value</i> forKey:@"inputImage"</code>.  You set other parameters similarly. Then you extract the output image, another CIImage object, with <code>valueForKey:@"outputImage"</code>.  Note that this does not actually cause any rendering or processing, which is the beauty of Core Image.  The pixel operations only happen when the image is rendered to a final bitmap, which is one of the reasons why Core Image is so fast and efficient.
+</p>
+<p>
+Depending on how complex your processing needs are, you could write a big chunk of code to set up the filters/parameters and pass the output image from one filter to another's input.  This could get pretty messy, especially if you embed that into other pieces of your code.  One technique I have found that works well is to write a category method on CIImage to perform a basic operation, to maximize reusability.  For instance, here's a category method to rotate an image by the given degrees.
+</p>
+<pre>
+- (CIImage *)rotateDegrees:(float)aDegrees
+{
+  CIImage *im = self;
+  if (aDegrees > 0.0 && aDegrees < 360.0)
+  {
+    CIFilter *f
+      = [CIFilter filterWithName:@"CIAffineTransform"];
+    NSAffineTransform *t = [NSAffineTransform transform];
+    [t rotateByDegrees:aDegrees];
+    [f setValue:t forKey:@"inputTransform"];
+    [f setValue:im forKey:@"inputImage"];
+    im = [f valueForKey:@"outputImage"];
+  }
+  return im;
+}
+</pre>
+<p>
+This does the trick, but one problem is that the newly rotated image, if it s origin was (0,0) to begin with, will likely go into negative coordinates.  For my purposes, I want to make sure the image is based at (0,0).  So my actual implementation moves the image with an affine transformation filter.
+</p>
+<pre>
+- (CIImage *)rotateDegrees:(float)aDegrees
+{
+  CIImage *im = self;
+  if (aDegrees > 0.0 && aDegrees < 360.0)
+  {
+    CIFilter *f
+      = [CIFilter filterWithName:@"CIAffineTransform"];
+    NSAffineTransform *t = [NSAffineTransform transform];
+    [t rotateByDegrees:aDegrees];
+    [f setValue:t forKey:@"inputTransform"];
+    [f setValue:im forKey:@"inputImage"];
+    im = [f valueForKey:@"outputImage"];
+    
+    CGRect extent = [im extent];
+    f = [CIFilter filterWithName:@"CIAffineTransform"];
+    t = [NSAffineTransform transform];
+    [t translateXBy:-extent.origin.x
+                yBy:-extent.origin.y];
+    [f setValue:t forKey:@"inputTransform"];
+    [f setValue:im forKey:@"inputImage"];
+    im = [f valueForKey:@"outputImage"];
+  }
+  return im;
+}
+</pre>
+<p>
+When I come back to revisit this topic, I'll talk about scaling &mdash; easy to do, but not as easy to do <em>right!</em>
+</p>

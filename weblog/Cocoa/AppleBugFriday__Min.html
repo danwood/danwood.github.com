@@ -1,0 +1,26 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>AppleBugFriday: Minimum Application Version</title>
+</head>
+<body>
+<h1>AppleBugFriday: Minimum Application Version</h1>
+
+
+<p>
+I have not done much "Apple Bug Report Friday" posting for a while, nor much blogging for that matter, because I am spending a huge amount of time working on Sandvox.  And where I have been reporting bugs lately, it's mostly been on WebKit's <a href="http://bugzilla.opendarwin.org/">Bugzilla</a> system.
+</p>
+<p>
+I did come across this one annoyance, via some beta-testing feedback.  Sandvox currently requires Mac OS X 10.4.3 &mdash; yes, the latest update &mdash; to run.  There are some fixes to Core Data that we need to take advantage of.  We set the <tt> LSMinimumSystemVersion</tt> property in the application's Info.plist file.  So what happens when somebody running any earlier version of Mac OS X tries to open Sandvox?
+</p>
+<p>
+<img src="http://www.gigliwood.com/weblogpix/minversion.png" />
+</p>
+<p>
+For crying out loud, tell us the minimum version that <em>is</em> required!  This dialog makes it look like there is something wrong with the application or your system!
+</p>
+<p>
+Reported as bug ID <a href="rdar://4363495">4363495</a>.
+</p>
+<p><b>Update:</b> <a href="http://homepage.mac.com/chris_campbell/blog/">Chris Campbell</a> of <a href="http://www.bignerdranch.com/">Big Nerd Ranch</a> has posted a <a href="http://homepage.mac.com/chris_campbell/blog/SystemVersionCheck.html">nice little wrapper utility</a> that warns you of the necessary system version; the wrapper works all the way back to 10.0!
+</p>

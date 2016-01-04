@@ -1,0 +1,12 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>Yet Another TV Listings update</title>
+</head>
+<body>
+<h1>Yet Another TV Listings update</h1>
+
+
+The last two weeks have been very interesting for users of the TV Listings tool in Watson.  Right on the heels of a fix to problems accessing the tvguide.com site (due to changes in their HTML pages), the site now requires cookies, which broke the newly released update to the tool.  Fortunately, it was an easy fix to a major change; the 'curl' technology deep in Watson has the ability to send cookies along with a request.  So today, version 1.7.2.5 of the TV was streamed out to Watson users.
+<p>
+Privacy note:  Since this is the first Watson tool to make use of cookies, I should mention what it is doing.  The cookie that is transferred has no information about you other than what is evident in the request based on the Zip code that you provide, or the fact that you are making the request for the data in the first place.  But this is no different than before; what is different is that more data is transferred back and forth when you interact with the tool.  (If you really want to see what is in the cookie, look for a file in the <tt>/tmp</tt> directory that resembles <tt><i>username</i>_tv_cookie.txt</tt>.)

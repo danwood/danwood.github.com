@@ -1,0 +1,54 @@
+<html>
+<head>
+<title>TableTester</title>
+</head>
+<body>
+<h1>TableTester</h1>
+A set of example programs and source code to accompany a series of <a href="http://www.mactech.com/">MacTech</a> articles that describe techniques for the NSTableView in Cocoa applications ....
+<p>
+<a href="TableTester_3.tgz">Download the Application for Part 3</a>
+<p>
+<a href="TableTester_3_src.tgz">Download the Source Code for Part 3</a>
+<p>
+<small>
+(TableTester 3 contains all functionality of parts 1 and 2, no need to get them particularly, but here they are:)
+<br>
+<a href="TableTester_1.tgz">Download the Application for Part 1</a>
+<br>
+<a href="TableTester_1_src.tgz">Download the Source Code for Part 1</a>
+<br>
+<a href="TableTester_2.tgz">Download the Application for Part 2</a>
+<br>
+<a href="TableTester_2_src.tgz">Download the Source Code for Part 2</a>
+<br>
+</small>
+<hr>
+<h2>Errata / Notes </h2>
+<h4>Striping Problems</h4>
+I think there's a bug in Interface Builder where sometimes the column you create in Interface Builder has the "drawsBackground" set on, which interferes with striping.  You could try to create new columns in IB until you find the ones that are correct, or you could correct it in code in your awakeFromNib method, something like this:
+<p>
+<pre>
+	// FIX the data cell that, for some reason, has "drawsBackground" set on.
+	NSTableColumn *titleColumn = [oReadTable tableColumnWithIdentifier:@"title"];
+	[[titleColumn dataCell] setDrawsBackground:NO];
+	titleColumn = [oSearchTable tableColumnWithIdentifier:@"title"];
+	[[titleColumn dataCell] setDrawsBackground:NO];
+</pre>
+<p>
+The vertical grid lines are not updated correctly when you resize the column widths.  A fix to this, courtesy of Eric Roccasecca of CE Software, is to add this to the
+ <tt>drawGridInClipRect:</tt> method:
+<p>
+<pre>[[self superview] setNeedsDisplayInRect:[[self superview] bounds]];</pre>
+ 
+<p>
+Another bug is when you resize the window after having decreased the size of the name column, the stripped background is not drawn at some locations. This can be fixed by settings the resizing springs of the NSTableView subclass widget.
+<hr>
+<b>Comments?</b>
+<p />
+<b>Feedback?</b>  Drop me a line.... .... dan at this domain with the subject line or message containing "Cocoa" to get past the spam-filters!
+
+
+
+
+</body>
+</html>

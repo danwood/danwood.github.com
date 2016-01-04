@@ -1,0 +1,58 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>AppleBugFriday: Finder not showing version in info panel</title>
+</head>
+<body>
+<h1>AppleBugFriday: Finder not showing version in info panel</h1>
+
+
+<p>
+Here's an interesting bug, reported at <a href="rdar://4424293">4424293</a> to Apple.
+</p>
+<p>
+According to <a href="http://developer.apple.com/documentation/MacOSX/Conceptual/BPRuntimeConfig/Articles/PListKeys.html#//apple_ref/doc/uid/20001431-101976">the documentation for the <b> CFBundleGetInfoString</b> key in an applications' Info.plist</a>:
+</p>
+<blockquote>
+Note: Prior to Mac OS X v10.4, this string used to include version information for the bundle. It is now recommended that you do not include version information with this string. Version information should instead be associated with the "CFBundleVersion" key.
+</blockquote>
+<p>
+Ok, so following the guidelines, I put the version number under CFBundleVersion, and leave it out of the  CFBundleGetInfoString.
+</p>
+<p>
+But what does the Finder show in its Get Info window?  It shows the contents of CFBundleGetInfoString next to the "version:" label.  So if you follow the guidelines, there's no version number visible!
+</p>
+<p>
+Never noticed this?  Maybe it's because nearly every single one of Apple's applications don't follow this rule, and they are still putting the version number next to the copyright statement.
+</p>
+<p>
+Here's a little list of the violators I found (with the help my friend <i>grep</i>):
+</p>
+<ul>
+<li>Address Book</li>
+<li>AppleScript/Script Editor</li>
+<li>Automator</li>
+<li>Calculator</li>
+<li>Chess</li>
+<li>DVD Player</li>
+<li>Font Book</li>
+<li>Image Capture</li>
+<li>Internet Connect</li>
+<li>Keynote</li>
+<li>Preview</li>
+<li>QuickTime Player</li>
+<li>Safari</li>
+<li>Stickies</li>
+<li>System Preferences</li>
+<li>iCal</li>
+<li>iChat</li>
+<li>iDVD</li>
+<li>iMovie HD</li>
+<li>iPhoto</li>
+<li>iSync</li>
+<li>iTunes</li>
+<li>i&lt;cough&gt;Web</li>
+</ul>
+<p>
+Still, the bug is really with <b>Finder</b>.  Well, Path Finder too.  There's no way to figure out the version number of an application from the "Get Info" window if you follow Apple's guidelines!
+</p>

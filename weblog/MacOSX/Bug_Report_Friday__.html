@@ -1,0 +1,98 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>Bug Report Friday: iPhoto Data Losses</title>
+</head>
+<body>
+<h1>Bug Report Friday: iPhoto Data Losses</h1>
+
+
+<p>
+I'll get an early start on Report-An-Apple-Bug Friday, considering I missed last week.  I was all ready to "squeak" about a minor UI annoyance of some sort or another, but a frustrating evening of iPhoto crashes changed my mind.
+</p>
+<p>
+Now, I sent the crash reports to Apple from the built-in mechanism; I hope that these are actually heeded!  But the report I'm filing is not about the crashes, it's about the way that significant data can be easily lost when the Application crashes.
+</p>
+<p>
+<img src="http://www.gigliwood.com/weblogpix/stretchedThumb.png"  align="right" style="clear:both; float: right; padding:0 0 3px 3px;" />
+I've been an advocate of auto-save for a long time.  And iPhoto is nice in that it effectively auto-saves.  <em>But it doesn't do it enough!</em>  It's possible to spend a long time organizing your photo album, and then lose all or most of your work when the program crashes.  (Photo editing is written after you finish with each photo, but album information is <em>not</em>.)  So my report to Apple, showing 3 different kinds of data that are lost, is that iPhoto needs to write its changes to disk immediately after they happen.
+</p>
+<!-- more -->
+<p>So my report is <a href="rdar://4242381">4242381</a>.  (I'm geekily hyperlinking this as a rdar:// URL for Apple employees, as Jens Alfke suggested at <a href="http://inessential.com/?comments=1&postid=3156">Inessential</a>).  Here is the text part of my bug:
+</p>
+<pre style="overflow:auto; width:550px;">
+Summary: 
+When iPhoto crashes (which it does; I've submitted
+separate crash reports from the in-App mechanism),
+significant data is lost or corrupted, including file
+names, source albums, and thumbnail images.
+
+Steps to Reproduce: 
+1. Drag one or more photos from your library to a create
+	a new album in the source list
+2. (Optional) Drag some more photos there (to "untitled
+	album")
+3. Simulate a crash by choosing "Force Quit" from the
+	dock menu for iPhoto
+4. Lauch iPhoto again
+
+(see "A" below)
+
+5, Double-click any photo for editing
+6. Drag a rectangle that is TALL/SKINNY
+7. Click "Crop" button
+8. Click "Done" button.
+9. Simulate a crash (see above)
+10. Lauch iPhoto again
+
+(see "B" below)
+
+11. Select any photo
+12. Click the "i" button in the lower left if the
+	Information panel is not visible
+13. Edit the photo name
+14. Optionally, Repeat 11-13 above for a few more photos
+15. Simulate a crash (see above)
+16. Lauch iPhoto again
+17. Click on the files you changed to observe their file
+	names.
+
+(see "C" below)
+
+Expected Results: 
+
+A: I should see the changes I made to the source albums
+	before the crash.
+B: I should see a proper thumbnail of the cropped image
+C: The photos I changed should show their changed names.
+
+Actual Results: 
+
+A: The changes to the albums were not saved at all.
+
+B: Though the file was saved in cropped form, the
+	thumbnail is stretched anamorphically; it seems
+	to think that the aspect ratio of the original,
+	uncropped image should be used.
+
+C: The file names have not changed.
+
+Regression: 
+N/A
+
+Notes: 
+
+Although this might seem like an exercise in overkill,
+the reality is the iPhoto, like any other application,
+will crash from time to time.  Recently, I lost over
+half-hour's work organizing my albums because of an
+iPhoto crash.  My changes SHOULD have been written out
+to disk immediately after any data-changing operation
+so that in case of a crash, I would have not lost any
+data.  It wouldn't be any perceivable lag to the user,
+and the benefits would be enormous.
+</pre>
+<hr />
+<p>
+<b>So ... as usual, I suggest that you, dear reader, <a href="https://bugreport.apple.com/">do the same</a>.</b> (<a href="http://developer.apple.com/bugreporter/bugrptform.html">Use this</a> if you don't have an Apple Developer Account.)
+<p>

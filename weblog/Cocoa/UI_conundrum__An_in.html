@@ -1,0 +1,31 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>UI conundrum: An inspector panel you can drag onto</title>
+</head>
+<body>
+<h1>UI conundrum: An inspector panel you can drag onto</h1>
+
+
+<p>
+I thought I'd point out a user interface conundrum we're experiencing with Sandvox.  We have an inspector NSPanel, which is a floating "utility window."  These kinds of windows hide when the application is not the frontmost program.   (I don't believe there is any way to prevent a floating panel like this from hiding on program deactivate.)
+</p>
+<p>
+One thing that we want to inspect is images.  Besides just showing an image, we want the user to be able to drag in an image from, say, Finder or iPhoto.  But to drag from another program, you need to deactivate Sandvox, which makes the potential destination go away.
+</p>
+<p>
+It seems we have few options:
+<ul>
+<li>Hack/subclass NSPanel somehow so that it never hides.</li>
+<li>Disallow drag onto the panel; use a "Set..." button to change images.</li>
+</ul>
+</p>
+<p>
+Any other ideas or suggestions?  Answer in the comments please...
+</p>
+<p>
+<b>Update:</b> OK, thanks Ken, sometimes the solution is staring you in the face.  <b>&lt;forehead-slap /&gt;</b>
+</p>
+<p>
+<b>Update2 :</b>Still haven't come up with an ideal solution.  Making the panel float, but not hide on deactivate, means that the panel will be frontmost <em>even while you are in other applications</em>. Yuck.  It would be nice to have a layer of "float above other application windows, but stick with the application layer" but it looks like that's not how window layers work.  So for now, it's probably better to just hide the window on deactivate. It will make D&amp;D into the inspector harder, but that's the breaks!
+</p>

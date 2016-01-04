@@ -1,0 +1,28 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>Use a bit of command-line magic to pop up reminders</title>
+</head>
+<body>
+<h1>Use a bit of command-line magic to pop up reminders</h1>
+
+
+Here's a tidbit for the more technically inclined user of Mac OS X (in otherwords, somebody who can deal with the terminal and shell scripts): You can create "cron" jobs to pop up periodic reminders!  For example, I have my development system configured to pop up a reminder every afternoon to remember to check in my files.
+<p>
+Use <a href="http://www.koch-schmidt.de/cronnix/">Cronnix</a> (or if you're brave, edit your crontab file manually) to run your reminder script whenever you wish.   In my case, I have a line in my crontab file to invoke my "remind_cvs" script:
+<blockquote><tt> 30     16      *       *       *       /Users/dwood/bin/remind_cvs</tt></blockquote>
+<!-- more -->
+Here's the script:
+<blockquote><tt>
+#!/bin/sh<br />
+pushd  ~/Development/Watson/Current<br />
+echo "---- Reminder to check in some files!  ---" &gt; /tmp/cvs_output<br />
+cvs -n -q update  | sort &gt;&gt; /tmp/cvs_output # Show me what files are modified<br />
+open -e /tmp/cvs_output # Open this file in TextEdit<br />
+popd
+</pre></blockquote>
+
+There are more ways for cron to interact with you, such as <a href="http://www.macosxhints.com/article.php?story=20021029062059486">Running an AppleScript</a>.  For instance, this will just pop up a dialog in the Finder at 5:30 PM every day.
+<blockquote><tt> 30     17      *       *       *       /usr/bin/osascript -l AppleScript -e 'tell Application "Finder" to display dialog "Did you check in your files?" '</tt></blockquote>
+
+Although for basic alarms, there's always Nicholas Riley's <a href="http://web.sabi.net/nriley/software/">Pester</a>.

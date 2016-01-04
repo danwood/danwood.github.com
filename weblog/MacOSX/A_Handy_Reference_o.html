@@ -1,0 +1,20 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>A Handy Reference of Mac OS X's port numbers</title>
+</head>
+<body>
+<h1>A Handy Reference of Mac OS X's port numbers</h1>
+
+
+<p>
+<a href="http://docs.info.apple.com/article.html?artnum=106439">This</a> tech note is a long time coming -- a handy list of what TCP and UDP ports Mac OS X uses.  I've been longing for this whenever I have to deal with firewall configuration problems.
+</p>
+<p>
+Of course, it doesn't cover ports used by ports &mdash; port numberws used by <em>third-party</em> programs not included with Mac OS X.  You can always look at your local file system's <a href="file:///etc/services">/etc/services</a> file; some lists like <a href="http://www.practicallynetworked.com/sharing/app_port_list.htm">this one</a> can be found on the web as well.
+</p>
+<p>But for Mac OS X applications, you may just have to look up documentation for a specific product.  <a href="http://www.codingmonkeys.de/subethaedit/">SubEthaEdit</a>, for example, uses port 30729 for its document sharing, as it states <a href="http://www.codingmonkeys.de/subethaedit/faq.html">here</a>.
+</p>
+<p>
+Does anybody know of a technique for detecting that a particular port is blocked by a firewall, so that an application could defensively check and warn its user, rather than just failing to connect?
+</p>

@@ -1,0 +1,21 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>XCode 2.1: Avoid it if you can</title>
+</head>
+<body>
+<h1>XCode 2.1: Avoid it if you can</h1>
+
+
+<p>
+I previously blogged about my bad experience last week getting our app to build and run with XCode 2.1, even for PowerPC.  Well, our woes continue.  This is certainly the most rushed and buggy release of Apple's developer tools that I've seen in a long time.  My advice: <b>avoid it!</b>
+</p>
+<p>
+Last week, I had problems with a GCC option causing the program not to find its linked frameworks, when that option didn't cause any problems using XCode 2.0 (with gcc 4.0).   Plus, there was a problem where even when ZeroLink was unchecked, it was still activated because Fix &amp; Continue was turned on.
+</p>
+<p>
+Now, we are going crazy trying to deal with XCode's new "Build Configurations."  This is supposed to make the confusion resulting from the previous "Build Styles" go away.  Well, actually, I think it's worse.   Now, when you look at a target (of which our projects have many), you can't tell what settings are set as "overrides" for that target, and which are "inherited" from the debug (development) and release (deployment) target/setting.  We are unable to get XCode to break on our code, and it's not for lack of trying.  We've tried to rebuild the settings from scratch, to no avail.  This has wasted a whole day so far, and we're nowhere near the light at the end of the tunnel.
+</p>
+<p>
+Unless somebody can convince me otherwise, I'm reverting back to XCode 2.0 for a while until Apple can clean things up.  Intel can wait.
+</p>

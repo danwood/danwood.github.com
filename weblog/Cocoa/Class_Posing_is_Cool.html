@@ -1,0 +1,54 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>Class Posing is Cool</title>
+</head>
+<body>
+<h1>Class Posing is Cool</h1>
+
+
+<p>
+OK, I finally have something interesting to write about in the "Cocoa" category.  I'm going to talk about <a href="http://www.cocoadev.com/index.pl?ClassPosing">Class Posing</a>.
+</p>
+<p>
+<img align="right" src="http://www.karelia.com/images/weblog/textured.png" />
+On the application I'm working on, I want to be able to support textured iApp-like windows, but not require them.  There are probably some sophisticated ways to handle this choice, but the biggest restriction is that you can't change the style of an NSWindow once that window has been initialized.  And if you are loading a window from a nib, the window has already been initialized!
+</p>
+<p>I was struggling to come up with a solution that would avoid having to create two almost identical nib files for each window type: one textured, one untextured.   Then I came up with the solution: use posing!
+</p>
+<p>
+What I've done is to create a new subclass of NSWindow called MyPosingWindow.  It intercepts the initialization, and checks the preferences to see if the window should be changed to a textured window, and then lets NSWindow do its stuff.
+</p>
+<!-- more -->
+<p>
+<code><pre>
+- (id)initWithContentRect:(NSRect)contentRect
+        styleMask:(unsigned int)styleMask
+        backing:(NSBackingStoreType)backingType
+        defer:(BOOL)flag
+{
+    NSUserDefaults *defaults
+        = [NSUserDefaults standardUserDefaults];
+    BOOL useTextured =
+        [defaults boolForKey:@"UseTexturedWindows"];
+    unsigned int newMask = styleMask | (useTextured
+        ? NSTexturedBackgroundWindowMask
+        : 0);
+    return [super initWithContentRect:contentRect
+        styleMask:newMask
+        backing:backingType
+        defer:flag];
+}
+</pre></code>
+</p>
+<p>All that I need to get this hooked up is the following line in my application delegate's <tt>+initialize</tt> method:
+<pre><code>
+[MyPosingWindow poseAsClass: [NSWindow class]];
+</code></pre>
+</p>
+<p>
+Posing, though it's great for hacks and trickery, is also a really useful tool when used properly.  Back in Watson, I used posing to make all NSTableView objects support alternate-row striping, without having to change the class in every nib file.  Similarly, I used posing to bring extra behaviors to NSComboBox to improve auto-completion.  And a couple of other cases, which I don't recall offhand.  So Cocoa developers, <em>do not fear the power of posing!</em>
+</p>
+
+
+<p>(And yes, that's actual code and an actual partial screenshot of my upcoming application &mdash; I hope that doesn't give too much away!)</p>
