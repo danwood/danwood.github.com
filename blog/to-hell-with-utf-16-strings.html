@@ -13,10 +13,10 @@
 		  })();
 		</script>		<title>To Hell with UTF-16 &quot;.strings&quot; Files | Dan Wood: The Eponymous Blog</title>
 		<meta name="robots" content="all" />
-		<meta name="generator" content="Sandvox 2.10.3" />
+		<meta name="generator" content="Sandvox 2.10.6" />
 		<meta name="viewport" content="width=760" />
 		<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
-		<link rel="image_src" href="http://gigliwood.com/blog/_Media/screen_shot_2012-10-05_at_med_hr.png" type="image/png" />
+		<link rel="image_src" href="http://gigliwood.com/blog/_Media/screen-shot-2012-10-05-at_252.png" type="image/png" />
 		<link rel="canonical" href="http://gigliwood.com/blog/to-hell-with-utf-16-strings.html" />
 		
 		<script>
@@ -43,7 +43,7 @@
 		
 		</script>
 	</head>
-	<body class="sandvox has-page-title no-sidebar no-custom-banner no-navigation no-IR" id="gigliwood_com" >
+	<body class="sandvox has-page-title no-sidebar no-custom-banner no-navigation no-IR" id="gigliwood_com_blog" >
 				<div id="page-container">
 			<div id="page">
 				<div id="page-top" class="has-logo has-title has-tagline">
@@ -73,14 +73,15 @@
 														
 													</blockquote>
 												</div>
-											</div><p>But this has caused so many headaches, that I finally decided it's time to defy this recommendation, and go UTF-8 for our .strings files.</p><p>UTF-8 is a file format that is consistent across all machines and byte-order architectures.  There is never any ambiguity.  It also works pretty well for file comparisons, especially when most of the characters are in the Roman alphabet. Yeah, maybe it's not as efficient at storing double-byte languages, but that's not really a big concern.</p><p>UTF-16, on the other hand, has turned into a big nightmare for us. We get localizations from people around the world (some using old PowerPC machines, some using Intel machines). It's never clear whether we are going to get:</p><ul><li>Little-endian, without the Byte Order Marker (BOM), a.k.a. UTF-16LE</li><li>Big-endian, without the BOM, a.k.a UTF-16BE</li><li>Little-endian, with <em>FF FE</em> BOM, a.k.a. UTF-16 sometimes</li><li>Big-endian, with <em>FE FF</em> BOM, a.k.a. UTF-16 othertimes.</li></ul><span data-img-src="_Media/screen_shot_2012-10-05_at_med.png" data-img-src-hr="_Media/screen_shot_2012-10-05_at_med_hr.png" data-alt="Screen Shot 2012-10-05 at 5.07.53 PM" data-width="173" data-height="66" style="width:173px; height:66px;" class="not-first-item narrow right graphic-container">
-												<noscript><img src="_Media/screen_shot_2012-10-05_at_med.png" alt="Screen Shot 2012-10-05 at 5.07.53 PM" width="173" height="66" /></noscript>
+											</div><p>But this has caused so many headaches, that I finally decided it's time to defy this recommendation, and go UTF-8 for our .strings files.</p><p>UTF-8 is a file format that is consistent across all machines and byte-order architectures.  There is never any ambiguity.  It also works pretty well for file comparisons, especially when most of the characters are in the Roman alphabet. Yeah, maybe it's not as efficient at storing double-byte languages, but that's not really a big concern.</p><p>UTF-16, on the other hand, has turned into a big nightmare for us. We get localizations from people around the world (some using old PowerPC machines, some using Intel machines). It's never clear whether we are going to get:</p><ul><li>Little-endian, without the Byte Order Marker (BOM), a.k.a. UTF-16LE</li><li>Big-endian, without the BOM, a.k.a UTF-16BE</li><li>Little-endian, with <em>FF FE</em> BOM, a.k.a. UTF-16 sometimes</li><li>Big-endian, with <em>FE FF</em> BOM, a.k.a. UTF-16 othertimes.</li></ul><span data-img-src="_Media/screen-shot-2012-10-05-at_med.png" data-img-src-hr="_Media/screen-shot-2012-10-05-at_252.png" data-alt="Screen Shot 2012-10-05 at 5.07.53 PM" data-width="173" data-height="66" style="width:173px; height:66px;" class="not-first-item narrow right graphic-container">
+												<noscript><img src="_Media/screen-shot-2012-10-05-at_med.png" alt="Screen Shot 2012-10-05 at 5.07.53 PM" width="173" height="66" /></noscript>
 											</span><p>It's amazing how many times I've gotten an update from a localizer, and when I try to merge it into our source base, it looks like everthing has changed. Opening the file with <a href="http://www.codingmonkeys.de/subethaedit/">SubEthaEdit</a> (the best text editor I've found for dealing with character encoding issues), I often find that the looks like dense bunch of oriental characters. (The Japanese call this <em><a href="http://en.wikipedia.org/wiki/Mojibake">mojibake</a>.</em>) Then I have to fiddle with the encoding for a bit until it's a consistent, um, little-endian UTF-16. After re-saving, I can finally find out if any contents of the file really were changed.</p><p><strong>No more!</strong> I've converted every .strings file to UTF-8! Everything seems to work even though I have dared to stand up to the forces of UTF-16.</p><p>The crazy thing is, I had to write my own little Cocoa tool to convert the strings files to UTF-8. I call it "UTF8ifier".  Apple's built-in utility, <a href="http://developer.apple.com/library/mac/#documentation/Darwin/Reference/ManPages/man1/iconv.1.html">iconv</a>, has never been particularly useful. My utility, on the other hand, uses +[NSString stringWithContentsOfFile: usedEncoding: error:] for reading, and if the encoding wasn't already UTF-8, then it writes it back out. </p><p>Have I committed a cardinal sin here by using UTF-8?  Or is this something that other developers have done? Any interest in making UTF8ifier public?</p><p><strong><span style="color: rgb(0, 0, 0); font-family: Helvetica; background-color: rgb(247, 251, 0); ">Update:</span> </strong>@bwebster commented on Twitter that Xcode now converts strings files to UTF-16 in the built product, so that means I shouldn't have to worry about manipulating and storing them in my source tree as UTF-8. Another good reason to use UTF-8 in source files is that GitHub can actually show differences. (If they are UTF-16, it treats the files like binary blobs!)</p><p>There's one more hoop I realized I have to jump through. When we build an archive, we run <em>genstrings</em>, which sadly has no option for output in UTF-8. So I think I need to add in a line to all of our projects, after the genstrings — as <a href="http://www.stevestreeting.com/2010/05/18/os-x-localisation-incremental-genstrings-and-utf-8-files/">these</a> <a href="http://fi.am/entry/keeping-your-localizablestrings-in-utf-8/">guys</a> do — to convert the UTF-16 to UTF-8, so that only legitimate changes get checked back into our source tree.</p><p>I guess I should file a Radar, requesting <em>genstrings</em> to be ablet to output in UTF-8. </p><p><strong><span style="color: rgb(0, 0, 0); font-family: Helvetica; background-color: rgb(247, 251, 0); ">Update 2:</span> </strong>@cocoanetics and @0xced suggested <a href="https://github.com/Cocoanetics/DTLocalizableStringScanner">DTLocalizableStringScanner</a>, which has re-built genstrings as open-source.  I've added a "-utf8" output option <a href="https://github.com/karelia/DTLocalizableStringScanner">in a branch</a>.</p>
 											
 										</div>
 									</div>
 								</div> <!-- /article-content -->
 								<div class="article-info">
+									<div class="timestamp in"><span class="in">Oct 5, 2012, 4:59 PM</span></div>
 															<!-- comments -->
 															
 															
