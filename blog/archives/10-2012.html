@@ -13,7 +13,7 @@
 		  })();
 		</script>		<title>Dan Wood: The Eponymous Blog</title>
 		<meta name="robots" content="all" />
-		<meta name="generator" content="Sandvox 2.10.6" />
+		<meta name="generator" content="Sandvox 2.10.11" />
 		<meta name="viewport" content="width=760" />
 		<link rel="shortcut icon" type="image/x-icon" href="../favicon.ico" />
 		<link rel="alternate" type="application/rss+xml" title="RSS: Blog" href="http://gigliwood.com/blog/index.xml" />
@@ -50,7 +50,7 @@
 					<div id="title">
 						<span id="logo-container"><img id="logo" src="../_Media/imgp3949jpg_med_hr.jpeg" alt="IMGP3949.JPG" width="105" height="105" /></span>
 						<h1 class="title"><span class="in">Dan Wood: The Eponymous Blog<br /></span></h1>
-						<p id="tagline"><span class="in"><span style="font-size: 12px; font-family: Georgia;">Dan Wood is president of Karelia Software, creators of the </span><a href="http://www.karelia.com/sandvox/" style="font-family: Georgia; font-size: 12px;">Sandvox website builder for the Mac</a><span style="font-size: 12px; font-family: Georgia;">. He is the father of two kids, lives in the Bay Area of California USA, keeps bees in the back yard, volunteers with his kids’ theatre company, and prefers bicycles to cars. This site is his new blog, which mostly covers geeky topics like Macs and Mac Programming. (Visit the </span><a href="http://gigliwood.com/weblog/" style="font-family: Georgia; font-size: 12px;">older blog</a><span style="font-size: 12px; font-family: Georgia;">.) </span><em style="font-family: Georgia; font-size: 12px;"><a href="https://twitter.com/danwood">Twitter</a></em><br /></span></p>
+						<p id="tagline"><span class="in"><span style="font-size: 12px; font-family: Georgia;">Dan Wood is the former  president of Karelia Software, creators of the </span><a href="http://www.karelia.com/sandvox/" style="font-family: Georgia; font-size: 12px;">Sandvox website builder for the Mac</a><span style="font-size: 12px; font-family: Georgia;">. He is the father of two kids, lives in the Bay Area of California USA, keeps bees in the back yard, volunteers with his kids’ theatre company, and prefers bicycles to cars. This site is his new blog, which mostly covers geeky topics like Macs and Mac Programming. (Visit the </span><a href="http://gigliwood.com/weblog/" style="font-family: Georgia; font-size: 12px;">older blog</a><span style="font-size: 12px; font-family: Georgia;">.) </span><em style="font-family: Georgia; font-size: 12px;"><a href="https://twitter.com/danwood">Twitter</a></em><br /></span></p>
 					</div><!-- title -->
 					<div id="sitemenu-container">
 						
@@ -92,10 +92,12 @@
 										<div>
 											<!-- sandvox.LinkListElement -->
 											<ul>
-												<li><a href="http://gigliwood.com/abcd/">A Basic Course in Dvorak</a></li>
-												<li><a href="http://gigliwood.com/kenwood/pickle/">The Pickle Machine</a></li>
-												<li><a href="http://gigliwood.com/mentos/">The Mentos Gallery</a></li>
-												<li><a href="http://gigliwood.com/weblog/">Old Weblog</a></li>
+												<li><a href="http://gigliwood.com/abcd/">A Basic Course in Dvorak</a><br />Learn to type Dvorak</li>
+												<li><a href="http://gigliwood.com/kenwood/pickle/">The Pickle Machine</a><br />Children's book by my late father, Ken Wood</li>
+												<li><a href="http://gigliwood.com/mentos/">The Mentos Gallery</a><br />A bit of creativity from early in the days of the Internet</li>
+												<li><a href="http://gigliwood.com/weblog/">Old Weblog</a><br />Blosxom-based blog</li>
+												<li><a href="http://lorenzowoodmusic.com/">Lorenzo Wood</a><br />Music by my #1 son</li>
+												<li><a href="http://sweethomealameda.com/">Sweet Home Alameda</a><br />Local honey!</li>
 											</ul>
 											<!-- /sandvox.LinkListElement -->
 										</div>
@@ -133,7 +135,7 @@
 										</div><p><br /></p>
 									</div>
 									<div class="article-info">
-										<div class="timestamp"><a href="../password-entry-maskingunmas.html" title="Password entry: Masking/Unmasking control for password inputs">Oct 26, 2012, 2:03 PM</a></div>
+										<div class="timestamp"><a href="../password-entry-maskingunmas.html" title="Password entry: Masking/Unmasking control for password inputs">Oct 26, 2012 at 2:03 PM</a></div>
 									</div>
 								</div>
 								<div class="i2 e article">
@@ -144,7 +146,7 @@
 										</a><p>First off, I decided that we wanted a single-step form; it seems to me that the fewer steps there are, the fewer chances we will lose somebody along the way. We wanted to make sure there were plenty of explanations of what the input fields are for, and <em>why we need them</em>. We wanted as much real-time input validation as possible so that there would be a live status update as the visitor clicks from field to field. (More on that in the followup post.)</p><p>To keep the more advanced options out of the way, we used simple text links (prefixed with a right-facing disclosure triangle) to allow additional sections to be revealed only if needed.</p><p>We put plenty of explanatory text below each field, to provide context for each input. That text even adapts as needed when additional options are disclosed. (Example: the explanation for "Your Name" changes if an advanced section is disclosed.)</p><p>Though the inputs are all collected in a single form submission, we felt it was important to group the similar types of input together into discreet chunks. We came up with three main sections: What the visitor is buying — from this a price is calculated. Then, who the license is for. Finally, the actual payment. </p><p>As I mentioned in my previous post, we wanted to keep PayPal an an option as well. So after a few iterations, we came on the idea of putting the PayPal button off to the side, at the top of the section where we deal with payment. This lets the visitor choose how to pay after we've collected the other information we need. The normal path is to continue and enter the credit card information, but they can veer off that path and use PayPal instead. This approach seems to work pretty well.</p><p>To reassure the visitor that this form is safe, we use the word "secure" above the payment section and feature a lock icon if it's an HTTPS connection. Plus, we link to Stripe and their <a href="https://stripe.com/help/security">security page</a> at the bottom.</p><p>In the field for the credit card number, we do something clever inspired by <a href="https://github.com/">GitHub</a>'s payment form. Like GitHub, we show icons for the credit cards that Stripe can process. But as the visitor types in a number, the first couple of digits indicate which type of card they are using, so we highlight the card they are using and fade out the others. No point in asking them what type of card they are using; this approach means one less step for the visitor to take, but it visually reinforces the card that they are using.</p><p>Naming and explaining the field for the 3- or 4-digit CVC/CVV2 code is never easy, and it varies greatly from website to website. We decided to call it "verification code", explain it below the input field, and provide a little thumbnail for where it can be found on a typical credit card.</p><p>Since this code is on the back of most cards but on the front of Amex cards, we do something kind of fun. If you enter an Amex number — try typing "34" in the Card Number field — we animate the card to flip over to show the front of an Amex card. (Also, we highlight the explanatory text referring to the Amex location.) <a href="https://secure.karelia.com/buy_now/">Try it!</a></p><p>That covers most of the design decisions for how to present the credit card input form. Next time around I'll describe what we are doing on the back end to deal with validation, internationalization, and dealing with unfinished transactions.</p><p><em>For the comments: How might you improve this form? (Despite the title, I don't think this is perfect by any means, and maybe there are more improvements we can make to it!) What are some other nice things that companies have done for their payment forms?</em></p>
 									</div>
 									<div class="article-info">
-										<div class="timestamp"><a href="../designing-the-perfect-credi.html" title="Designing the Perfect Credit Card Payment Form">Oct 24, 2012, 10:43 AM</a></div>
+										<div class="timestamp"><a href="../designing-the-perfect-credi.html" title="Designing the Perfect Credit Card Payment Form">Oct 24, 2012 at 10:43 AM</a></div>
 									</div>
 								</div>
 								<div class="i3 o article">
@@ -164,7 +166,7 @@
 										</div><p><br /></p><p><span style="color: rgb(255, 237, 0); "><strong>Update</strong></span>: Thanks to Kris in the comments, who linked to <a href="http://castirony.com/post/26466421254/the-case-for-a-7-8-ipad">this article</a>. I guess iPad developers have already been designing iPad elements bigger than they needed to be (to maintain iPhone compatibility, with its denser pixels) so now the new iPad Mini just brings the density down to the same as the iPhone. <em><strong>Whew!</strong></em></p>
 									</div>
 									<div class="article-info">
-										<div class="timestamp"><a href="../ipad-mini-developers-will.html" title="iPad Mini: Developers will need to make their touchable elements bigger">Oct 23, 2012, 12:27 PM</a></div>
+										<div class="timestamp"><a href="../ipad-mini-developers-will.html" title="iPad Mini: Developers will need to make their touchable elements bigger">Oct 23, 2012 at 12:27 PM</a></div>
 									</div>
 								</div>
 								<div class="i4 e article">
@@ -179,7 +181,7 @@
 										</div><p>Yes, I reported it to Apple, Radar 12549677. I guess I still have hopes that Safari will get better again.</p><p>P.S. Chrome, what's up with the favicons?</p>
 									</div>
 									<div class="article-info">
-										<div class="timestamp"><a href="../safaris-history-menu-sucks.html" title="Safari's History Menu Sucks">Oct 22, 2012, 11:46 AM</a></div>
+										<div class="timestamp"><a href="../safaris-history-menu-sucks.html" title="Safari's History Menu Sucks">Oct 22, 2012 at 11:46 AM</a></div>
 									</div>
 								</div>
 								<div class="i5 o article">
@@ -251,7 +253,7 @@
 										
 									</div>
 									<div class="article-info">
-										<div class="timestamp"><a href="../wild-images-inspired-by.html" title="Wild Images, Inspired by Shades of Grey by Jasper Fforde">Oct 18, 2012, 4:29 PM</a></div>
+										<div class="timestamp"><a href="../wild-images-inspired-by.html" title="Wild Images, Inspired by Shades of Grey by Jasper Fforde">Oct 18, 2012 at 4:29 PM</a></div>
 									</div>
 								</div>
 								<div class="i6 e article">
@@ -266,7 +268,7 @@
 										</div><BR />
 									</div>
 									<div class="article-info">
-										<div class="timestamp"><a href="../conference-overload.html" title="Conference Overload!">Oct 17, 2012, 10:03 AM</a></div>
+										<div class="timestamp"><a href="../conference-overload.html" title="Conference Overload!">Oct 17, 2012 at 10:03 AM</a></div>
 									</div>
 								</div>
 								<div class="i7 o article">
@@ -283,21 +285,21 @@
 										
 									</div>
 									<div class="article-info">
-										<div class="timestamp"><a href="../get-thee-to-a-maker-faire.html" title="Get Thee to a Maker Faire">Oct 14, 2012, 7:58 PM</a></div>
+										<div class="timestamp"><a href="../get-thee-to-a-maker-faire.html" title="Get Thee to a Maker Faire">Oct 14, 2012 at 7:58 PM</a></div>
 									</div>
 								</div>
 								<div class="i8 e article">
 									<h2 class="index-title"><a href="../neighborhood-happy-hour.html" title="Neighborhood Happy Hour"><span class="in">Neighborhood Happy Hour</span></a></h2>
 									<div class="article-summary"><img src="../_Media/happy-hour_med_hr.jpeg" alt="happy hour" width="225" height="169" class="first narrow right graphic-container" /><p>Summer of 2012 has been a very nice summer, thanks to some neighbors who had a very cool idea.</p><p>Every Friday evening, since about June, they've had a simple open invitation to their neighbors to hang out in their front yard for a "happy hour" or "TGIF" get-together.</p><p>Very casual: bring some drinks and munchies to share.  Bring some outdoor chairs, or sit on lawn or the front steps.  And kids are welcome too; there are babies and toddlers and kids and pre-teens and teens hanging out.</p><p>What a great way to get to know your neighbors! We're building bonds that are much stronger than the occasional "hi" while out walking the dog, or the annual "block sale" that brings nearly everybody out and about.</p><p>The turnout of the happy hour varies from week to week, so it's never the same.</p><p>It turns out that this phenomonon is not unique to our street. See, for instance, <a href="http://thepiesthatbind.wordpress.com/2010/09/24/front-yard-happy%C2%A0hour/">this</a>, <a href="http://voices.yahoo.com/how-organize-neighborhood-happy-hour-6002228.html?cat=7">this</a>, <a href="http://www.habicurious.com/?p=3692">this</a>, and <a href="http://playborhood.com/2009/08/a_happy_hour_in_the_neighborhood-2/">this</a>. Everybody's is different — some are more involved than others; some are monthly not weekly; some have even have a theme.</p><p>As the days get shorter as we head into Autumn, it is still warm enough in California to continue for a bit, but probably not a good time to <em>start</em> something like this up in other areas where it's getting colder outdoors. Of course there's always indoors, but that involves a bit more preparation and logistics. (Especially if you don't know your neighbors that well at first, it's probably easier to spend some time outdoors before you open up your house to them!) I'm not sure if we'll be able to continue quite as before now that it's getting colder, darker, and wetter.  But it's been a great summer, and we have many more friends who happen to live right near me than we did before.</p><p>If you live in a place where you wouldn't mind getting to know your neighborhood a bit better, maybe this is something you might consider starting up when the weather permits it.</p><p><br /></p><p>(Photo CC from Flickr by <a href="http://flic.kr/p/8Az2Ef">ozmafan</a>)</p></div>
 									<div class="article-info">
-										<div class="timestamp"><a href="../neighborhood-happy-hour.html" title="Neighborhood Happy Hour">Oct 11, 2012, 8:03 AM</a></div>
+										<div class="timestamp"><a href="../neighborhood-happy-hour.html" title="Neighborhood Happy Hour">Oct 11, 2012 at 8:03 AM</a></div>
 									</div>
 								</div>
 								<div class="i9 o article">
 									<h2 class="index-title"><a href="../a-year-on-the-mac-app-store.html" title="A Year on the Mac App Store"><span class="in">A Year on the Mac App Store</span></a></h2>
 									<div class="article-summary"><p>Tomorrow marks one year that <a href="http://www.karelia.com/sandvox/">Sandvox</a> has been available <a href="http://itunes.apple.com/us/app/sandvox/id455413521?mt=12">for sale on the Mac App Store</a>.</p><img src="../_Media/mas_189.png" alt="mas" width="189" height="293" class="first narrow right graphic-container" /><p>With all its faults, it was a great decision to make the effort to get our app on the App Store. While we were a bit worried, it doesn't feel like it cannabilized the sales we would be making on our own store. The App Store is just another discovery mechanism and distribution mechanism, existing in addition to our own website and <a href="https://secure.karelia.com/buy_now/">online store</a>.</p><p>While I think the App Store is a great way to succeed, I don't agree with the decisions that a few of my fellow indie developers have made to <em>stop</em> offering their product on their own website and switch to the App Store exclusively.</p><p>In today's world, I think the best idea is to have your app available in <em>both</em> distributions. (<a href="http://mattgemmell.com/2012/08/24/releasing-outside-the-app-store/">Matt Gemmell offers some suggestions on that.</a>)</p><p>Now let's hope that the App Store team will do something about these worsening review queue times. (It's not the actual review that takes a long time, but <em>waiting</em> to get reviewed.) Our latest update had us waiting <em>a month</em>, and it looks from <a href="http://reviewtimes.shinydevelopment.com/">submitted statistics</a> and <a href="http://www.macworld.com/article/2011430/developers-stymied-by-mac-app-store-approval-delays.html">reports from others</a> that it's affecting other developers as well.</p><p>These delays really cut into developers' schedules, and force some tough decisions. Whether to anticipate sitting on a new version for a month. Or to decide to let your self-released edition be kept up-to-date, letting the App Store version lag seriously behind. I suppose that's OK for minor updates, but what about if you have a major new update? If you want to send out press releases and garner publicity for a new version, it doesn't make sense to announce that it's available in one edition and a month away in another edition.</p><p>If only Apple Inc. had a little bit of extra cash, so that they could afford to hire a few more people on the App Store review team, to bring that review delay down to a week or less, as it was earlier this year!</p><p>Today's question for the comments: <em>What can Apple do to improve the Mac App Store experience for its developers?</em></p></div>
 									<div class="article-info">
-										<div class="timestamp"><a href="../a-year-on-the-mac-app-store.html" title="A Year on the Mac App Store">Oct 10, 2012, 8:02 AM</a></div>
+										<div class="timestamp"><a href="../a-year-on-the-mac-app-store.html" title="A Year on the Mac App Store">Oct 10, 2012 at 8:02 AM</a></div>
 									</div>
 								</div>
 								<div class="i10 e article">
@@ -317,7 +319,7 @@
 										
 									</div>
 									<div class="article-info">
-										<div class="timestamp"><a href="../i-heart-stripe-credit-card.html" title="I 💜 Stripe 💳 Credit Card Processor">Oct 8, 2012, 8:31 AM</a></div>
+										<div class="timestamp"><a href="../i-heart-stripe-credit-card.html" title="I 💜 Stripe 💳 Credit Card Processor">Oct 8, 2012 at 8:31 AM</a></div>
 									</div>
 								</div>
 								<div class="i11 o article">
@@ -336,14 +338,14 @@
 										
 									</div>
 									<div class="article-info">
-										<div class="timestamp"><a href="../to-hell-with-utf-16-strings.html" title="To Hell with UTF-16 &quot;.strings&quot; Files">Oct 5, 2012, 4:59 PM</a></div>
+										<div class="timestamp"><a href="../to-hell-with-utf-16-strings.html" title="To Hell with UTF-16 &quot;.strings&quot; Files">Oct 5, 2012 at 4:59 PM</a></div>
 									</div>
 								</div>
 								<div class="i12 e article">
 									<h2 class="index-title"><a href="../phone-phishing.html" title="Phone Phishing"><span class="in">Phone Phishing</span></a></h2>
 									<div class="article-summary"><p>A fun story at Ars Technica about <a href="http://arstechnica.com/tech-policy/2012/10/i-am-calling-you-from-windows-a-tech-support-scammer-dials-ars-technica/">getting a call from a supposed Windows technician</a>, who tries to connect to their PC to fix a virus.</p><p>It's a total scam, of course. I can't believe people fall for that kind of thing, but like spam and email phishing, it must be successful enough for people to be doing it.</p><p>If you haven't read <a href="http://amzn.com/0471237124">The Art of Deception</a> by Kevin Mitnick, go do it now! I'll wait.</p><p>Good book, huh? It's a real eye-opener, and now whenever I get a phone call from somebody I don't know, I get really wary when they ask for any personal information. If it's from somebody representing a bank/credit card, or a charity/political group requesting a donation, I just don't give out information over the phone.</p><p>I recently got a message on my answering machine about some suspicious credit card activity, leaving me a number to call. Did I call that number back? Nope. I called the number on the back of my credit card. Fortunately, it was a legitimate call, and I solved the issue quickly. But what if it hadn't been?</p><p>These are the old-world equivalent of phishing over email. But they are still effective.</p><p>Anybody here get a suspicious call, or worse yet, actually fall for it?</p><p><br /></p></div>
 									<div class="article-info">
-										<div class="timestamp"><a href="../phone-phishing.html" title="Phone Phishing">Oct 5, 2012, 11:05 AM</a></div>
+										<div class="timestamp"><a href="../phone-phishing.html" title="Phone Phishing">Oct 5, 2012 at 11:05 AM</a></div>
 									</div>
 								</div>
 								<div class="i13 o article">
@@ -360,21 +362,21 @@
 										
 									</div>
 									<div class="article-info">
-										<div class="timestamp"><a href="../honey-harvest.html" title="Honey Harvest">Oct 3, 2012, 10:09 AM</a></div>
+										<div class="timestamp"><a href="../honey-harvest.html" title="Honey Harvest">Oct 3, 2012 at 10:09 AM</a></div>
 									</div>
 								</div>
 								<div class="i14 e article">
 									<h2 class="index-title"><a href="../will-mozilla-persona-succee.html" title="Will Mozilla Persona succeed where OpenID fails?"><span class="in">Will Mozilla Persona succeed where OpenID fails?</span></a></h2>
 									<div class="article-summary"><p><a href="http://labs.newsint.co.uk/blog/2012/10/why-mozilla-persona-is-the-right-answer-to-the-question-of-identity/">Mozilla Persona looks promising</a>. I've tried implementing <a href="http://openid.net/">OpenID</a> on an a private site, and it was a bitch to implement, and is really confusing to the few people who have tried to use it.</p><p>Persona doesn't look like it's that much easier to implement, but maybe I'm wrong.  One step that looks particularly dubious is where the "identity provider" (owner of your email address) manages requests for certificates. That means that a lot of domanant email providers are going to have to come on-board.  That might happen. But if you have your own domain name and you don't want an email address with one of these systems, it's probably not going to be a cakewalk to install the authentication step on your own server.</p><p>We'll see. I have hopes for this, but I'm not holding my breath!</p></div>
 									<div class="article-info">
-										<div class="timestamp"><a href="../will-mozilla-persona-succee.html" title="Will Mozilla Persona succeed where OpenID fails?">Oct 3, 2012, 8:35 AM</a></div>
+										<div class="timestamp"><a href="../will-mozilla-persona-succee.html" title="Will Mozilla Persona succeed where OpenID fails?">Oct 3, 2012 at 8:35 AM</a></div>
 									</div>
 								</div>
 								<div class="i15 o last-item article">
 									<h2 class="index-title"><a href="../inspired-to-try-this-bloggi.html" title="Inspired to try this &quot;blogging&quot; thing again"><span class="in">Inspired to try this "blogging" thing again</span></a></h2>
 									<div class="article-summary"><p>I pick up marketing books from time to time. (I had blogged about marketing as it relates to the Indie Mac Developer a while ago, when I was reading those kinds of books frequently!) I ran across <a href="http://amzn.com/159555503X">Platform: Get Noticed in a Noisy World</a> by Michael Hyatt. It has inspired me to try blogging again.</p><p>I think that I had lost my blogging mojo when I was active in Twitter (and Facebook) but I've been Facebook-free for over a year now, and I've cut down on Twitter a lot.</p><p>Maybe if I feel like saying something, it takes more than 140 characters.</p><p>Let's see if this sticks.</p></div>
 									<div class="article-info">
-										<div class="timestamp"><a href="../inspired-to-try-this-bloggi.html" title="Inspired to try this &quot;blogging&quot; thing again">Oct 3, 2012, 8:15 AM</a></div>
+										<div class="timestamp"><a href="../inspired-to-try-this-bloggi.html" title="Inspired to try this &quot;blogging&quot; thing again">Oct 3, 2012 at 8:15 AM</a></div>
 									</div>
 								</div>
 								<div class="general-index-bottom"></div>
